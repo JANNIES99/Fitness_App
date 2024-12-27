@@ -17,8 +17,35 @@ class Exercise {
     required this.name,
     required this.focusArea,
     required this.instructions,
+    required this.isTimer,
+    required this.timer,
+    required this.isRepetition,
+    required this.repetition,
   });
+
   final String name;
   final List<AreasOfTheBody> focusArea;
   final String instructions;
+  final int? timer;
+  final bool isTimer;
+  final bool isRepetition;
+  final int? repetition;
+
+  Exercise.withRepetition({
+    required this.name,
+    required this.focusArea,
+    required this.instructions,
+    required this.repetition,
+  })  : isRepetition = true,
+        isTimer = false,
+        timer = null;
+
+  Exercise.withTimer({
+    required this.name,
+    required this.focusArea,
+    required this.instructions,
+    required this.timer,
+  })  : isRepetition = false,
+        isTimer = true,
+        repetition = null;
 }
