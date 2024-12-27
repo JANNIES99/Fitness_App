@@ -39,4 +39,13 @@ class Exercise {
   })  : isRepetition = true,
         isTimer = false,
         timer = null;
+
+  Exercise.withTimer({
+    required this.name,
+    required this.focusArea,
+    required this.instructions,
+    required this.timer,
+  })  : isRepetition = false,
+        isTimer = true,
+        repetition = null;
 }
