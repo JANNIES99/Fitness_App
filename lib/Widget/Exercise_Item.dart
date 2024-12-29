@@ -14,7 +14,9 @@ class ExerciseItem extends StatelessWidget {
             child: Text(exercise.name),
           ),
           if (exercise.isRepetition == true)
-            Text("x+${exercise.repetition.toString()}")
+            Text("x+${exercise.repetition.toString()}"),
+          if (exercise.isTimer == true)
+            Text("x+${exercise.repetition.toString()}"),
         ],
       ),
     );
