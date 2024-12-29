@@ -7,6 +7,16 @@ class ExerciseItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Card(
+      child: Column(
+        children: [
+          Center(
+            child: Text(exercise.name),
+          ),
+          if (exercise.isRepetition == true)
+            Text("x+${exercise.repetition.toString()}")
+        ],
+      ),
+    );
   }
 }
