@@ -7,10 +7,6 @@ class ExerciseItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Card(
-      child: Column(
-        children: [],
-      ),
-    );
+    return const Placeholder();
   }
 }
