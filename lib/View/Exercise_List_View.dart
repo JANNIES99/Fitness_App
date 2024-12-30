@@ -1,3 +1,4 @@
+import 'package:fitnessapp/Widget/Exercise_Item.dart';
 import 'package:fitnessapp/model/Exercise.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +14,11 @@ class ExerciseListView extends StatelessWidget {
         appBar: AppBar(),
         body: ListView.builder(
           itemCount: length,
-          itemBuilder: (ctx, index) {},
+          itemBuilder: (ctx, index) {
+            return ExerciseItem(
+              exercise: exercises[index],
+            );
+          },
         ),
       ),
     );
