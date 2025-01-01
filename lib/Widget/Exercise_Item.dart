@@ -8,16 +8,26 @@ class ExerciseItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      child: Column(
-        children: [
-          Center(
-            child: Text(exercise.name),
-          ),
-          if (exercise.isRepetition == true)
-            Text("x+${exercise.repetition.toString()}"),
-          if (exercise.isTimer == true)
-            Text("${exercise.minute.toString()}:${exercise.second.toString()}"),
-        ],
+      child: Container(
+        padding: const EdgeInsets.all(10),
+        child: Column(
+          children: [
+            Center(
+              child: Text(exercise.name),
+            ),
+            if (exercise.isRepetition == true)
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Text("x+${exercise.repetition.toString()}"),
+              ),
+            if (exercise.isTimer == true)
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                    "${exercise.minute.toString()}:${exercise.second.toString()}"),
+              ),
+          ],
+        ),
       ),
     );
   }

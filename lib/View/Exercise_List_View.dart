@@ -9,20 +9,18 @@ class ExerciseListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final int length = exercises.length;
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(),
-        body: ListView.builder(
-          itemCount: length,
-          itemBuilder: (ctx, index) {
-            return GestureDetector(
-              onTap: () {},
-              child: ExerciseItem(
-                exercise: exercises[index],
-              ),
-            );
-          },
-        ),
+    return Scaffold(
+      appBar: AppBar(),
+      body: ListView.builder(
+        itemCount: length,
+        itemBuilder: (ctx, index) {
+          return GestureDetector(
+            onTap: () {},
+            child: ExerciseItem(
+              exercise: exercises[index],
+            ),
+          );
+        },
       ),
     );
   }
