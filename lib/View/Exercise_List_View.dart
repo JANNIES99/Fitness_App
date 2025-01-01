@@ -15,9 +15,7 @@ class ExerciseListView extends StatelessWidget {
         itemCount: length,
         itemBuilder: (ctx, index) {
           return GestureDetector(
-            onTap: () {
-              print("hello World");
-            },
+            onTap: () {},
             child: ExerciseItem(
               exercise: exercises[index],
             ),
