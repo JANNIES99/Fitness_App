@@ -17,12 +17,13 @@ class ExerciseListView extends StatelessWidget {
           return GestureDetector(
             onTap: () {
               showModalBottomSheet(
-                  context: context,
-                  isScrollControlled: true,
-                  useSafeArea: true,
-                  builder: (BuildContext ctx) {
-                    return const Text("hello");
-                  });
+                context: context,
+                isScrollControlled: true,
+                useSafeArea: true,
+                builder: (BuildContext ctx) {
+                  return const Text("hello");
+                },
+              );
             },
             child: ExerciseItem(
               exercise: exercises[index],
