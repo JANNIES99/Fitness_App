@@ -34,7 +34,7 @@ class ExerciseDetails extends StatelessWidget {
           Wrap(
             children: [
               for (final area in exercise.focusArea)
-                Text("${area.name.toString().toUpperCase()} ")
+                Text("${area.name.toString()} ")
             ],
           ),
         ],
