@@ -1,3 +1,4 @@
+import 'package:fitnessapp/Widget/Exercise_Details.dart';
 import 'package:fitnessapp/Widget/Exercise_Item.dart';
 import 'package:fitnessapp/model/Exercise.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +22,7 @@ class ExerciseListView extends StatelessWidget {
                 isScrollControlled: true,
                 useSafeArea: true,
                 builder: (BuildContext ctx) {
-                  return const Text("hello");
+                  return ExerciseDetails(exercise: exercises[index]);
                 },
               );
             },
