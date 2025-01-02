@@ -30,6 +30,13 @@ class ExerciseDetails extends StatelessWidget {
             ),
           const Text("INSTRUCTIONS"),
           Text(exercise.instructions),
+          const Text("FOCUS AREA"),
+          Wrap(
+            children: [
+              for (final area in exercise.focusArea)
+                Text("${area.name.toString().toUpperCase()} ")
+            ],
+          ),
         ],
       ),
     );
