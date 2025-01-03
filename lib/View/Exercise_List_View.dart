@@ -32,6 +32,9 @@ class ExerciseListView extends StatelessWidget {
           );
         },
       ),
+      persistentFooterButtons: [
+        ElevatedButton(onPressed: () {}, child: const Text("Start"))
+      ],
     );
   }
 }
