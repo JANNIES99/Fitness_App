@@ -12,31 +12,25 @@ class ExerciseListView extends StatelessWidget {
     final int length = exercises.length;
     return Scaffold(
       appBar: AppBar(),
-      body: Column(
-        children: [
-          SingleChildScrollView(
-            child: ListView.builder(
-              itemCount: length,
-              itemBuilder: (ctx, index) {
-                return GestureDetector(
-                  onTap: () {
-                    showModalBottomSheet(
-                      context: context,
-                      isScrollControlled: true,
-                      useSafeArea: true,
-                      builder: (BuildContext ctx) {
-                        return ExerciseDetails(exercise: exercises[index]);
-                      },
-                    );
-                  },
-                  child: ExerciseItem(
-                    exercise: exercises[index],
-                  ),
-                );
-              },
+      body: ListView.builder(
+        itemCount: length,
+        itemBuilder: (ctx, index) {
+          return GestureDetector(
+            onTap: () {
+              showModalBottomSheet(
+                context: context,
+                isScrollControlled: true,
+                useSafeArea: true,
+                builder: (BuildContext ctx) {
+                  return ExerciseDetails(exercise: exercises[index]);
+                },
+              );
+            },
+            child: ExerciseItem(
+              exercise: exercises[index],
             ),
-          ),
-        ],
+          );
+        },
       ),
     );
   }
