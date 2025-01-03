@@ -11,10 +11,11 @@ class ExerciseListView extends StatelessWidget {
   Widget build(BuildContext context) {
     final int length = exercises.length;
     return Scaffold(
-        appBar: AppBar(),
-        body: Column(
-          children: [
-            ListView.builder(
+      appBar: AppBar(),
+      body: Column(
+        children: [
+          SingleChildScrollView(
+            child: ListView.builder(
               itemCount: length,
               itemBuilder: (ctx, index) {
                 return GestureDetector(
@@ -34,7 +35,9 @@ class ExerciseListView extends StatelessWidget {
                 );
               },
             ),
-          ],
-        ));
+          ),
+        ],
+      ),
+    );
   }
 }
