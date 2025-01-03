@@ -38,6 +38,7 @@ class ExerciseDetails extends StatelessWidget {
             ],
           ),
           ElevatedButton(
+              style: ElevatedButton.styleFrom(),
               onPressed: () {
                 Navigator.pop(context);
               },
