@@ -37,6 +37,11 @@ class ExerciseDetails extends StatelessWidget {
                 Text("${area.name.toString().toUpperCase()} ")
             ],
           ),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: const Text("Close"))
         ],
       ),
     );
