@@ -14,6 +14,8 @@ class DoingExercise extends StatelessWidget {
         body: Column(
           children: [
             Text(exercises[selector].name),
+            if (exercises[selector].isRepetition)
+              Text("x${exercises[selector].repetition}"),
           ],
         ),
       ),
