@@ -1,14 +1,20 @@
+import 'package:fitnessapp/model/Exercise.dart';
 import 'package:flutter/material.dart';
 
 class DoingExercise extends StatelessWidget {
-  const DoingExercise({super.key});
+  const DoingExercise(
+      {required this.selector, required this.exercises, super.key});
+  final int selector;
+  final List<Exercise> exercises;
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         body: Column(
-          children: [],
+          children: [
+            Text(exercises[selector].name),
+          ],
         ),
       ),
     );
