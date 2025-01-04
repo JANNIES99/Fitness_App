@@ -6,7 +6,11 @@ class DoingExercise extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(),
+      home: Scaffold(
+        body: Column(
+          children: [],
+        ),
+      ),
     );
   }
 }
