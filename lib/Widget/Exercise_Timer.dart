@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 
 class ExerciseTimer extends StatefulWidget {
@@ -10,8 +11,25 @@ class ExerciseTimer extends StatefulWidget {
 }
 
 class _ExerciseTimerState extends State<ExerciseTimer> {
+  int timeForTimer = 0;
+  String timeToDisplay = "";
+  @override
+  void initState() {
+    timeForTimer = ((widget.minute * 60) + widget.seconds);
+    timeToDisplay = timeForTimer.toString();
+    super.initState();
+  }
+
+  void startTimer() {
+    Timer.periodic(
+        Duration(
+          seconds: 1,
+        ),
+        (Timer t) {});
+  }
+
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Text(timeToDisplay);
   }
 }
