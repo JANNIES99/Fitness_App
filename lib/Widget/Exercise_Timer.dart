@@ -17,6 +17,7 @@ class _ExerciseTimerState extends State<ExerciseTimer> {
   void initState() {
     timeForTimer = ((widget.minute * 60) + widget.seconds);
     timeToDisplay = timeForTimer.toString();
+    startTimer();
     super.initState();
   }
 

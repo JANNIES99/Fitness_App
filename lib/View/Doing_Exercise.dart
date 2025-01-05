@@ -1,3 +1,4 @@
+import 'package:fitnessapp/Widget/Exercise_Timer.dart';
 import 'package:fitnessapp/model/Exercise.dart';
 import 'package:flutter/material.dart';
 
@@ -16,8 +17,10 @@ class DoingExercise extends StatelessWidget {
             Text(exercises[selector].name),
             if (exercises[selector].isRepetition)
               Text("x${exercises[selector].repetition}"),
-
-            // if(exercises[selector].isTimer)
+            if (exercises[selector].isTimer)
+              ExerciseTimer(
+                  minute: exercises[selector].minute as int,
+                  seconds: exercises[selector].second as int)
           ],
         ),
       ),
