@@ -22,10 +22,11 @@ class _ExerciseTimerState extends State<ExerciseTimer> {
 
   void startTimer() {
     Timer.periodic(
-        Duration(
-          seconds: 1,
-        ),
-        (Timer t) {});
+      const Duration(
+        seconds: 1,
+      ),
+      (Timer t) {},
+    );
   }
 
   @override
