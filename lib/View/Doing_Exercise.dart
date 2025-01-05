@@ -4,15 +4,17 @@ import 'package:flutter/material.dart';
 
 class DoingExercise extends StatelessWidget {
   const DoingExercise(
-      {required this.selector, required this.exercises, super.key});
-  final int selector;
+      {/*required this.selector,*/ required this.exercises, super.key});
+  final int selector = 1;
   final List<Exercise> exercises;
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        appBar: AppBar(),
         body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(exercises[selector].name),
             if (exercises[selector].isRepetition)

@@ -1,3 +1,4 @@
+import 'package:fitnessapp/View/Doing_Exercise.dart';
 import 'package:fitnessapp/Widget/Exercise_Details.dart';
 import 'package:fitnessapp/Widget/Exercise_Item.dart';
 import 'package:fitnessapp/model/Exercise.dart';
@@ -33,7 +34,12 @@ class ExerciseListView extends StatelessWidget {
         },
       ),
       persistentFooterButtons: [
-        ElevatedButton(onPressed: () {}, child: const Text("Start"))
+        ElevatedButton(
+            onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => DoingExercise(exercises: exercises)));
+            },
+            child: const Text("Start"))
       ],
     );
   }
