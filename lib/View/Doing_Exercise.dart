@@ -16,6 +16,8 @@ class DoingExercise extends StatelessWidget {
             Text(exercises[selector].name),
             if (exercises[selector].isRepetition)
               Text("x${exercises[selector].repetition}"),
+
+            // if(exercises[selector].isTimer)
           ],
         ),
       ),
