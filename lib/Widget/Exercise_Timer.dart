@@ -25,7 +25,17 @@ class _ExerciseTimerState extends State<ExerciseTimer> {
       const Duration(
         seconds: 1,
       ),
-      (Timer t) {},
+      (Timer t) {
+        setState(() {
+          if (timeForTimer < 1) {
+            t.cancel();
+            timeForTimer = 0;
+          } else {
+            timeForTimer = timeForTimer - 1;
+          }
+          timeToDisplay = timeForTimer.toString();
+        });
+      },
     );
   }
 
