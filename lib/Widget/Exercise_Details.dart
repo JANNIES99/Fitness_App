@@ -25,7 +25,7 @@ class ExerciseDetails extends StatelessWidget {
               children: [
                 const Text("DURATION"),
                 const Spacer(),
-                Text("x${exercise.repetition}"),
+                Text("${exercise.minute}:${exercise.second}"),
               ],
             ),
           const Text("INSTRUCTIONS"),
