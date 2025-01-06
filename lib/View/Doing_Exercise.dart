@@ -1,3 +1,4 @@
+import 'package:fitnessapp/Widget/Exercise_Details.dart';
 import 'package:fitnessapp/Widget/Exercise_Timer.dart';
 import 'package:fitnessapp/model/Exercise.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +24,18 @@ class DoingExercise extends StatelessWidget {
                 children: [
                   Text(exercises[selector].name),
                   IconButton(
-                      onPressed: () {}, icon: const Icon(Icons.question_mark)),
+                      onPressed: () {
+                        showModalBottomSheet(
+                          context: context,
+                          isScrollControlled: true,
+                          useSafeArea: true,
+                          builder: (BuildContext ctx) {
+                            return ExerciseDetails(
+                                exercise: exercises[selector]);
+                          },
+                        );
+                      },
+                      icon: const Icon(Icons.question_mark)),
                 ],
               ),
               if (exercises[selector].isRepetition)
