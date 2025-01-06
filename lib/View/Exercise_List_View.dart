@@ -17,16 +17,7 @@ class ExerciseListView extends StatelessWidget {
         itemCount: length,
         itemBuilder: (ctx, index) {
           return GestureDetector(
-            onTap: () {
-              showModalBottomSheet(
-                context: context,
-                isScrollControlled: true,
-                useSafeArea: true,
-                builder: (BuildContext ctx) {
-                  return ExerciseDetails(exercise: exercises[index]);
-                },
-              );
-            },
+            onTap: () {},
             child: ExerciseItem(
               exercise: exercises[index],
             ),
