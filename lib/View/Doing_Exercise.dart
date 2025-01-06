@@ -15,6 +15,7 @@ class DoingExercise extends StatelessWidget {
         appBar: AppBar(),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(exercises[selector].name),
             if (exercises[selector].isRepetition)
