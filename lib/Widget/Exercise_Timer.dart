@@ -31,8 +31,17 @@ class _ExerciseTimerState extends State<ExerciseTimer> {
           if (timeForTimer < 1) {
             t.cancel();
             timeForTimer = 0;
+            timeToDisplay = timeForTimer.toString();
           } else {
             timeForTimer = timeForTimer - 1;
+            if (timeForTimer > 60) {
+              int t = timeForTimer;
+              int m = (t / 60).floor();
+              int s = t % 60;
+              timeToDisplay = "$m:$s";
+            } else {
+              timeToDisplay = timeForTimer.toString();
+            }
           }
           timeToDisplay = timeForTimer.toString();
         });
