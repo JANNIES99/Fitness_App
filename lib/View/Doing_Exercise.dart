@@ -13,18 +13,27 @@ class DoingExercise extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text(exercises[selector].name),
-            if (exercises[selector].isRepetition)
-              Text("x${exercises[selector].repetition}"),
-            if (exercises[selector].isTimer)
-              ExerciseTimer(
-                  minute: exercises[selector].minute as int,
-                  seconds: exercises[selector].second as int)
-          ],
+        body: Container(
+          width: double.infinity,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Row(
+                children: [
+                  Text(exercises[selector].name),
+                  IconButton(
+                      onPressed: () {}, icon: const Icon(Icons.question_mark)),
+                ],
+              ),
+              if (exercises[selector].isRepetition)
+                Text("x${exercises[selector].repetition}"),
+              if (exercises[selector].isTimer)
+                ExerciseTimer(
+                    minute: exercises[selector].minute as int,
+                    seconds: exercises[selector].second as int)
+            ],
+          ),
         ),
       ),
     );
