@@ -46,18 +46,31 @@ class DoingExercise extends StatelessWidget {
                   minute: exercises[selector].minute as int,
                   seconds: exercises[selector].second as int,
                 ),
-              Row(
-                children: [
-                  ElevatedButton(
-                    onPressed: () {},
-                    child: const Row(
-                      children: [
-                        Icon(Icons.skip_previous_outlined),
-                        Text("Previous"),
-                      ],
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: Row(
+                  children: [
+                    ElevatedButton(
+                      onPressed: () {},
+                      child: const Row(
+                        children: [
+                          Icon(Icons.skip_previous_outlined),
+                          Text("Previous"),
+                        ],
+                      ),
                     ),
-                  )
-                ],
+                    const Spacer(),
+                    ElevatedButton(
+                      onPressed: () {},
+                      child: const Row(
+                        children: [
+                          Text("Skip"),
+                          Icon(Icons.skip_next_outlined),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               )
             ],
           ),
