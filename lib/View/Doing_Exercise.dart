@@ -21,6 +21,7 @@ class DoingExercise extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(exercises[selector].name),
                   IconButton(
