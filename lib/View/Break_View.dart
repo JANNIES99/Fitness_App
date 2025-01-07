@@ -14,7 +14,7 @@ class BreakView extends StatefulWidget {
 }
 
 class _BreakViewState extends State<BreakView> {
-  int timeForTimer = 30;
+  int timeForTimer = 120;
   String timeToDisplay = "30";
 
   void endTheBreak() {
@@ -49,7 +49,6 @@ class _BreakViewState extends State<BreakView> {
               timeToDisplay = timeForTimer.toString();
             }
           }
-          timeToDisplay = timeForTimer.toString();
         });
       },
     );
@@ -65,16 +64,19 @@ class _BreakViewState extends State<BreakView> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        body: Container(
-          padding: const EdgeInsets.all(10),
+        body: Center(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(timeToDisplay),
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   TextButton(
                     onPressed: () {
-                      timeForTimer = timeForTimer + 10;
+                      setState(() {
+                        timeForTimer = timeForTimer + 10;
+                      });
                     },
                     child: const Text("+10 Sec"),
                   ),

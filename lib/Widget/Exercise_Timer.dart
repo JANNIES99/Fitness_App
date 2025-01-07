@@ -43,7 +43,6 @@ class _ExerciseTimerState extends State<ExerciseTimer> {
               timeToDisplay = timeForTimer.toString();
             }
           }
-          timeToDisplay = timeForTimer.toString();
         });
       },
     );
