@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 
 class DoingExercise extends StatelessWidget {
   const DoingExercise(
-      {/*required this.selector,*/ required this.exercises, super.key});
-  final int selector = 1;
+      {required this.selector, required this.exercises, super.key});
+  final int selector;
   final List<Exercise> exercises;
 
   @override

@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:math';
 import 'package:fitnessapp/View/Doing_Exercise.dart';
 import 'package:fitnessapp/model/Exercise.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +20,8 @@ class _BreakViewState extends State<BreakView> {
   void endTheBreak() {
     Navigator.of(context).push(
       MaterialPageRoute(
-        builder: (context) => DoingExercise(exercises: widget.exercises),
+        builder: (context) => DoingExercise(
+            selector: (widget.selector + 1), exercises: widget.exercises),
       ),
     );
   }
@@ -64,9 +66,26 @@ class _BreakViewState extends State<BreakView> {
     return MaterialApp(
       home: Scaffold(
         body: Container(
+          padding: const EdgeInsets.all(10),
           child: Column(
             children: [
               Text(timeToDisplay),
+              Row(
+                children: [
+                  TextButton(
+                    onPressed: () {
+                      timeForTimer = timeForTimer + 10;
+                    },
+                    child: const Text("+10 Sec"),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      endTheBreak();
+                    },
+                    child: const Text("Skip Breal"),
+                  ),
+                ],
+              ),
             ],
           ),
         ),

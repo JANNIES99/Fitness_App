@@ -1,3 +1,4 @@
+import 'package:fitnessapp/View/Break_View.dart';
 import 'package:fitnessapp/View/Doing_Exercise.dart';
 import 'package:fitnessapp/Widget/Exercise_Details.dart';
 import 'package:fitnessapp/Widget/Exercise_Item.dart';
@@ -37,7 +38,7 @@ class ExerciseListView extends StatelessWidget {
         ElevatedButton(
             onPressed: () {
               Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => DoingExercise(exercises: exercises)));
+                  builder: (context) => BreakView(exercises: exercises)));
             },
             child: const Text("Start"))
       ],
