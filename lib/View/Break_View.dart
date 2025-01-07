@@ -1,8 +1,11 @@
 import 'dart:async';
+import 'package:fitnessapp/model/Exercise.dart';
 import 'package:flutter/material.dart';
 
 class BreakView extends StatefulWidget {
-  const BreakView({super.key});
+  const BreakView({required this.exercises, this.selector = -1, super.key});
+  final List<Exercise> exercises;
+  final int selector;
 
   @override
   State<BreakView> createState() => _BreakViewState();
