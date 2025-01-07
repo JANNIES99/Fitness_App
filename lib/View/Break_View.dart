@@ -74,9 +74,19 @@ class _BreakViewState extends State<BreakView> {
                 children: [
                   TextButton(
                     onPressed: () {
-                      setState(() {
-                        timeForTimer = timeForTimer + 10;
-                      });
+                      setState(
+                        () {
+                          timeForTimer = timeForTimer + 10;
+                          if (timeForTimer > 60) {
+                            int t = timeForTimer;
+                            int m = (t / 60).floor();
+                            int s = t % 60;
+                            timeToDisplay = "$m:$s";
+                          } else {
+                            timeToDisplay = timeForTimer.toString();
+                          }
+                        },
+                      );
                     },
                     child: const Text("+10 Sec"),
                   ),
