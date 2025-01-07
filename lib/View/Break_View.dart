@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:fitnessapp/View/Doing_Exercise.dart';
 import 'package:fitnessapp/model/Exercise.dart';
 import 'package:flutter/material.dart';
 
@@ -15,6 +16,14 @@ class _BreakViewState extends State<BreakView> {
   int timeForTimer = 30;
   String timeToDisplay = "30";
 
+  void endTheBreak() {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => DoingExercise(exercises: widget.exercises),
+      ),
+    );
+  }
+
   void startTimer() {
     Timer.periodic(
       const Duration(
@@ -26,6 +35,7 @@ class _BreakViewState extends State<BreakView> {
             t.cancel();
             timeForTimer = 0;
             timeToDisplay = timeForTimer.toString();
+            endTheBreak();
           } else {
             timeForTimer = timeForTimer - 1;
             if (timeForTimer > 60) {
