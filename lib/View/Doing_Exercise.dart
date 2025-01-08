@@ -15,6 +15,7 @@ class DoingExercise extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(),
         body: Container(
+          margin: const EdgeInsets.all(20),
           width: double.infinity,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
