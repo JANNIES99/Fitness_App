@@ -62,44 +62,42 @@ class _BreakViewState extends State<BreakView> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(timeToDisplay),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  TextButton(
-                    onPressed: () {
-                      setState(
-                        () {
-                          timeForTimer = timeForTimer + 10;
-                          if (timeForTimer > 60) {
-                            int t = timeForTimer;
-                            int m = (t / 60).floor();
-                            int s = t % 60;
-                            timeToDisplay = "$m:$s";
-                          } else {
-                            timeToDisplay = timeForTimer.toString();
-                          }
-                        },
-                      );
-                    },
-                    child: const Text("+10 Sec"),
-                  ),
-                  ElevatedButton(
-                    onPressed: () {
-                      endTheBreak();
-                    },
-                    child: const Text("Skip Breal"),
-                  ),
-                ],
-              ),
-            ],
-          ),
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(timeToDisplay),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                TextButton(
+                  onPressed: () {
+                    setState(
+                      () {
+                        timeForTimer = timeForTimer + 10;
+                        if (timeForTimer > 60) {
+                          int t = timeForTimer;
+                          int m = (t / 60).floor();
+                          int s = t % 60;
+                          timeToDisplay = "$m:$s";
+                        } else {
+                          timeToDisplay = timeForTimer.toString();
+                        }
+                      },
+                    );
+                  },
+                  child: const Text("+10 Sec"),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    endTheBreak();
+                  },
+                  child: const Text("Skip Breal"),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );
