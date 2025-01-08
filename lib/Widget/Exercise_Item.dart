@@ -18,7 +18,7 @@ class ExerciseItem extends StatelessWidget {
             if (exercise.isRepetition == true)
               Align(
                 alignment: Alignment.centerLeft,
-                child: Text("x+${exercise.repetition.toString()}"),
+                child: Text("x${exercise.repetition.toString()}"),
               ),
             if (exercise.isTimer == true)
               Align(

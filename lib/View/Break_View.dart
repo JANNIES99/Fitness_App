@@ -13,7 +13,7 @@ class BreakView extends StatefulWidget {
 }
 
 class _BreakViewState extends State<BreakView> {
-  int timeForTimer = 120;
+  int timeForTimer = 30;
   String timeToDisplay = "30";
 
   void endTheBreak() {
@@ -23,6 +23,7 @@ class _BreakViewState extends State<BreakView> {
             selector: (widget.selector + 1), exercises: widget.exercises),
       ),
     );
+    timeForTimer = 0;
   }
 
   void startTimer() {

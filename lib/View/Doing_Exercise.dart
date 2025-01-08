@@ -63,7 +63,9 @@ class DoingExercise extends StatelessWidget {
                     ),
                     const Spacer(),
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
                       child: const Row(
                         children: [
                           Text("Skip"),
