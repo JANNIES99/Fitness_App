@@ -5,7 +5,11 @@ import 'package:flutter/material.dart';
 
 class DoingExercise extends StatelessWidget {
   const DoingExercise(
-      {required this.switchView, required this.exercise, super.key});
+      {required this.switchPrevious,
+      required this.switchView,
+      required this.exercise,
+      super.key});
+  final void Function() switchPrevious;
   final void Function() switchView;
   final Exercise exercise;
 
