@@ -1,4 +1,5 @@
 import 'package:fitnessapp/View/Break_View.dart';
+import 'package:fitnessapp/View/Doing_Exercise.dart';
 import 'package:fitnessapp/model/Exercise.dart';
 import 'package:flutter/material.dart';
 
@@ -12,10 +13,21 @@ class StartingExercise extends StatefulWidget {
 
 class _StartingExerciseState extends State<StartingExercise> {
   Widget? frontView;
+  int selector = -1;
+
+  void switchToExerciseView() {
+    selector++;
+    frontView = DoingExercise(selector: selector, exercises: widget.exercises);
+  }
+
+  void switchToBreakView() {
+    frontView = const BreakView();
+  }
+
   @override
   void initState() {
     setState(() {
-      frontView = BreakView(exercises: widget.exercises);
+      frontView = const BreakView();
       super.initState();
     });
   }

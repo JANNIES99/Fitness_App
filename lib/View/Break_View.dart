@@ -1,12 +1,8 @@
 import 'dart:async';
-import 'package:fitnessapp/View/Doing_Exercise.dart';
-import 'package:fitnessapp/model/Exercise.dart';
 import 'package:flutter/material.dart';
 
 class BreakView extends StatefulWidget {
-  const BreakView({required this.exercises, this.selector = -1, super.key});
-  final List<Exercise> exercises;
-  final int selector;
+  const BreakView({super.key});
 
   @override
   State<BreakView> createState() => _BreakViewState();
@@ -16,15 +12,7 @@ class _BreakViewState extends State<BreakView> {
   int timeForTimer = 30;
   String timeToDisplay = "30";
 
-  void endTheBreak() {
-    Navigator.of(context).push(
-      MaterialPageRoute(
-        builder: (context) => DoingExercise(
-            selector: (widget.selector + 1), exercises: widget.exercises),
-      ),
-    );
-    timeForTimer = 0;
-  }
+  void endTheBreak() {}
 
   void startTimer() {
     Timer.periodic(
