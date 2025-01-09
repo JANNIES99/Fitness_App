@@ -13,7 +13,10 @@ class _BreakViewState extends State<BreakView> {
   int timeForTimer = 30;
   String timeToDisplay = "30";
 
-  void endTheBreak() {}
+  void endTheBreak() {
+    timeForTimer = 0;
+    widget.switchView();
+  }
 
   void startTimer() {
     Timer.periodic(
