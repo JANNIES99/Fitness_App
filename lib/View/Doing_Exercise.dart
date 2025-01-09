@@ -4,10 +4,8 @@ import 'package:fitnessapp/model/Exercise.dart';
 import 'package:flutter/material.dart';
 
 class DoingExercise extends StatelessWidget {
-  const DoingExercise(
-      {required this.selector, required this.exercises, super.key});
-  final int selector;
-  final List<Exercise> exercises;
+  const DoingExercise({required this.exercise, super.key});
+  final Exercise exercise;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +23,7 @@ class DoingExercise extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(exercises[selector].name),
+                  Text(exercise.name),
                   IconButton(
                       onPressed: () {
                         showModalBottomSheet(
@@ -33,20 +31,18 @@ class DoingExercise extends StatelessWidget {
                           isScrollControlled: true,
                           useSafeArea: true,
                           builder: (BuildContext ctx) {
-                            return ExerciseDetails(
-                                exercise: exercises[selector]);
+                            return ExerciseDetails(exercise: exercise);
                           },
                         );
                       },
                       icon: const Icon(Icons.question_mark)),
                 ],
               ),
-              if (exercises[selector].isRepetition)
-                Text("x${exercises[selector].repetition}"),
-              if (exercises[selector].isTimer)
+              if (exercise.isRepetition) Text("x${exercise.repetition}"),
+              if (exercise.isTimer)
                 ExerciseTimer(
-                  minute: exercises[selector].minute as int,
-                  seconds: exercises[selector].second as int,
+                  minute: exercise.minute as int,
+                  seconds: exercise.second as int,
                 ),
               Align(
                 alignment: Alignment.bottomCenter,

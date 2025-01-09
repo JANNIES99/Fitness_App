@@ -17,7 +17,7 @@ class _StartingExerciseState extends State<StartingExercise> {
 
   void switchToExerciseView() {
     selector++;
-    frontView = DoingExercise(selector: selector, exercises: widget.exercises);
+    frontView = DoingExercise(exercise: widget.exercises[selector]);
   }
 
   void switchToBreakView() {
