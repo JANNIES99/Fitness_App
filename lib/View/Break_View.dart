@@ -85,7 +85,7 @@ class _BreakViewState extends State<BreakView> {
                   onPressed: () {
                     endTheBreak();
                   },
-                  child: const Text("Skip Breal"),
+                  child: const Text("Skip Break"),
                 ),
               ],
             ),
