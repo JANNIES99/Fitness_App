@@ -21,13 +21,17 @@ class _StartingExerciseState extends State<StartingExercise> {
   }
 
   void switchToBreakView() {
-    frontView = const BreakView();
+    frontView = BreakView(
+      switchView: switchToExerciseView,
+    );
   }
 
   @override
   void initState() {
     setState(() {
-      frontView = const BreakView();
+      frontView = BreakView(
+        switchView: switchToExerciseView,
+      );
       super.initState();
     });
   }

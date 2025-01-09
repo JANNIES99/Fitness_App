@@ -2,8 +2,9 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 class BreakView extends StatefulWidget {
-  const BreakView({super.key});
+  const BreakView({required this.switchView, super.key});
 
+  final void Function() switchView;
   @override
   State<BreakView> createState() => _BreakViewState();
 }
