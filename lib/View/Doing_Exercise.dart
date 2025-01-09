@@ -54,7 +54,9 @@ class DoingExercise extends StatelessWidget {
               child: Row(
                 children: [
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      switchPrevious();
+                    },
                     child: const Row(
                       children: [
                         Icon(Icons.skip_previous_outlined),
@@ -65,7 +67,7 @@ class DoingExercise extends StatelessWidget {
                   const Spacer(),
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.pop(context);
+                      switchView();
                     },
                     child: const Row(
                       children: [
