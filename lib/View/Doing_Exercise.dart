@@ -4,7 +4,9 @@ import 'package:fitnessapp/model/Exercise.dart';
 import 'package:flutter/material.dart';
 
 class DoingExercise extends StatelessWidget {
-  const DoingExercise({required this.exercise, super.key});
+  const DoingExercise(
+      {required this.switchView, required this.exercise, super.key});
+  final void Function() switchView;
   final Exercise exercise;
 
   @override
