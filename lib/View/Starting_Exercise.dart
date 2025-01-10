@@ -26,13 +26,15 @@ class _StartingExerciseState extends State<StartingExercise> {
   }
 
   void switchToPreviousExercise() {
-    setState(() {
-      selector--;
-      frontView = DoingExercise(
-          switchPrevious: switchToPreviousExercise,
-          switchView: switchToBreakView,
-          exercise: widget.exercises[selector]);
-    });
+    if (selector >= 0) {
+      setState(() {
+        selector--;
+        frontView = DoingExercise(
+            switchPrevious: switchToPreviousExercise,
+            switchView: switchToBreakView,
+            exercise: widget.exercises[selector]);
+      });
+    }
   }
 
   void switchToBreakView() {
