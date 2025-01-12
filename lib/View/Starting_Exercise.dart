@@ -52,11 +52,13 @@ class _StartingExerciseState extends State<StartingExercise> {
   }
 
   void switchToBreakView() {
-    setState(() {
-      frontView = BreakView(
-        switchView: switchToExerciseView,
-      );
-    });
+    if (selector + 1 < widget.exercises.length) {
+      setState(() {
+        frontView = BreakView(
+          switchView: switchToExerciseView,
+        );
+      });
+    }
   }
 
   @override
