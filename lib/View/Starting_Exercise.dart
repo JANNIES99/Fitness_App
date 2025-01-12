@@ -58,6 +58,12 @@ class _StartingExerciseState extends State<StartingExercise> {
           switchView: switchToExerciseView,
         );
       });
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text("It cannot be gone further"),
+        ),
+      );
     }
   }
 
