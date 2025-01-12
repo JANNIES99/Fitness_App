@@ -24,6 +24,12 @@ class _StartingExerciseState extends State<StartingExercise> {
             switchView: switchToBreakView,
             exercise: widget.exercises[selector]);
       });
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text("It cannot be gone further"),
+        ),
+      );
     }
   }
 
