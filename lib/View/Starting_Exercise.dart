@@ -26,7 +26,7 @@ class _StartingExerciseState extends State<StartingExercise> {
   }
 
   void switchToPreviousExercise() {
-    if (selector >= 0) {
+    if (selector > 0) {
       setState(() {
         selector--;
         frontView = DoingExercise(
