@@ -16,7 +16,17 @@ class DoingExercise extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Row(
+          children: [
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.arrow_left_rounded),
+            ),
+            Text(exercise.name),
+          ],
+        ),
+      ),
       body: Container(
         margin: const EdgeInsets.all(20),
         width: double.infinity,
