@@ -12,8 +12,8 @@ class HomeView extends StatelessWidget {
         title: const Text("Fitness App"),
       ),
       body: Center(
-        child: ElevatedButton(
-          onPressed: () {
+        child: GestureDetector(
+          onTap: () {
             Navigator.of(context).push(
               MaterialPageRoute(
                 builder: (context) =>
@@ -21,8 +21,9 @@ class HomeView extends StatelessWidget {
               ),
             );
           },
-          child: GestureDetector(
-            child: const Card(
+          child: const Card(
+            child: SizedBox(
+              width: double.infinity,
               child: Text("press this"),
             ),
           ),
