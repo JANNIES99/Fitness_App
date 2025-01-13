@@ -8,9 +8,11 @@ class DoingExercise extends StatelessWidget {
       {required this.switchPrevious,
       required this.switchView,
       required this.exercise,
+      required this.goBack,
       super.key});
   final void Function() switchPrevious;
   final void Function() switchView;
+  final void Function() goBack;
   final Exercise exercise;
 
   @override
@@ -20,8 +22,10 @@ class DoingExercise extends StatelessWidget {
         title: Row(
           children: [
             IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.arrow_left_rounded),
+              onPressed: () {
+                goBack();
+              },
+              icon: const Icon(Icons.arrow_back),
             ),
             Text(exercise.name),
           ],
