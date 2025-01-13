@@ -11,7 +11,8 @@ class HomeView extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Fitness App"),
       ),
-      body: Center(
+      body: Container(
+        padding: const EdgeInsets.all(10),
         child: GestureDetector(
           onTap: () {
             Navigator.of(context).push(
@@ -21,10 +22,11 @@ class HomeView extends StatelessWidget {
               ),
             );
           },
-          child: const Card(
-            child: SizedBox(
+          child: Card(
+            child: Container(
+              margin: const EdgeInsets.all(20),
               width: double.infinity,
-              child: Text("press this"),
+              child: const Text("press this"),
             ),
           ),
         ),
