@@ -21,7 +21,11 @@ class HomeView extends StatelessWidget {
               ),
             );
           },
-          child: const Text("Press This"),
+          child: GestureDetector(
+            child: const Card(
+              child: Text("press this"),
+            ),
+          ),
         ),
       ),
     );
