@@ -23,7 +23,25 @@ class DoingExercise extends StatelessWidget {
           children: [
             IconButton(
               onPressed: () {
-                goBack();
+                showDialog(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                          title: const Text("Quit"),
+                          content: const Text("Are you sure"),
+                          actions: [
+                            TextButton(
+                              onPressed: () => Navigator.pop(context),
+                              child: const Text("Cancel"),
+                            ),
+                            TextButton(
+                              onPressed: () {
+                                Navigator.pop(context);
+                                goBack();
+                              },
+                              child: const Text("Quit"),
+                            )
+                          ],
+                        ));
               },
               icon: const Icon(Icons.arrow_back),
             ),
