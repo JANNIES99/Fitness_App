@@ -17,10 +17,10 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData().copyWith(
-        textTheme: const TextTheme(
-            headlineLarge: TextStyle(color: Colors.black),
-            headlineMedium: TextStyle(color: Colors.blue),
-            displayMedium: TextStyle(color: Colors.black)),
+        textTheme: const TextTheme().copyWith(
+            headlineLarge: const TextStyle(color: Colors.black),
+            headlineMedium: const TextStyle(color: Colors.blue),
+            displayMedium: const TextStyle(color: Colors.black)),
       ),
       home: const HomeView(),
     );
