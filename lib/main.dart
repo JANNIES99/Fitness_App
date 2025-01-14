@@ -21,7 +21,7 @@ class _MyAppState extends State<MyApp> {
         headlineLarge: TextStyle(color: Colors.black),
         headlineMedium: TextStyle(color: Colors.blue),
       )),
-      home: HomeView(),
+      home: const HomeView(),
     );
   }
 }
