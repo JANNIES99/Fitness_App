@@ -15,7 +15,12 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      theme: ThemeData().copyWith(
+          textTheme: const TextTheme(
+        headlineLarge: TextStyle(color: Colors.black),
+        headlineMedium: TextStyle(color: Colors.blue),
+      )),
       home: HomeView(),
     );
   }
