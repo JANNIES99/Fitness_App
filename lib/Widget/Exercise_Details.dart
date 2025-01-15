@@ -11,7 +11,10 @@ class ExerciseDetails extends StatelessWidget {
       height: double.infinity,
       child: Column(
         children: [
-          Text(exercise.name),
+          Text(
+            exercise.name,
+            style: ThemeData().textTheme.headlineMedium,
+          ),
           if (exercise.isRepetition)
             Row(
               children: [
