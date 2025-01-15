@@ -18,10 +18,12 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       theme: ThemeData().copyWith(
         textTheme: const TextTheme().copyWith(
-            headlineLarge: const TextStyle(color: Colors.black),
-            headlineMedium: const TextStyle(color: Colors.black),
-            headlineSmall: const TextStyle(color: Colors.blue),
-            displayMedium: const TextStyle(color: Colors.black)),
+          headlineLarge: const TextStyle(color: Colors.black),
+          headlineMedium: const TextStyle(color: Colors.black),
+          headlineSmall: const TextStyle(color: Colors.blue),
+          displayMedium: const TextStyle(color: Colors.black),
+          displaySmall: const TextStyle(color: Colors.black),
+        ),
       ),
       home: const HomeView(),
     );
