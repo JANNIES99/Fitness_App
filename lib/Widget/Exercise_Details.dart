@@ -18,7 +18,10 @@ class ExerciseDetails extends StatelessWidget {
           if (exercise.isRepetition)
             Row(
               children: [
-                const Text("REPEATS"),
+                Text(
+                  "REPEATS",
+                  style: ThemeData().textTheme.headlineSmall,
+                ),
                 const Spacer(),
                 Text("x${exercise.repetition}"),
               ],
