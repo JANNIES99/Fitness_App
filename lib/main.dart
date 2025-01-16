@@ -20,7 +20,7 @@ class _MyAppState extends State<MyApp> {
         textTheme: const TextTheme().copyWith(
           headlineLarge: const TextStyle(color: Colors.black, fontSize: 14),
           headlineMedium: const TextStyle(color: Colors.black, fontSize: 12),
-          headlineSmall: const TextStyle(color: Colors.blue),
+          headlineSmall: const TextStyle(color: Colors.blue, fontSize: 12),
           displayMedium: const TextStyle(color: Colors.black),
           displaySmall: const TextStyle(color: Colors.black),
         ),
