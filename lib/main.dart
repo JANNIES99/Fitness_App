@@ -21,7 +21,7 @@ class _MyAppState extends State<MyApp> {
           headlineLarge: const TextStyle(color: Colors.black, fontSize: 14),
           headlineMedium: const TextStyle(color: Colors.blue, fontSize: 12),
           headlineSmall: const TextStyle(color: Colors.black, fontSize: 12),
-          displayMedium: const TextStyle(color: Colors.black, fontSize: 12),
+          displayMedium: const TextStyle(color: Colors.black, fontSize: 10),
           displaySmall: const TextStyle(color: Colors.black),
         ),
       ),
