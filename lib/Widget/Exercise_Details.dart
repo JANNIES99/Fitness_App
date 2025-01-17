@@ -13,19 +13,19 @@ class ExerciseDetails extends StatelessWidget {
         children: [
           Text(
             exercise.name,
-            style: Theme.of(context).textTheme.headlineMedium,
+            style: Theme.of(context).textTheme.headlineLarge,
           ),
           if (exercise.isRepetition)
             Row(
               children: [
                 Text(
                   "REPEATS",
-                  style: Theme.of(context).textTheme.headlineSmall,
+                  style: Theme.of(context).textTheme.headlineMedium,
                 ),
                 const Spacer(),
                 Text(
                   "x${exercise.repetition}",
-                  style: Theme.of(context).textTheme.displaySmall,
+                  style: Theme.of(context).textTheme.displayMedium,
                 ),
               ],
             ),
@@ -34,12 +34,12 @@ class ExerciseDetails extends StatelessWidget {
               children: [
                 Text(
                   "DURATION",
-                  style: Theme.of(context).textTheme.headlineSmall,
+                  style: Theme.of(context).textTheme.headlineMedium,
                 ),
                 const Spacer(),
                 Text(
                   "${exercise.minute}:${exercise.second}",
-                  style: Theme.of(context).textTheme.displaySmall,
+                  style: Theme.of(context).textTheme.displayMedium,
                 ),
               ],
             ),
