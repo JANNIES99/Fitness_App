@@ -15,19 +15,24 @@ class ExerciseItem extends StatelessWidget {
             Center(
               child: Text(
                 exercise.name,
-                style: Theme.of(context).textTheme.displayMedium,
+                style: Theme.of(context).textTheme.headlineSmall,
               ),
             ),
             if (exercise.isRepetition == true)
               Align(
                 alignment: Alignment.centerLeft,
-                child: Text("x${exercise.repetition.toString()}"),
+                child: Text(
+                  "x${exercise.repetition.toString()}",
+                  style: Theme.of(context).textTheme.displayMedium,
+                ),
               ),
             if (exercise.isTimer == true)
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                    "${exercise.minute.toString()}:${exercise.second.toString()}"),
+                  "${exercise.minute.toString()}:${exercise.second.toString()}",
+                  style: Theme.of(context).textTheme.displayMedium,
+                ),
               ),
           ],
         ),
