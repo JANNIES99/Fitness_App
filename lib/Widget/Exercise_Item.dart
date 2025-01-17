@@ -13,7 +13,10 @@ class ExerciseItem extends StatelessWidget {
         child: Column(
           children: [
             Center(
-              child: Text(exercise.name),
+              child: Text(
+                exercise.name,
+                style: Theme.of(context).textTheme.displayMedium,
+              ),
             ),
             if (exercise.isRepetition == true)
               Align(
