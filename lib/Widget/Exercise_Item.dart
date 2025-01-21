@@ -23,7 +23,7 @@ class ExerciseItem extends StatelessWidget {
                 alignment: Alignment.centerLeft,
                 child: Text(
                   "x${exercise.repetition.toString()}",
-                  style: Theme.of(context).textTheme.displayMedium,
+                  style: Theme.of(context).textTheme.bodyMedium,
                 ),
               ),
             if (exercise.isTimer == true)
@@ -31,7 +31,7 @@ class ExerciseItem extends StatelessWidget {
                 alignment: Alignment.centerLeft,
                 child: Text(
                   "${exercise.minute.toString()}:${exercise.second.toString()}",
-                  style: Theme.of(context).textTheme.displayMedium,
+                  style: Theme.of(context).textTheme.bodyMedium,
                 ),
               ),
           ],
