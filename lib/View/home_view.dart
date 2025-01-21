@@ -26,7 +26,7 @@ class HomeView extends StatelessWidget {
             child: Container(
               margin: const EdgeInsets.all(20),
               width: double.infinity,
-              height: 20,
+              height: 50,
               child: Image.asset("images/abs.jpg"),
             ),
           ),
