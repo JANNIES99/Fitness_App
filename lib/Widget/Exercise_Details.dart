@@ -25,7 +25,7 @@ class ExerciseDetails extends StatelessWidget {
                 const Spacer(),
                 Text(
                   "x${exercise.repetition}",
-                  style: Theme.of(context).textTheme.displayMedium,
+                  style: Theme.of(context).textTheme.bodyMedium,
                 ),
               ],
             ),
@@ -39,13 +39,15 @@ class ExerciseDetails extends StatelessWidget {
                 const Spacer(),
                 Text(
                   "${exercise.minute}:${exercise.second}",
-                  style: Theme.of(context).textTheme.displayMedium,
+                  style: Theme.of(context).textTheme.bodyMedium,
                 ),
               ],
             ),
-          const Text("INSTRUCTIONS"),
-          Text(exercise.instructions),
-          const Text("FOCUS AREA"),
+          Text("INSTRUCTIONS",
+              style: Theme.of(context).textTheme.headlineMedium),
+          Text(exercise.instructions,
+              style: Theme.of(context).textTheme.bodyMedium),
+          Text("FOCUS AREA", style: Theme.of(context).textTheme.headlineMedium),
           Wrap(
             children: [
               for (final area in exercise.focusArea)

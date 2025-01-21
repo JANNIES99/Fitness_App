@@ -1,4 +1,5 @@
 import 'package:fitnessapp/View/home_view.dart';
+import 'package:fitnessapp/model/Theme.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,15 +17,8 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData().copyWith(
-        textTheme: const TextTheme().copyWith(
-          headlineLarge: const TextStyle(color: Colors.black, fontSize: 14),
-          headlineMedium: const TextStyle(color: Colors.blue, fontSize: 12),
-          headlineSmall: const TextStyle(color: Colors.black, fontSize: 12),
-          displayMedium: const TextStyle(color: Colors.black, fontSize: 10),
-          displaySmall: const TextStyle(color: Colors.black),
-        ),
-      ),
+      theme: GlobalThemedata().lightThemeData,
+      darkTheme: GlobalThemedata().darkThemeData,
       home: const HomeView(),
     );
   }

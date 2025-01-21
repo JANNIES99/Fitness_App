@@ -1,6 +1,7 @@
 import 'package:fitnessapp/View/Break_View.dart';
 import 'package:fitnessapp/View/Doing_Exercise.dart';
 import 'package:fitnessapp/model/Exercise.dart';
+import 'package:fitnessapp/model/Theme.dart';
 import 'package:flutter/material.dart';
 
 class StartingExercise extends StatefulWidget {
@@ -66,6 +67,8 @@ class _StartingExerciseState extends State<StartingExercise> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: GlobalThemedata().lightThemeData,
+      darkTheme: GlobalThemedata().darkThemeData,
       home: frontView,
     );
   }
