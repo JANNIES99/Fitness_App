@@ -1,3 +1,4 @@
+import 'package:fitnessapp/View/Login.dart';
 import 'package:fitnessapp/View/home_view.dart';
 import 'package:fitnessapp/model/Theme.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +20,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       theme: GlobalThemedata().lightThemeData,
       darkTheme: GlobalThemedata().darkThemeData,
-      home: const HomeView(),
+      home: const Login(),
     );
   }
 }
