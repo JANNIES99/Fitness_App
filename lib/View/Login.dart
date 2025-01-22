@@ -18,9 +18,17 @@ class _LoginState extends State<Login> {
           children: [
             TextField(
               controller: _usernameController,
+              decoration: const InputDecoration(
+                label: Text("Username"),
+                // enabledBorder: OutlineInputBorder(
+                //     borderRadius: BorderRadius.all(Radius.circular(25)))
+              ),
             ),
             TextField(
               controller: _passwordController,
+              decoration: const InputDecoration(
+                label: Text("PassWord"),
+              ),
             )
           ],
         ),
