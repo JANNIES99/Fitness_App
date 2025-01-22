@@ -8,10 +8,23 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  final _usernameController = TextEditingController();
+  final _passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(),
+      body: SafeArea(
+        child: Column(
+          children: [
+            TextField(
+              controller: _usernameController,
+            ),
+            TextField(
+              controller: _passwordController,
+            )
+          ],
+        ),
+      ),
     );
   }
 }
