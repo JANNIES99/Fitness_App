@@ -20,7 +20,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       theme: GlobalThemedata().lightThemeData,
       darkTheme: GlobalThemedata().darkThemeData,
-      home: const Login(),
+      home: const HomeView(),
     );
   }
 }
