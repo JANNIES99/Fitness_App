@@ -15,6 +15,7 @@ class _LoginState extends State<Login> {
     return Scaffold(
       body: SafeArea(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             TextField(
               controller: _usernameController,
@@ -27,8 +28,13 @@ class _LoginState extends State<Login> {
             TextField(
               controller: _passwordController,
               decoration: const InputDecoration(
-                label: Text("PassWord"),
+                label: Text("Password"),
               ),
+            ),
+            Row(
+              children: [
+                ElevatedButton(onPressed: () {}, child: const Text("Login"))
+              ],
             )
           ],
         ),
