@@ -10,10 +10,10 @@ class GlobalThemedata {
       colorScheme: colorScheme,
       brightness: brightness,
       textTheme: const TextTheme().copyWith(
-        headlineLarge: const TextStyle(color: Colors.black, fontSize: 14),
-        headlineMedium: const TextStyle(color: Colors.blue, fontSize: 12),
-        headlineSmall: const TextStyle(color: Colors.black, fontSize: 12),
-        bodyMedium: const TextStyle(color: Colors.black, fontSize: 10),
+        headlineLarge: const TextStyle(color: Colors.black, fontSize: 16),
+        headlineMedium: const TextStyle(color: Colors.blue, fontSize: 14),
+        headlineSmall: const TextStyle(color: Colors.black, fontSize: 14),
+        bodyMedium: const TextStyle(color: Colors.black, fontSize: 12),
         bodySmall: const TextStyle(color: Colors.black),
       ),
     );
