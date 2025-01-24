@@ -14,7 +14,7 @@ class GlobalThemedata {
         headlineMedium: const TextStyle(color: Colors.blue, fontSize: 14),
         headlineSmall: const TextStyle(color: Colors.black, fontSize: 14),
         bodyMedium: const TextStyle(color: Colors.black, fontSize: 12),
-        bodySmall: const TextStyle(color: Colors.black),
+        bodySmall: const TextStyle(color: Colors.black, fontSize: 12),
       ),
     );
   }
