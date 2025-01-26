@@ -54,3 +54,12 @@ Exercise jumpingJacks = Exercise.withTimer(
   minute: 0,
   second: 30,
 );
+
+Exercise flutterKick = Exercise.withTimer(
+  name: "Flutter Kick",
+  focusArea: [AreasOfTheBody.glutes, AreasOfTheBody.hamstrings],
+  instructions:
+      "Lie flat on your back.\n Keep your legs straight and lift them a little off the ground (about 6 inches).\n Kick your legs up and down in a small, controlled motion, alternating legs.\n Keep your core tight and your back flat against the floor.\n Do it for 30 seconds to 1 minute.",
+  minute: 0,
+  second: 30,
+);
