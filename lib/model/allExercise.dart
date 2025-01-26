@@ -115,7 +115,7 @@ Exercise lunge = Exercise.withRepetition(
 );
 
 Exercise bridge = Exercise.withTimer(
-  name: "bridge",
+  name: "Bridge",
   focusArea: [AreasOfTheBody.glutes],
   instructions:
       "Lie on your back with your knees bent and feet flat on the floor, hip-width apart.\n Place your arms at your sides with your palms facing down.\n Engage your core and press through your heels to lift your hips up, forming a straight line from your shoulders to your knees.\n Squeeze your glutes at the top and hold for a second or two.\n Lower your hips back down slowly to the floor.",
