@@ -72,3 +72,53 @@ Exercise cobraStretch = Exercise.withTimer(
   minute: 0,
   second: 30,
 );
+
+Exercise armCircle = Exercise.withTimer(
+  name: "Arm Circle",
+  focusArea: [AreasOfTheBody.shoulders],
+  instructions:
+      "Stand up straight with your feet shoulder-width apart.\n Extend your arms straight out to the sides, parallel to the ground.\n Make small circles with your arms, moving forward or backward.\n Gradually make the circles bigger as you go, if you feel comfortable.\n Then switch directions forward to backward or vice versa.",
+  minute: 0,
+  second: 30,
+);
+
+Exercise jumpSquat = Exercise.withRepetition(
+  name: "Jump Squat",
+  focusArea: [AreasOfTheBody.glutes, AreasOfTheBody.hamstrings],
+  instructions:
+      "Stand with your feet shoulder-width apart and your toes pointing slightly outward.\n Bend your knees and lower your body into a squat position, keeping your chest up and your back straight.\n Push through your heels and jump up as high as you can, swinging your arms to help with momentum.\n Land softly with your knees slightly bent to absorb the impact, then immediately lower back into the squat position to repeat.",
+  repetition: 16,
+);
+
+Exercise glutesKickback = Exercise.withRepetition(
+  name: "Glutes Kickback",
+  focusArea: [AreasOfTheBody.glutes, AreasOfTheBody.hamstrings],
+  instructions:
+      "Start on all fours with your hands under your shoulders and knees under your hips.\n Engage your core to keep your back straight and stable.\n Lift one leg behind you, keeping the knee bent at about 90 degrees. Push through your heel as you lift your leg toward the ceiling, focusing on squeezing your glutes.",
+  repetition: 15,
+);
+
+Exercise singleLegCalfRaise = Exercise.withRepetition(
+  name: "Single Leg Calf Raise",
+  focusArea: [AreasOfTheBody.hamstrings],
+  instructions:
+      "Stand tall with your feet hip-width apart, and hold onto something for balance if needed like a wall or chair.\n Lift one foot off the ground, so you're standing on just one leg.\n Slowly raise your heel as high as you can, lifting your body up using the calf muscle.\n Lower back down slowly and repeat.",
+  repetition: 15,
+);
+
+Exercise lunge = Exercise.withRepetition(
+  name: "Lunge",
+  focusArea: [AreasOfTheBody.glutes, AreasOfTheBody.hamstrings],
+  instructions:
+      "Stand tall with your feet hip-width apart.\n Step one foot forward about 2 feet, keeping your chest up and your core engaged. Lower your body by bending both knees. Your back knee should almost touch the floor, and your front knee should be directly above your ankle (not beyond your toes).\n Push through the heel of your front foot to stand back up and return to the starting position.\n Then switch to the other leg.",
+  repetition: 12,
+);
+
+Exercise bridge = Exercise.withTimer(
+  name: "bridge",
+  focusArea: [AreasOfTheBody.glutes],
+  instructions:
+      "Lie on your back with your knees bent and feet flat on the floor, hip-width apart.\n Place your arms at your sides with your palms facing down.\n Engage your core and press through your heels to lift your hips up, forming a straight line from your shoulders to your knees.\n Squeeze your glutes at the top and hold for a second or two.\n Lower your hips back down slowly to the floor.",
+  minute: 0,
+  second: 30,
+);
