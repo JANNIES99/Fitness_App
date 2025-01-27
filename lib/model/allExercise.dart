@@ -1,7 +1,15 @@
 import 'package:fitnessapp/model/Exercise.dart';
 import 'package:flutter/material.dart';
 
-List<List<Exercise>> absEasyExercise = [[]];
+List<List<Exercise>> absEasyExercise = [
+  [
+    abdominalCrunches,
+    jumpingJacks,
+    pushUp,
+    squats,
+    mountainClimber,
+  ]
+];
 
 Exercise abdominalCrunches = Exercise.withRepetition(
   name: "Abdominal Crunches",
@@ -139,8 +147,8 @@ Exercise reverseCrunch = Exercise.withRepetition(
   image: Image.asset("images/exercise/reverse_crunch.gif"),
 );
 
-Exercise squat = Exercise.withRepetition(
-  name: "Squat",
+Exercise squats = Exercise.withRepetition(
+  name: "Squats",
   focusArea: [
     AreasOfTheBody.quadriceps,
     AreasOfTheBody.hamstrings,
@@ -149,7 +157,7 @@ Exercise squat = Exercise.withRepetition(
   instructions:
       "Stand with your feet shoulder-width apart.\n Slowly lower your body down into a seated position, keeping your back straight and your knees behind your toes.\n Pause for a moment at the bottom of the movement.\n Then, push through your heels to return to standing.",
   repetition: 16,
-  image: Image.asset("images/exercise/squat.gif"),
+  image: Image.asset("images/exercise/squats.gif"),
 );
 
 Exercise sitUp = Exercise.withRepetition(

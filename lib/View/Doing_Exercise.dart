@@ -56,6 +56,10 @@ class DoingExercise extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            const SizedBox(
+              height: 10,
+            ),
+            exercise.image,
             const Spacer(),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
