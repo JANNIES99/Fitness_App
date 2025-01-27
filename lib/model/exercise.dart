@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 enum AreasOfTheBody {
   abs,
   adductors,
@@ -22,6 +24,7 @@ class Exercise {
     required this.second,
     required this.isRepetition,
     required this.repetition,
+    required this.image,
   });
   final int? minute;
   final int? second;
@@ -31,12 +34,14 @@ class Exercise {
   final bool isTimer;
   final bool isRepetition;
   final int? repetition;
+  final Image image;
 
   Exercise.withRepetition({
     required this.name,
     required this.focusArea,
     required this.instructions,
     required this.repetition,
+    required this.image,
   })  : isRepetition = true,
         isTimer = false,
         minute = null,
@@ -48,6 +53,7 @@ class Exercise {
     required this.instructions,
     required this.minute,
     required this.second,
+    required this.image,
   })  : isRepetition = false,
         isTimer = true,
         repetition = null;
