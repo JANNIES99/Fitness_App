@@ -104,3 +104,78 @@ Exercise bridge = Exercise.withTimer(
   second: 30,
   image: Image.asset("images/exercise/bridge.gif"),
 );
+
+Exercise mountainClimber = Exercise.withTimer(
+  name: "Mountain Climber",
+  focusArea: [
+    AreasOfTheBody.abs,
+    AreasOfTheBody.shoulders,
+    AreasOfTheBody.triceps,
+    AreasOfTheBody.adductors,
+    AreasOfTheBody.glutes,
+  ],
+  instructions:
+      "Start in a plank position with your hands shoulder-width apart, and your feet hip-width apart.\n Bring one knee towards your chest, keeping your foot flexed, then quickly switch to the other knee, mimicking the motion of running in place.\n Keep your core engaged, back straight, and body in a straight line from head to heels.",
+  minute: 0,
+  second: 30,
+  image: Image.asset("images/exercise/mountain_climber.gif"),
+);
+
+Exercise calfRaise = Exercise.withRepetition(
+  name: "Calf Raise",
+  focusArea: [AreasOfTheBody.calves],
+  instructions:
+      "Stand on a step or platform with your heels hanging off the edge.\n Slowly raise up onto your tiptoes, then lower back down to the starting position.\n Keep your knees straight and only lift your heels.",
+  repetition: 20,
+  image: Image.asset("images/exercise/calf_raise.gif"),
+);
+
+Exercise reverseCrunch = Exercise.withRepetition(
+  name: "Reverse Crunch",
+  focusArea: [AreasOfTheBody.abs],
+  instructions:
+      "Lie on your back with your knees bent and feet flat on the floor.\n Lift your hips off the ground, squeezing your glutes and lower back muscles as you lift.\n Focus on lifting your hips, rather than just your lower back.\n Slowly lower your hips back down to the starting position.",
+  repetition: 16,
+  image: Image.asset("images/exercise/reverse_crunch.gif"),
+);
+
+Exercise squat = Exercise.withRepetition(
+  name: "Squat",
+  focusArea: [
+    AreasOfTheBody.quadriceps,
+    AreasOfTheBody.hamstrings,
+    AreasOfTheBody.glutes
+  ],
+  instructions:
+      "Stand with your feet shoulder-width apart.\n Slowly lower your body down into a seated position, keeping your back straight and your knees behind your toes.\n Pause for a moment at the bottom of the movement.\n Then, push through your heels to return to standing.",
+  repetition: 16,
+  image: Image.asset("images/exercise/squat.gif"),
+);
+
+Exercise sitUp = Exercise.withRepetition(
+  name: "Sit Up",
+  focusArea: [AreasOfTheBody.abs],
+  instructions:
+      "Lie on your back with your knees bent and feet flat on the floor.\n Engage your core muscles by drawing your belly button towards your spine.\n Slowly lift your shoulders off the ground, curling up towards your knees.\n Focus on lifting your shoulders, rather than just your upper body.",
+  repetition: 15,
+  image: Image.asset("images/exercise/sit_up.gif"),
+);
+
+Exercise legRaise = Exercise.withRepetition(
+  name: "Leg Raise",
+  focusArea: [AreasOfTheBody.abs, AreasOfTheBody.obliques],
+  instructions:
+      "Lie on your back with your arms extended overhead and legs straight.\n Lift one leg up towards the ceiling, keeping it straight.\n Focus on using your lower abs to lift your leg.\n Slowly lower your leg back down to the starting position.\n Repeat with the other leg.",
+  repetition: 15,
+  image: Image.asset("images/exercise/leg_raise.gif"),
+);
+
+Exercise plank = Exercise.withTimer(
+  name: "Plank",
+  focusArea: [AreasOfTheBody.core, AreasOfTheBody.shoulders],
+  instructions:
+      "Start in a push-up position with your hands shoulder-width apart.\n Instead of lowering your body down towards the ground, hold yourself up in a straight line from head to heels.\n Engage your core muscles by drawing your belly button towards your spine.\n Hold this position for as long as possible..",
+  minute: 0,
+  second: 30,
+  image: Image.asset("images/exercise/plank.gif"),
+);

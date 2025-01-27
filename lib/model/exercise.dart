@@ -12,6 +12,8 @@ enum AreasOfTheBody {
   back,
   hamstrings,
   biceps,
+  obliques,
+  core,
 }
 
 class Exercise {
