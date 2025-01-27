@@ -157,7 +157,7 @@ Exercise sitUp = Exercise.withRepetition(
   focusArea: [AreasOfTheBody.abs],
   instructions:
       "Lie on your back with your knees bent and feet flat on the floor.\n Engage your core muscles by drawing your belly button towards your spine.\n Slowly lift your shoulders off the ground, curling up towards your knees.\n Focus on lifting your shoulders, rather than just your upper body.",
-  repetition: 15,
+  repetition: 14,
   image: Image.asset("images/exercise/sit_up.gif"),
 );
 
@@ -166,7 +166,7 @@ Exercise legRaise = Exercise.withRepetition(
   focusArea: [AreasOfTheBody.abs, AreasOfTheBody.obliques],
   instructions:
       "Lie on your back with your arms extended overhead and legs straight.\n Lift one leg up towards the ceiling, keeping it straight.\n Focus on using your lower abs to lift your leg.\n Slowly lower your leg back down to the starting position.\n Repeat with the other leg.",
-  repetition: 15,
+  repetition: 14,
   image: Image.asset("images/exercise/leg_raise.gif"),
 );
 
@@ -178,4 +178,45 @@ Exercise plank = Exercise.withTimer(
   minute: 0,
   second: 30,
   image: Image.asset("images/exercise/plank.gif"),
+);
+
+Exercise pushUp = Exercise.withRepetition(
+  name: "Push-up",
+  focusArea: [AreasOfTheBody.chest, AreasOfTheBody.triceps],
+  instructions:
+      "Start in a plank position with your hands shoulder-width apart.\n Lower your body down until your chest nearly touches the ground.\n Push back up to the starting position and repeat.",
+  repetition: 12,
+  image: Image.asset("images/exercise/push_up.gif"),
+);
+
+Exercise superman = Exercise.withTimer(
+  name: "Superman",
+  focusArea: [
+    AreasOfTheBody.back,
+    AreasOfTheBody.shoulders,
+    AreasOfTheBody.glutes,
+  ],
+  instructions:
+      "Start in a plank position with your hands shoulder-width apart, and your feet hip-width apart.\n Lift your left arm and right leg off the ground, keeping them straight, and hold for a brief moment.\n Lower back down to the starting position and repeat on the other side, lifting your right arm and left leg.",
+  minute: 0,
+  second: 30,
+  image: Image.asset("images/exercise/superman.gif"),
+);
+
+Exercise tricepsSideStretch = Exercise.withRepetition(
+  name: "Triceps Side Stretch",
+  focusArea: [AreasOfTheBody.triceps],
+  instructions:
+      "Hold your arm straight out to the side at shoulder height.\n Bend your elbow and bring your hand towards your shoulder.\nUse your other hand to gently pull your hand further towards your shoulder.\nHold for a few seconds, then release.\nRepeat on the other side.",
+  repetition: 10,
+  image: Image.asset("images/exercise/triceps_side_stretch.gif"),
+);
+
+Exercise tricepPushup = Exercise.withRepetition(
+  name: "Tricep Push-up",
+  focusArea: [AreasOfTheBody.triceps],
+  instructions:
+      "Start in a plank position with your hands shoulder-width apart.\n Lower your body down until your arms are bent at a 90-degree angle, keeping your upper arms still and only moving your forearms to lower the rest of your body towards the ground. Then push back up to the starting position and repeat.",
+  repetition: 10,
+  image: Image.asset("images/exercise/tricep_push_up.gif"),
 );
