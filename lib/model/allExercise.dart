@@ -214,7 +214,7 @@ Exercise tricepsSideStretch = Exercise.withRepetition(
 
 Exercise tricepPushup = Exercise.withRepetition(
   name: "Tricep Push-up",
-  focusArea: [AreasOfTheBody.triceps],
+  focusArea: [AreasOfTheBody.triceps, AreasOfTheBody.chest],
   instructions:
       "Start in a plank position with your hands shoulder-width apart.\n Lower your body down until your arms are bent at a 90-degree angle, keeping your upper arms still and only moving your forearms to lower the rest of your body towards the ground. Then push back up to the starting position and repeat.",
   repetition: 10,
