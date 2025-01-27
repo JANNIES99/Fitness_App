@@ -28,6 +28,8 @@ List<List<Exercise>> absEasyExercise = [
         instructions:
             "Start in a plank position with your hands slightly wider than shoulder-width apart, and your body in a straight line from head to heels. Lower your body until your chest almost touches the ground, keeping your elbows at a 45-degree angle. Push back up to the starting position.",
         repetition: 15),
+    abdominalCrunches,
+    flutterKick,
   ]
 ];
 
