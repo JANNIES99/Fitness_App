@@ -85,6 +85,9 @@ class _StartingExerciseState extends State<StartingExercise> {
                 "Great job on crushing your workout! You’re one step closer to reaching your fitness goals!",
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
+              const SizedBox(
+                height: 10,
+              ),
               ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).pop();
