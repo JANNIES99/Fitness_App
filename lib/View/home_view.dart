@@ -1,5 +1,5 @@
 import 'package:fitnessapp/View/Exercise_List_View.dart';
-import 'package:fitnessapp/model/allExercise.dart';
+import 'package:fitnessapp/model/allExercisePlain.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {

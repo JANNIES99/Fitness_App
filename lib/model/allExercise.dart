@@ -1,16 +1,6 @@
 import 'package:fitnessapp/model/Exercise.dart';
 import 'package:flutter/material.dart';
 
-List<List<Exercise>> absEasyExercise = [
-  [
-    abdominalCrunches,
-    jumpingJacks,
-    pushUp,
-    squats,
-    mountainClimber,
-  ]
-];
-
 Exercise abdominalCrunches = Exercise.withRepetition(
   name: "Abdominal Crunches",
   focusArea: [AreasOfTheBody.abs],

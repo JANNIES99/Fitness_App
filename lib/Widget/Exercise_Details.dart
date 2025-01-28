@@ -7,8 +7,9 @@ class ExerciseDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       height: double.infinity,
+      padding: const EdgeInsets.all(10),
       child: Column(
         children: [
           Text(
