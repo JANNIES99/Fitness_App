@@ -67,7 +67,6 @@ class _StartingExerciseState extends State<StartingExercise> {
     });
   }
 
-  @override
   void animatedChecker() {
     showDialog(
       barrierDismissible: false,
@@ -101,6 +100,7 @@ class _StartingExerciseState extends State<StartingExercise> {
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: GlobalThemedata().lightThemeData,
