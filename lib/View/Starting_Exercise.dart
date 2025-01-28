@@ -3,6 +3,7 @@ import 'package:fitnessapp/View/Doing_Exercise.dart';
 import 'package:fitnessapp/model/Exercise.dart';
 import 'package:fitnessapp/model/Theme.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class StartingExercise extends StatefulWidget {
   const StartingExercise({required this.exercises, super.key});
@@ -51,6 +52,8 @@ class _StartingExerciseState extends State<StartingExercise> {
           switchView: switchToExerciseView,
         );
       });
+    } else {
+      animatedChecker();
     }
   }
 
@@ -65,6 +68,36 @@ class _StartingExerciseState extends State<StartingExercise> {
   }
 
   @override
+  void animatedChecker() {
+    showDialog(
+      barrierDismissible: false,
+      context: context,
+      builder: (context) => Dialog(
+        child: Container(
+          padding: const EdgeInsets.all(10),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              LottieBuilder.asset(
+                "images/lottie/checker.json",
+              ),
+              Text(
+                "Great job on crushing your workout! You’re one step closer to reaching your fitness goals!",
+                style: Theme.of(context).textTheme.bodyMedium,
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: const Text("Continue"),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: GlobalThemedata().lightThemeData,
