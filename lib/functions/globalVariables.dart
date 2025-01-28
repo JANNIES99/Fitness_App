@@ -9,3 +9,5 @@ final List<int> daysOfTheWeek = [
   findFriday(DateTime.now()).day,
   findSaturday(DateTime.now()).day,
 ];
+
+int absEasyDayIndex = 0;

@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
   final int streaks = 5;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,7 +67,7 @@ class HomeView extends StatelessWidget {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) => ExerciseListView(
-                      exercises: absEasyExercise[0],
+                      exercises: absEasyExercise[absEasyDayIndex],
                     ),
                   ),
                 );
