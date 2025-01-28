@@ -1,4 +1,5 @@
 import 'package:fitnessapp/View/Exercise_List_View.dart';
+import 'package:fitnessapp/functions/dateTime.dart';
 import 'package:fitnessapp/model/allExercisePlain.dart';
 import 'package:flutter/material.dart';
 
@@ -30,6 +31,30 @@ class HomeView extends StatelessWidget {
                     "$streaks days",
                     style: Theme.of(context).textTheme.bodySmall,
                   ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      ...daysOfTheWeek.map(
+                        (days) => Container(
+                          margin: const EdgeInsets.all(10),
+                          height: 30,
+                          width: 30,
+                          decoration: BoxDecoration(
+                              color: Theme.of(context)
+                                  .colorScheme
+                                  .secondaryContainer,
+                              borderRadius: BorderRadius.circular(20)),
+                          child: Align(
+                            alignment: Alignment.center,
+                            child: Text(
+                              (days.toString()),
+                              style: Theme.of(context).textTheme.bodySmall,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  )
                 ],
               ),
             ),
