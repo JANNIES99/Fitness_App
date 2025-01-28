@@ -1,5 +1,5 @@
 import 'package:fitnessapp/View/Exercise_List_View.dart';
-import 'package:fitnessapp/functions/dateTime.dart';
+import 'package:fitnessapp/functions/globalVariables.dart';
 import 'package:fitnessapp/model/allExercisePlain.dart';
 import 'package:flutter/material.dart';
 
@@ -28,7 +28,7 @@ class HomeView extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    "$streaks days",
+                    "$streaks days streak",
                     style: Theme.of(context).textTheme.bodySmall,
                   ),
                   Row(
@@ -65,8 +65,9 @@ class HomeView extends StatelessWidget {
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) =>
-                        ExerciseListView(exercises: absEasyExercise[0]),
+                    builder: (context) => ExerciseListView(
+                      exercises: absEasyExercise[0],
+                    ),
                   ),
                 );
               },

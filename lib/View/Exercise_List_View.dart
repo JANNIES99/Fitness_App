@@ -37,8 +37,9 @@ class ExerciseListView extends StatelessWidget {
         ElevatedButton(
             onPressed: () {
               Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) =>
-                      StartingExercise(exercises: exercises)));
+                  builder: (context) => StartingExercise(
+                        exercises: exercises,
+                      )));
             },
             child: const Text("Start"))
       ],

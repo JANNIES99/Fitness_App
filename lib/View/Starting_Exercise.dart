@@ -90,6 +90,7 @@ class _StartingExerciseState extends State<StartingExercise> {
               ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).pop();
+                  goBack();
                 },
                 child: const Text("Continue"),
               ),

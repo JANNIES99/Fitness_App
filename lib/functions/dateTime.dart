@@ -32,13 +32,3 @@ DateTime findSaturday(DateTime dateTime) {
   int daysToSubtract = (dateTime.weekday == 7) ? 0 : dateTime.weekday - 6;
   return dateTime.subtract(Duration(days: daysToSubtract));
 }
-
-final List<int> daysOfTheWeek = [
-  findSunday(DateTime.now()).day,
-  findMonday(DateTime.now()).day,
-  findTuesday(DateTime.now()).day,
-  findWednesday(DateTime.now()).day,
-  findThursday(DateTime.now()).day,
-  findFriday(DateTime.now()).day,
-  findSaturday(DateTime.now()).day,
-];
