@@ -13,7 +13,7 @@ class GlobalThemedata {
         headlineLarge: const TextStyle(color: Colors.black, fontSize: 25),
         headlineMedium: const TextStyle(color: Colors.blue, fontSize: 20),
         headlineSmall: const TextStyle(color: Colors.black, fontSize: 16),
-        bodyMedium: const TextStyle(color: Colors.black, fontSize: 20),
+        bodyMedium: const TextStyle(color: Colors.black, fontSize: 16),
         bodySmall: const TextStyle(color: Colors.black, fontSize: 12),
       ),
     );
