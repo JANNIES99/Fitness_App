@@ -1,13 +1,13 @@
 import 'package:fitnessapp/functions/dateTime.dart';
 
-final List<int> daysOfTheWeek = [
-  findSunday(DateTime.now()).day,
-  findMonday(DateTime.now()).day,
-  findTuesday(DateTime.now()).day,
-  findWednesday(DateTime.now()).day,
-  findThursday(DateTime.now()).day,
-  findFriday(DateTime.now()).day,
-  findSaturday(DateTime.now()).day,
-];
-
 int absEasyDayIndex = 0;
+
+final Map<int, bool> daysWorked = {
+  findSunday(DateTime.now()).day: true,
+  findMonday(DateTime.now()).day: false,
+  findTuesday(DateTime.now()).day: false,
+  findWednesday(DateTime.now()).day: false,
+  findThursday(DateTime.now()).day: false,
+  findFriday(DateTime.now()).day: false,
+  findSaturday(DateTime.now()).day: false,
+};

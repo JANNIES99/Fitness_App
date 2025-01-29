@@ -3,9 +3,21 @@ import 'package:fitnessapp/functions/globalVariables.dart';
 import 'package:fitnessapp/model/allExercisePlain.dart';
 import 'package:flutter/material.dart';
 
-class HomeView extends StatelessWidget {
+class HomeView extends StatefulWidget {
   const HomeView({super.key});
+
+  @override
+  State<HomeView> createState() => _HomeViewState();
+}
+
+class _HomeViewState extends State<HomeView> {
   final int streaks = 5;
+
+  void workedToday() {
+    setState(() {
+      daysWorked[DateTime.now().day] = true;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,15 +47,17 @@ class HomeView extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      ...daysOfTheWeek.map(
+                      ...daysWorked.keys.map(
                         (days) => Container(
                           margin: const EdgeInsets.all(10),
                           height: 30,
                           width: 30,
                           decoration: BoxDecoration(
-                              color: Theme.of(context)
-                                  .colorScheme
-                                  .secondaryContainer,
+                              color: daysWorked[days]!
+                                  ? Theme.of(context)
+                                      .colorScheme
+                                      .secondaryContainer
+                                  : Theme.of(context).colorScheme.onSecondary,
                               borderRadius: BorderRadius.circular(20)),
                           child: Align(
                             alignment: Alignment.center,
