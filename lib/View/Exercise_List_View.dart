@@ -5,8 +5,14 @@ import 'package:fitnessapp/model/Exercise.dart';
 import 'package:flutter/material.dart';
 
 class ExerciseListView extends StatelessWidget {
-  const ExerciseListView({required this.exercises, super.key});
+  const ExerciseListView(
+      {required this.exercises,
+      required this.goBackHome,
+      required this.workedToday,
+      super.key});
   final List<Exercise> exercises;
+  final void Function() goBackHome;
+  final void Function() workedToday;
 
   @override
   Widget build(BuildContext context) {
@@ -39,6 +45,8 @@ class ExerciseListView extends StatelessWidget {
               Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => StartingExercise(
                         exercises: exercises,
+                        goBackHome: goBackHome,
+                        workedToday: workedToday,
                       )));
             },
             child: const Text("Start"))

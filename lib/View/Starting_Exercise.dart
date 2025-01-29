@@ -7,9 +7,14 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
 class StartingExercise extends StatefulWidget {
-  const StartingExercise({required this.exercises, super.key});
+  const StartingExercise(
+      {required this.exercises,
+      required this.goBackHome,
+      required this.workedToday,
+      super.key});
   final List<Exercise> exercises;
-
+  final void Function() goBackHome;
+  final void Function() workedToday;
   @override
   State<StartingExercise> createState() => _StartingExerciseState();
 }
@@ -90,9 +95,10 @@ class _StartingExerciseState extends State<StartingExercise> {
               ),
               ElevatedButton(
                 onPressed: () {
-                  daysWorked[DateTime.now().day] = true;
+                  widget.workedToday();
                   Navigator.of(context).pop();
                   goBack();
+                  widget.goBackHome();
                 },
                 child: const Text("Continue"),
               ),

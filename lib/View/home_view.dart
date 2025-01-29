@@ -11,10 +11,15 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-  final int streaks = 5;
+  int streaks = 5;
+
+  void goToHome() {
+    Navigator.of(context).pop();
+  }
 
   void workedToday() {
     setState(() {
+      streaks++;
       daysWorked[DateTime.now().day] = true;
     });
   }
@@ -82,6 +87,8 @@ class _HomeViewState extends State<HomeView> {
                   MaterialPageRoute(
                     builder: (context) => ExerciseListView(
                       exercises: absEasyExercise[absEasyDayIndex],
+                      goBackHome: goToHome,
+                      workedToday: workedToday,
                     ),
                   ),
                 );
