@@ -1,4 +1,5 @@
 import 'package:fitnessapp/View/Exercise_List_View.dart';
+import 'package:fitnessapp/Widget/chart/chart.dart';
 import 'package:fitnessapp/functions/globalVariables.dart';
 import 'package:fitnessapp/model/allExercisePlain.dart';
 import 'package:flutter/material.dart';
@@ -24,6 +25,7 @@ class _HomeViewState extends State<HomeView> {
     });
   }
 
+  List<double> burnedCalories = [0, 0.25, 0, 0, 0, 0.3, 0];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -79,6 +81,7 @@ class _HomeViewState extends State<HomeView> {
               ),
             ),
           ),
+          Chart(burnedCalories: burnedCalories),
           Container(
             padding: const EdgeInsets.all(10),
             child: GestureDetector(
