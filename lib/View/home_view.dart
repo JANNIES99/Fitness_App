@@ -22,10 +22,11 @@ class _HomeViewState extends State<HomeView> {
     setState(() {
       streaks++;
       daysWorked[DateTime.now().day] = true;
+      burnedCalories[4] = 0.6;
     });
   }
 
-  List<double> burnedCalories = [0, 0.25, 0, 0, 0, 0.3, 0];
+  List<double> burnedCalories = [0, 0.25, 0, 0, 0, 0, 0];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
