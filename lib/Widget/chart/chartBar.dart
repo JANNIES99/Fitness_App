@@ -13,7 +13,7 @@ class ChartBar extends StatelessWidget {
           heightFactor: fill,
           child: DecoratedBox(
             decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.onSecondary,
+              color: Theme.of(context).colorScheme.secondaryContainer,
               shape: BoxShape.rectangle,
               borderRadius:
                   const BorderRadius.vertical(top: Radius.circular(10)),

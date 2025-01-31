@@ -12,7 +12,7 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-  int streaks = 5;
+  int streaks = 0;
 
   void goToHome() {
     Navigator.of(context).pop();
@@ -26,7 +26,7 @@ class _HomeViewState extends State<HomeView> {
     });
   }
 
-  List<double> burnedCalories = [0, 0.25, 0, 0, 0, 0, 0];
+  List<double> burnedCalories = [0.25, 0, 0, 0, 0, 0, 0];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
