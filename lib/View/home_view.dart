@@ -23,6 +23,7 @@ class _HomeViewState extends State<HomeView> {
     setState(() {
       streaks++;
       daysWorked[endOfTheDay(DateTime.now())]![0] = true;
+      daysWorked[endOfTheDay(DateTime.now())]![1] = 0.6;
       burnedCalories[4] = 0.6;
     });
   }
