@@ -1,5 +1,6 @@
 import 'package:fitnessapp/View/Exercise_List_View.dart';
 import 'package:fitnessapp/Widget/chart/chart.dart';
+import 'package:fitnessapp/functions/dateTime.dart';
 import 'package:fitnessapp/functions/globalVariables.dart';
 import 'package:fitnessapp/model/allExercisePlain.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +22,7 @@ class _HomeViewState extends State<HomeView> {
   void workedToday() {
     setState(() {
       streaks++;
-      daysWorked[DateTime.now().day] = true;
+      daysWorked[endOfTheDay(DateTime.now())] = true;
       burnedCalories[4] = 0.6;
     });
   }
@@ -70,7 +71,7 @@ class _HomeViewState extends State<HomeView> {
                           child: Align(
                             alignment: Alignment.center,
                             child: Text(
-                              (days.toString()),
+                              (days.day.toString()),
                               style: Theme.of(context).textTheme.bodySmall,
                             ),
                           ),

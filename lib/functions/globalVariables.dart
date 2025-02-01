@@ -2,12 +2,12 @@ import 'package:fitnessapp/functions/dateTime.dart';
 
 int absEasyDayIndex = 0;
 
-final Map<int, bool> daysWorked = {
-  findSunday(DateTime.now()).day: true,
-  findMonday(DateTime.now()).day: false,
-  findTuesday(DateTime.now()).day: false,
-  findWednesday(DateTime.now()).day: false,
-  findThursday(DateTime.now()).day: false,
-  findFriday(DateTime.now()).day: false,
-  findSaturday(DateTime.now()).day: false,
+final Map<DateTime, bool> daysWorked = {
+  findSunday(DateTime.now()): true,
+  findMonday(DateTime.now()): false,
+  findTuesday(DateTime.now()): false,
+  findWednesday(DateTime.now()): false,
+  findThursday(DateTime.now()): false,
+  findFriday(DateTime.now()): false,
+  findSaturday(DateTime.now()): false,
 };
