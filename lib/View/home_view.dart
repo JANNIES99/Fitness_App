@@ -22,7 +22,7 @@ class _HomeViewState extends State<HomeView> {
   void workedToday() {
     setState(() {
       streaks++;
-      daysWorked[endOfTheDay(DateTime.now())] = true;
+      daysWorked[endOfTheDay(DateTime.now())]![0] = true;
       burnedCalories[4] = 0.6;
     });
   }
@@ -62,7 +62,7 @@ class _HomeViewState extends State<HomeView> {
                           height: 30,
                           width: 30,
                           decoration: BoxDecoration(
-                              color: daysWorked[days]!
+                              color: daysWorked[days]![0] as bool
                                   ? Theme.of(context)
                                       .colorScheme
                                       .secondaryContainer
