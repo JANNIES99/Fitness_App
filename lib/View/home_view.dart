@@ -89,7 +89,6 @@ class _HomeViewState extends State<HomeView> {
             padding: const EdgeInsets.all(10),
             child: GestureDetector(
               onTap: () {
-                print(daysWorked);
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) => ExerciseListView(
