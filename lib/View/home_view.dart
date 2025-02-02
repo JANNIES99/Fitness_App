@@ -19,11 +19,11 @@ class _HomeViewState extends State<HomeView> {
     Navigator.of(context).pop();
   }
 
-  void workedToday() {
+  void workedToday(double caloriesBurned) {
     setState(() {
       streaks++;
-      daysWorked[endOfTheDay(DateTime.now())]![0] = true;
-      daysWorked[endOfTheDay(DateTime.now())]![1] = 0.6;
+      List<Object> list = [true, caloriesBurned];
+      daysWorked[endOfTheDay(DateTime.now())] = list;
       burnedCalories[4] = 0.6;
     });
   }

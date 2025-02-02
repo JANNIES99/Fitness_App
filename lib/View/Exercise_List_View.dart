@@ -12,7 +12,7 @@ class ExerciseListView extends StatelessWidget {
       super.key});
   final List<Exercise> exercises;
   final void Function() goBackHome;
-  final void Function() workedToday;
+  final void Function(double) workedToday;
 
   @override
   Widget build(BuildContext context) {
