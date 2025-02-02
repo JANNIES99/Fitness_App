@@ -27,6 +27,7 @@ class Exercise {
     required this.isRepetition,
     required this.repetition,
     required this.image,
+    required this.caloriesBurned,
   });
   final int? minute;
   final int? second;
@@ -37,6 +38,7 @@ class Exercise {
   final bool isRepetition;
   final int? repetition;
   final Image image;
+  final double caloriesBurned;
 
   Exercise.withRepetition({
     required this.name,
@@ -44,6 +46,7 @@ class Exercise {
     required this.instructions,
     required this.repetition,
     required this.image,
+    required this.caloriesBurned,
   })  : isRepetition = true,
         isTimer = false,
         minute = null,
@@ -56,6 +59,7 @@ class Exercise {
     required this.minute,
     required this.second,
     required this.image,
+    required this.caloriesBurned,
   })  : isRepetition = false,
         isTimer = true,
         repetition = null;

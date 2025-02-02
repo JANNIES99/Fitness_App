@@ -8,6 +8,7 @@ Exercise abdominalCrunches = Exercise.withRepetition(
       "Lie on your back with your knees bent and feet flat on the floor, hip-width apart.\n Cross your arms over your chest with your palms just below your shoulders.\n Engage your core by drawing your belly button and waist towards your spine.\n Tuck your chin in slightly, as if holding a tennis ball between your chin and chest.\n Slowly tense your upper abdominals to lift your head, then neck, then shoulders and upper back off the floor as you reach forwards and up with your hands.\n Keep your lower back on the floor and avoid arching it away from the floor.\n From the top position, slowly lower your upper back, then shoulders, then neck and head back to the starting position.",
   repetition: 16,
   image: Image.asset("images/exercise/abdominal_crunches.gif"),
+  caloriesBurned: 4,
 );
 
 Exercise jumpingJacks = Exercise.withTimer(
@@ -25,6 +26,7 @@ Exercise jumpingJacks = Exercise.withTimer(
   minute: 0,
   second: 30,
   image: Image.asset("images/exercise/jumping_jack.gif"),
+  caloriesBurned: 5,
 );
 
 Exercise flutterKick = Exercise.withTimer(
@@ -35,6 +37,7 @@ Exercise flutterKick = Exercise.withTimer(
   minute: 0,
   second: 30,
   image: Image.asset("images/exercise/flutter_kick.gif"),
+  caloriesBurned: 2.5,
 );
 
 Exercise cobraStretch = Exercise.withTimer(
@@ -45,6 +48,7 @@ Exercise cobraStretch = Exercise.withTimer(
   minute: 0,
   second: 30,
   image: Image.asset("images/exercise/cobra.gif"),
+  caloriesBurned: 2,
 );
 
 Exercise armCircle = Exercise.withTimer(
@@ -55,6 +59,7 @@ Exercise armCircle = Exercise.withTimer(
   minute: 0,
   second: 30,
   image: Image.asset("images/exercise/arm_cirles.gif"),
+  caloriesBurned: 2,
 );
 
 Exercise jumpSquat = Exercise.withRepetition(
@@ -64,6 +69,7 @@ Exercise jumpSquat = Exercise.withRepetition(
       "Stand with your feet shoulder-width apart and your toes pointing slightly outward.\n Bend your knees and lower your body into a squat position, keeping your chest up and your back straight.\n Push through your heels and jump up as high as you can, swinging your arms to help with momentum.\n Land softly with your knees slightly bent to absorb the impact, then immediately lower back into the squat position to repeat.",
   repetition: 16,
   image: Image.asset("images/exercise/jump_squat.gif"),
+  caloriesBurned: 5.5,
 );
 
 Exercise glutesKickback = Exercise.withRepetition(
@@ -71,8 +77,9 @@ Exercise glutesKickback = Exercise.withRepetition(
   focusArea: [AreasOfTheBody.glutes, AreasOfTheBody.hamstrings],
   instructions:
       "Start on all fours with your hands under your shoulders and knees under your hips.\n Engage your core to keep your back straight and stable.\n Lift one leg behind you, keeping the knee bent at about 90 degrees. Push through your heel as you lift your leg toward the ceiling, focusing on squeezing your glutes.",
-  repetition: 15,
+  repetition: 16,
   image: Image.asset("images/exercise/glute_kickback.gif"),
+  caloriesBurned: 2.6,
 );
 
 Exercise singleLegCalfRaise = Exercise.withRepetition(
@@ -80,8 +87,9 @@ Exercise singleLegCalfRaise = Exercise.withRepetition(
   focusArea: [AreasOfTheBody.hamstrings],
   instructions:
       "Stand tall with your feet hip-width apart, and hold onto something for balance if needed like a wall or chair.\n Lift one foot off the ground, so you're standing on just one leg.\n Slowly raise your heel as high as you can, lifting your body up using the calf muscle.\n Lower back down slowly and repeat.",
-  repetition: 15,
+  repetition: 16,
   image: Image.asset("images/exercise/single_leg_calf_raise.gif"),
+  caloriesBurned: 2,
 );
 
 Exercise lunge = Exercise.withRepetition(
@@ -89,8 +97,9 @@ Exercise lunge = Exercise.withRepetition(
   focusArea: [AreasOfTheBody.glutes, AreasOfTheBody.hamstrings],
   instructions:
       "Stand tall with your feet hip-width apart.\n Step one foot forward about 2 feet, keeping your chest up and your core engaged. Lower your body by bending both knees. Your back knee should almost touch the floor, and your front knee should be directly above your ankle (not beyond your toes).\n Push through the heel of your front foot to stand back up and return to the starting position.\n Then switch to the other leg.",
-  repetition: 12,
+  repetition: 14,
   image: Image.asset("images/exercise/lunge.gif"),
+  caloriesBurned: 4.6,
 );
 
 Exercise bridge = Exercise.withTimer(
@@ -101,6 +110,7 @@ Exercise bridge = Exercise.withTimer(
   minute: 0,
   second: 30,
   image: Image.asset("images/exercise/bridge.gif"),
+  caloriesBurned: 3,
 );
 
 Exercise mountainClimber = Exercise.withTimer(
@@ -117,6 +127,7 @@ Exercise mountainClimber = Exercise.withTimer(
   minute: 0,
   second: 30,
   image: Image.asset("images/exercise/mountain_climber.gif"),
+  caloriesBurned: 6.7,
 );
 
 Exercise calfRaise = Exercise.withRepetition(
@@ -126,6 +137,7 @@ Exercise calfRaise = Exercise.withRepetition(
       "Stand on a step or platform with your heels hanging off the edge.\n Slowly raise up onto your tiptoes, then lower back down to the starting position.\n Keep your knees straight and only lift your heels.",
   repetition: 20,
   image: Image.asset("images/exercise/calf_raise.gif"),
+  caloriesBurned: 2,
 );
 
 Exercise reverseCrunch = Exercise.withRepetition(
@@ -135,6 +147,7 @@ Exercise reverseCrunch = Exercise.withRepetition(
       "Lie on your back with your knees bent and feet flat on the floor.\n Lift your hips off the ground, squeezing your glutes and lower back muscles as you lift.\n Focus on lifting your hips, rather than just your lower back.\n Slowly lower your hips back down to the starting position.",
   repetition: 16,
   image: Image.asset("images/exercise/reverse_crunch.gif"),
+  caloriesBurned: 3.4,
 );
 
 Exercise squats = Exercise.withRepetition(
@@ -148,6 +161,7 @@ Exercise squats = Exercise.withRepetition(
       "Stand with your feet shoulder-width apart.\n Slowly lower your body down into a seated position, keeping your back straight and your knees behind your toes.\n Pause for a moment at the bottom of the movement.\n Then, push through your heels to return to standing.",
   repetition: 16,
   image: Image.asset("images/exercise/squats.gif"),
+  caloriesBurned: 4.5,
 );
 
 Exercise sitUp = Exercise.withRepetition(
@@ -157,6 +171,7 @@ Exercise sitUp = Exercise.withRepetition(
       "Lie on your back with your knees bent and feet flat on the floor.\n Engage your core muscles by drawing your belly button towards your spine.\n Slowly lift your shoulders off the ground, curling up towards your knees.\n Focus on lifting your shoulders, rather than just your upper body.",
   repetition: 14,
   image: Image.asset("images/exercise/sit_up.gif"),
+  caloriesBurned: 3.4,
 );
 
 Exercise legRaise = Exercise.withRepetition(
@@ -166,6 +181,7 @@ Exercise legRaise = Exercise.withRepetition(
       "Lie on your back with your arms extended overhead and legs straight.\n Lift one leg up towards the ceiling, keeping it straight.\n Focus on using your lower abs to lift your leg.\n Slowly lower your leg back down to the starting position.\n Repeat with the other leg.",
   repetition: 14,
   image: Image.asset("images/exercise/leg_raise.gif"),
+  caloriesBurned: 3.6,
 );
 
 Exercise plank = Exercise.withTimer(
@@ -176,6 +192,7 @@ Exercise plank = Exercise.withTimer(
   minute: 0,
   second: 30,
   image: Image.asset("images/exercise/plank.gif"),
+  caloriesBurned: 3,
 );
 
 Exercise pushUp = Exercise.withRepetition(
@@ -183,8 +200,9 @@ Exercise pushUp = Exercise.withRepetition(
   focusArea: [AreasOfTheBody.chest, AreasOfTheBody.triceps],
   instructions:
       "Start in a plank position with your hands shoulder-width apart.\n Lower your body down until your chest nearly touches the ground.\n Push back up to the starting position and repeat.",
-  repetition: 12,
+  repetition: 10,
   image: Image.asset("images/exercise/push_up.gif"),
+  caloriesBurned: 4,
 );
 
 Exercise superman = Exercise.withTimer(
@@ -199,6 +217,7 @@ Exercise superman = Exercise.withTimer(
   minute: 0,
   second: 30,
   image: Image.asset("images/exercise/superman.gif"),
+  caloriesBurned: 2.7,
 );
 
 Exercise tricepsSideStretch = Exercise.withRepetition(
@@ -208,6 +227,7 @@ Exercise tricepsSideStretch = Exercise.withRepetition(
       "Hold your arm straight out to the side at shoulder height.\n Bend your elbow and bring your hand towards your shoulder.\nUse your other hand to gently pull your hand further towards your shoulder.\nHold for a few seconds, then release.\nRepeat on the other side.",
   repetition: 10,
   image: Image.asset("images/exercise/triceps_side_stretch.gif"),
+  caloriesBurned: 1.2,
 );
 
 Exercise tricepPushup = Exercise.withRepetition(
@@ -217,4 +237,5 @@ Exercise tricepPushup = Exercise.withRepetition(
       "Start in a plank position with your hands shoulder-width apart.\n Lower your body down until your arms are bent at a 90-degree angle, keeping your upper arms still and only moving your forearms to lower the rest of your body towards the ground. Then push back up to the starting position and repeat.",
   repetition: 10,
   image: Image.asset("images/exercise/tricep_push_up.gif"),
+  caloriesBurned: 4.2,
 );
