@@ -46,7 +46,7 @@ class Chart extends StatelessWidget {
               children: [
                 for (final i in burnedCalories)
                   Text(
-                    "$i",
+                    i.toStringAsFixed(2),
                     style: Theme.of(context).textTheme.bodySmall,
                   )
               ],

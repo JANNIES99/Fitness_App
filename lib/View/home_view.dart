@@ -19,16 +19,32 @@ class _HomeViewState extends State<HomeView> {
     Navigator.of(context).pop();
   }
 
+  List<double> setBurnedCalories(Map<DateTime, List<Object>> caloriesBurned) {
+    List<double> list = [];
+    for (final calories in caloriesBurned.values) {
+      list.add(calories[1] as double);
+    }
+    return list;
+  }
+
   void workedToday(double caloriesBurned) {
     setState(() {
       streaks++;
       List<Object> list = [true, caloriesBurned];
       daysWorked[endOfTheDay(DateTime.now())] = list;
-      burnedCalories[4] = 0.6;
+      burnedCalories = setBurnedCalories(daysWorked);
     });
   }
 
-  List<double> burnedCalories = [0.25, 0, 0, 0, 0, 0, 0];
+  List<double> burnedCalories = [];
+  @override
+  void initState() {
+    setState(() {
+      burnedCalories = setBurnedCalories(daysWorked);
+    });
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
