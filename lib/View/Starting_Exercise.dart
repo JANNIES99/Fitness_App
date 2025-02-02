@@ -21,6 +21,7 @@ class StartingExercise extends StatefulWidget {
 class _StartingExerciseState extends State<StartingExercise> {
   Widget? frontView;
   int selector = -1;
+  double caloriesBurned = 0;
 
   void goBack() {
     Navigator.of(context).pop();
@@ -41,6 +42,7 @@ class _StartingExerciseState extends State<StartingExercise> {
     if (selector > 0) {
       setState(() {
         selector--;
+        caloriesBurned -= widget.exercises[selector].caloriesBurned;
         frontView = DoingExercise(
             switchPrevious: switchToPreviousExercise,
             switchView: switchToBreakView,
@@ -51,6 +53,7 @@ class _StartingExerciseState extends State<StartingExercise> {
   }
 
   void switchToBreakView() {
+    caloriesBurned += widget.exercises[selector].caloriesBurned;
     if (selector + 1 < widget.exercises.length) {
       setState(() {
         frontView = BreakView(
