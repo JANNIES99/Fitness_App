@@ -2,7 +2,8 @@ import 'package:intl/intl.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
-DateFormat format = DateFormat('MM/dd/yyyy');
+final DateFormat format = DateFormat('MM/dd/yyyy');
+final DateFormat formatter = DateFormat.yMd();
 
 class DatabaseService {
   Database? _db;
@@ -17,11 +18,11 @@ class DatabaseService {
     return _db!;
   }
 
-  final _tableName1 = "Streak";
+  final _tableName1 = "DaysWorked";
 
   Future<Database> getDataBase() async {
     final databaseDirPath = await getDatabasesPath();
-    final databasePath = join(databaseDirPath, "Expense_db.db");
+    final databasePath = join(databaseDirPath, "Exercise_db.db");
     final database = await openDatabase(
       databasePath,
       onCreate: (db, version) {
@@ -32,4 +33,26 @@ class DatabaseService {
     );
     return database;
   }
+
+  void addToDaysWorked(DateTime date, double calorie) async {
+    Map<String, Object> map = {
+      "DATES": formatter.format(date),
+      "CALORIES": calorie,
+    };
+    final db = await database;
+    db.insert(_tableName1, map);
+  }
+
+  void updateDaysWorked(DateTime date, double calorie) async {
+    final db = await database;
+    Map<String, Object> map = {
+      "CALORIES": calorie,
+    };
+    db.update(_tableName1, map,
+        where: "DATES = ?", whereArgs: [formatter.format(date)]);
+  }
 }
+
+// Future<Map<DateTime,double>> getAllDaysWorked()async{
+  
+// }
