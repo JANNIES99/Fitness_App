@@ -1,4 +1,4 @@
-import 'package:fitnessapp/Service/DatabaseForDays.dart';
+import 'package:fitnessapp/Service/Database.dart';
 import 'package:fitnessapp/View/Exercise_List_View.dart';
 import 'package:fitnessapp/Widget/chart/chart.dart';
 import 'package:fitnessapp/functions/dateTime.dart';
@@ -14,7 +14,7 @@ class HomeView extends StatefulWidget {
 
 class _HomeViewState extends State<HomeView> {
   int streaks = 0;
-  final DatabaseForDays _databaseService = DatabaseForDays.instance;
+  final DatabaseService _databaseService = DatabaseService.instance;
   final Map<DateTime, double> allDaysWorked = {};
 
   void setAllDaysWorked() async {

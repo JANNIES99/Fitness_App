@@ -6,10 +6,10 @@ import 'package:sqflite/sqflite.dart';
 final DateFormat format = DateFormat('MM/dd/yyyy');
 final DateFormat formatter = DateFormat.yMd();
 
-class DatabaseForDays {
+class DatabaseService {
   Database? _db;
-  static final DatabaseForDays instance = DatabaseForDays._constructor();
-  DatabaseForDays._constructor();
+  static final DatabaseService instance = DatabaseService._constructor();
+  DatabaseService._constructor();
 
   Future<Database> get database async {
     if (_db != null) {
