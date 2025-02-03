@@ -15,6 +15,19 @@ class HomeView extends StatefulWidget {
 class _HomeViewState extends State<HomeView> {
   int streaks = 0;
   final DatabaseService _databaseService = DatabaseService.instance;
+  final Map<DateTime, double> allDaysWorked = {};
+
+  void setAllDaysWorked() async {
+    final map = await _databaseService.getAllDaysWorked();
+    for (final i in map.keys) {
+      allDaysWorked[i] = map[i]!;
+    }
+    for (final i in daysWorked.keys) {
+      if (map[i] != null) {
+        daysWorked[i] = [true, map[i]!];
+      }
+    }
+  }
 
   void goToHome() {
     Navigator.of(context).pop();
