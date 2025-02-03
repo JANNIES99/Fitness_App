@@ -20,7 +20,7 @@ class DatabaseService {
   }
 
   final _tableName1 = "DaysWorked";
-
+  final _tableName2 = "Profile";
   Future<Database> getDataBase() async {
     final databaseDirPath = await getDatabasesPath();
     final databasePath = join(databaseDirPath, "Exercise_db.db");
@@ -29,6 +29,8 @@ class DatabaseService {
       onCreate: (db, version) {
         db.execute(
             'CREATE TABLE $_tableName1(DATES TEXT PRIMARY KEY,CALORIES REAL)');
+        db.execute(
+            'CREATE TABLE $_tableName2(FIRSTNAME TEXT,LASTNAME TEXT,IMAGE BLOB,GENDER TEXT,DOB TEXT,WEIGHT REAL,HEIGHT REAL,STREAKS INTEGER,FULLBODY INTEGER,ABS INTEGER,ARMS INTEGER,CHEST INTEGER,BACK INTEGER,LEGS INTEGER)');
       },
       version: 1,
     );
