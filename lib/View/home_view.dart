@@ -56,6 +56,7 @@ class _HomeViewState extends State<HomeView> {
     setState(() {
       burnedCalories = setBurnedCalories(daysWorked);
     });
+    setAllDaysWorked();
     super.initState();
   }
 
