@@ -1,3 +1,4 @@
+import 'package:fitnessapp/Service/Database.dart';
 import 'package:fitnessapp/View/Exercise_List_View.dart';
 import 'package:fitnessapp/Widget/chart/chart.dart';
 import 'package:fitnessapp/functions/dateTime.dart';
@@ -7,13 +8,13 @@ import 'package:flutter/material.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
-
   @override
   State<HomeView> createState() => _HomeViewState();
 }
 
 class _HomeViewState extends State<HomeView> {
   int streaks = 0;
+  final DatabaseService _databaseService = DatabaseService.instance;
 
   void goToHome() {
     Navigator.of(context).pop();

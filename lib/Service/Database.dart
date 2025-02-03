@@ -1,3 +1,4 @@
+import 'package:fitnessapp/functions/dateTime.dart';
 import 'package:intl/intl.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
@@ -51,8 +52,15 @@ class DatabaseService {
     db.update(_tableName1, map,
         where: "DATES = ?", whereArgs: [formatter.format(date)]);
   }
-}
 
-// Future<Map<DateTime,double>> getAllDaysWorked()async{
-  
-// }
+  Future<Map<DateTime, double>> getAllDaysWorked() async {
+    Map<DateTime, double> map = {};
+    final db = await database;
+    final datas = await db.query(_tableName1);
+    for (final data in datas) {
+      map[endOfTheDay(format.parse(data["DATES"] as String))] =
+          data["CALORIES"] as double;
+    }
+    return map;
+  }
+}
