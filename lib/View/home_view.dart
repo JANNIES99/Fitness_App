@@ -19,7 +19,6 @@ class _HomeViewState extends State<HomeView> {
 
   void setAllDaysWorked() async {
     final map = await _databaseService.getAllDaysWorked();
-    print(map);
     setState(() {
       for (final i in map.keys) {
         allDaysWorked[i] = map[i]!;
@@ -47,16 +46,13 @@ class _HomeViewState extends State<HomeView> {
 
   void workedToday(double caloriesBurned) {
     setState(() {
-      print("hi");
       streaks++;
       if (daysWorked[endOfTheDay(DateTime.now())]![0] as bool) {
         _databaseService.updateDaysWorked(
             endOfTheDay(DateTime.now()), caloriesBurned);
-        print("hi1");
       } else {
         _databaseService.addToDaysWorked(
             endOfTheDay(DateTime.now()), caloriesBurned);
-        print("hi");
       }
       List<Object> list = [true, caloriesBurned];
       daysWorked[endOfTheDay(DateTime.now())] = list;
@@ -133,7 +129,6 @@ class _HomeViewState extends State<HomeView> {
             padding: const EdgeInsets.all(10),
             child: GestureDetector(
               onTap: () {
-                print(allDaysWorked);
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) => ExerciseListView(

@@ -40,7 +40,6 @@ class DatabaseService {
       "DATES": formatter.format(date),
       "CALORIES": calorie,
     };
-    print(map);
     final db = await database;
     db.insert(_tableName1, map);
   }
