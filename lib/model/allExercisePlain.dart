@@ -3,10 +3,17 @@ import 'package:fitnessapp/model/allExercise.dart';
 
 List<List<Exercise>> absExercise = [
   [
-    abdominalCrunches,
-    jumpingJacks,
-    pushUp,
-    squats,
+    flutterKick,
     mountainClimber,
+    sitUp,
+    plank,
+    cobraStretch,
+  ],
+  [
+    glutesKickback,
+    reverseCrunch,
+    legRaise,
+    squats,
+    pushUp,
   ]
 ];
