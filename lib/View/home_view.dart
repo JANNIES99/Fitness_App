@@ -133,7 +133,7 @@ class _HomeViewState extends State<HomeView> {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) => ExerciseListView(
-                      exercises: absEasyExercise[absEasyDayIndex],
+                      exercises: absExercise[absEasyDayIndex],
                       goBackHome: goToHome,
                       workedToday: workedToday,
                     ),
