@@ -263,7 +263,7 @@ List<List<Exercise>> absExercise = [
     sitUp,
     tricepPushup,
     jumpSquat,
-    plank
+    plank,
   ],
   [
     bridge,
@@ -274,7 +274,7 @@ List<List<Exercise>> absExercise = [
     mountainClimber,
     squats,
     pushUp,
-    superman
+    superman,
   ],
 ];
 
