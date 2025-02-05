@@ -17,8 +17,8 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: GlobalThemedata().lightThemeData,
-      darkTheme: GlobalThemedata().darkThemeData,
+      theme: lightThemeData,
+      darkTheme: darkThemeData,
       home: const HomeView(),
     );
   }
