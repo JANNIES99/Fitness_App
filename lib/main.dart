@@ -15,6 +15,12 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   @override
+  void initState() {
+    lightColorScheme = lightColorScheme;
+    lightThemeData = lightThemeData;
+    super.initState();
+  }
+
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: lightThemeData,
