@@ -3,7 +3,7 @@ import 'package:fitnessapp/View/Exercise_List_View.dart';
 import 'package:fitnessapp/Widget/chart/chart.dart';
 import 'package:fitnessapp/functions/dateTime.dart';
 import 'package:fitnessapp/functions/globalVariables.dart';
-import 'package:fitnessapp/model/absExercisePlain.dart';
+import 'package:fitnessapp/model/ExercisePlain/absExercisePlain.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatefulWidget {
