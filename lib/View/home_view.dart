@@ -1,4 +1,5 @@
 import 'package:fitnessapp/Service/Database.dart';
+import 'package:fitnessapp/View/Calender.dart';
 import 'package:fitnessapp/View/Exercise_List_View.dart';
 import 'package:fitnessapp/Widget/chart/chart.dart';
 import 'package:fitnessapp/functions/dateTime.dart';
@@ -81,47 +82,56 @@ class _HomeViewState extends State<HomeView> {
           Container(
             padding: const EdgeInsets.all(10),
             width: double.infinity,
-            child: Card(
-              child: Column(
-                children: [
-                  Align(
-                    alignment: Alignment.topLeft,
-                    child: Text(
-                      "Weekly goals",
+            child: GestureDetector(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const Calender(),
+                  ),
+                );
+              },
+              child: Card(
+                child: Column(
+                  children: [
+                    Align(
+                      alignment: Alignment.topLeft,
+                      child: Text(
+                        "Weekly goals",
+                        style: Theme.of(context).textTheme.bodySmall,
+                      ),
+                    ),
+                    Text(
+                      "$streaks days streak",
                       style: Theme.of(context).textTheme.bodySmall,
                     ),
-                  ),
-                  Text(
-                    "$streaks days streak",
-                    style: Theme.of(context).textTheme.bodySmall,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      ...daysWorked.keys.map(
-                        (days) => Container(
-                          margin: const EdgeInsets.all(10),
-                          height: 30,
-                          width: 30,
-                          decoration: BoxDecoration(
-                              color: daysWorked[days]![0] as bool
-                                  ? Theme.of(context)
-                                      .colorScheme
-                                      .secondaryContainer
-                                  : Theme.of(context).colorScheme.onSecondary,
-                              borderRadius: BorderRadius.circular(20)),
-                          child: Align(
-                            alignment: Alignment.center,
-                            child: Text(
-                              (days.day.toString()),
-                              style: Theme.of(context).textTheme.bodySmall,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        ...daysWorked.keys.map(
+                          (days) => Container(
+                            margin: const EdgeInsets.all(10),
+                            height: 30,
+                            width: 30,
+                            decoration: BoxDecoration(
+                                color: daysWorked[days]![0] as bool
+                                    ? Theme.of(context)
+                                        .colorScheme
+                                        .secondaryContainer
+                                    : Theme.of(context).colorScheme.onSecondary,
+                                borderRadius: BorderRadius.circular(20)),
+                            child: Align(
+                              alignment: Alignment.center,
+                              child: Text(
+                                (days.day.toString()),
+                                style: Theme.of(context).textTheme.bodySmall,
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                    ],
-                  )
-                ],
+                      ],
+                    )
+                  ],
+                ),
               ),
             ),
           ),
