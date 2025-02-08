@@ -86,7 +86,9 @@ class _HomeViewState extends State<HomeView> {
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => const Calender(),
+                    builder: (context) => Calender(
+                      allDaysWorked: allDaysWorked,
+                    ),
                   ),
                 );
               },

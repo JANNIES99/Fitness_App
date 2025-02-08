@@ -38,3 +38,8 @@ DateTime endOfTheDay(DateTime dateTime) {
   DateTime endOfDay = DateTime(now.year, now.month, now.day, 23, 59, 59, 999);
   return endOfDay;
 }
+
+DateTime earliestDate(List<DateTime> listOfDates) {
+  DateTime lowestDate = listOfDates.reduce((a, b) => a.isBefore(b) ? a : b);
+  return lowestDate;
+}
