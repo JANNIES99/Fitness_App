@@ -1,4 +1,5 @@
 import 'package:fitnessapp/functions/dateTime.dart';
+import 'package:fitnessapp/model/userProfile.dart';
 import 'package:intl/intl.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
@@ -64,5 +65,11 @@ class DatabaseService {
           data["CALORIES"] as double;
     }
     return map;
+  }
+
+  void addToProfile(UserProfile userInfo) async {
+    Map<String, Object> map = {};
+    final db = await database;
+    db.insert(_tableName2, map);
   }
 }

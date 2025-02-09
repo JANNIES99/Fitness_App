@@ -2,8 +2,8 @@ import 'dart:typed_data';
 
 import 'package:fitnessapp/functions/dateTime.dart';
 
-class Userprofile {
-  Userprofile({
+class UserProfile {
+  UserProfile({
     required this.gmail,
     required this.firstName,
     required this.lastName,
@@ -27,7 +27,7 @@ class Userprofile {
   Map<String, int> exerciseIndex;
 }
 
-Userprofile user = Userprofile(
+UserProfile user = UserProfile(
   gmail: "hello@gmail.com",
   firstName: "Jack",
   lastName: "Miller",
