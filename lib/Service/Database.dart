@@ -68,7 +68,19 @@ class DatabaseService {
   }
 
   void addToProfile(UserProfile userInfo) async {
-    Map<String, Object> map = {};
+    Map<String, Object> map = {
+      "GMAIL": userInfo.gmail,
+      "FIRSTNAME": userInfo.firstName,
+      "LASTNAME": userInfo.lastName,
+      "GENDER": userInfo.gender,
+      "DOB": formatter.format(userInfo.dob),
+      "HEIGHT": userInfo.height,
+      "WEIGHT": userInfo.weight,
+      "STREAKS": userInfo.streak,
+      "FULLBODY": userInfo.exerciseIndex["FULL BODY"]!,
+      "ABS": userInfo.exerciseIndex["ABS"]!,
+      "ARMS": userInfo.exerciseIndex["ARMS"]!,
+    };
     final db = await database;
     db.insert(_tableName2, map);
   }
