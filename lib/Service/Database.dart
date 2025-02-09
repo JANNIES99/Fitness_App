@@ -87,4 +87,28 @@ class DatabaseService {
     final db = await database;
     db.insert(_tableName2, map);
   }
+
+  Future<UserProfile> getUserProfile() async {
+    final db = await database;
+    final datas = await db.query(_tableName2);
+    final data = datas[0];
+    return UserProfile(
+      gmail: data["GMAIL"] as String,
+      firstName: data["FIRSTNAME"] as String,
+      lastName: data["LASTNAME"] as String,
+      streak: data["STREAKS"] as int,
+      gender: data["GENDER"] as String,
+      height: data["HEIGHT"] as double,
+      weight: data["WEIGHT"] as double,
+      dob: format.parse(data["DOB"] as String),
+      exerciseIndex: {
+        "FULL BODY": data["FULLBODY"] as int,
+        "ABS": data["ABS"] as int,
+        "ARMS": data["ARMS"] as int,
+        "CHEST": data["CHEST"] as int,
+        "BACK": data["BACK"] as int,
+        "LEGS": data["LEGS"] as int,
+      },
+    );
+  }
 }
