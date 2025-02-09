@@ -5,6 +5,7 @@ import 'package:fitnessapp/Widget/chart/chart.dart';
 import 'package:fitnessapp/functions/dateTime.dart';
 import 'package:fitnessapp/functions/globalVariables.dart';
 import 'package:fitnessapp/model/ExercisePlain/absExercisePlain.dart';
+import 'package:fitnessapp/model/userProfile.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatefulWidget {
@@ -17,6 +18,7 @@ class _HomeViewState extends State<HomeView> {
   int streaks = 0;
   final DatabaseService _databaseService = DatabaseService.instance;
   final Map<DateTime, double> allDaysWorked = {};
+  UserProfile? user;
 
   void setAllDaysWorked() async {
     final map = await _databaseService.getAllDaysWorked();
@@ -31,6 +33,10 @@ class _HomeViewState extends State<HomeView> {
       }
       burnedCalories = setBurnedCalories(daysWorked);
     });
+  }
+
+  void getProfileData() async {
+    user = await _databaseService.getUserProfile();
   }
 
   void goToHome() {
@@ -66,6 +72,7 @@ class _HomeViewState extends State<HomeView> {
   @override
   void initState() {
     setState(() {
+      getProfileData();
       setAllDaysWorked();
     });
     super.initState();
@@ -84,6 +91,7 @@ class _HomeViewState extends State<HomeView> {
             width: double.infinity,
             child: GestureDetector(
               onTap: () {
+                print(user);
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) => Calender(
