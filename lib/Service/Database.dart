@@ -80,6 +80,9 @@ class DatabaseService {
       "FULLBODY": userInfo.exerciseIndex["FULL BODY"]!,
       "ABS": userInfo.exerciseIndex["ABS"]!,
       "ARMS": userInfo.exerciseIndex["ARMS"]!,
+      "CHEST": userInfo.exerciseIndex["CHEST"]!,
+      "BACK": userInfo.exerciseIndex["BACK"]!,
+      "LEGS": userInfo.exerciseIndex["LEGS"]!,
     };
     final db = await database;
     db.insert(_tableName2, map);
