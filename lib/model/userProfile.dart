@@ -7,6 +7,15 @@ class Userprofile {
     required this.lastName,
     required this.streak,
     required this.gender,
+    required this.height,
+    required this.weight,
+    required this.dob,
+    required this.fullBodyIndex,
+    required this.absIndex,
+    required this.armsIndex,
+    required this.backIndex,
+    required this.chestIndex,
+    required this.legsIndex,
     this.image,
   });
   final String gmail;
@@ -15,6 +24,13 @@ class Userprofile {
   int streak;
   Uint8List? image;
   final String gender;
-  int FIRSTNAME TEXT,LASTNAME TEXT,IMAGE BLOB,GENDER TEXT,DOB TEXT,WEIGHT REAL,HEIGHT REAL,STREAKS INTEGER,FULLBODY INTEGER,ABS INTEGER,ARMS INTEGER,CHEST INTEGER,BACK INTEGER,LEGS INTEGER
-
+  double height;
+  double weight;
+  final DateTime dob;
+  int fullBodyIndex;
+  int absIndex;
+  int armsIndex;
+  int chestIndex;
+  int backIndex;
+  int legsIndex;
 }
