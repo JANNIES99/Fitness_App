@@ -1,5 +1,7 @@
 import 'dart:typed_data';
 
+import 'package:fitnessapp/functions/dateTime.dart';
+
 class Userprofile {
   Userprofile({
     required this.gmail,
@@ -24,3 +26,22 @@ class Userprofile {
   final DateTime dob;
   Map<String, int> exerciseIndex;
 }
+
+Userprofile user = Userprofile(
+  gmail: "hello@gmail.com",
+  firstName: "Jack",
+  lastName: "Miller",
+  streak: 0,
+  gender: "Male",
+  height: 1.73,
+  weight: 70,
+  dob: endOfTheDay(DateTime.now()),
+  exerciseIndex: {
+    "FULL BODY": 0,
+    "ABS": 0,
+    "ARMS": 0,
+    "CHEST": 0,
+    "BACK": 0,
+    "LEGS": 0,
+  },
+);
