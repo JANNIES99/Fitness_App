@@ -10,12 +10,7 @@ class Userprofile {
     required this.height,
     required this.weight,
     required this.dob,
-    required this.fullBodyIndex,
-    required this.absIndex,
-    required this.armsIndex,
-    required this.backIndex,
-    required this.chestIndex,
-    required this.legsIndex,
+    required this.exerciseIndex,
     this.image,
   });
   final String gmail;
@@ -27,10 +22,5 @@ class Userprofile {
   double height;
   double weight;
   final DateTime dob;
-  int fullBodyIndex;
-  int absIndex;
-  int armsIndex;
-  int chestIndex;
-  int backIndex;
-  int legsIndex;
+  Map<String, int> exerciseIndex;
 }
