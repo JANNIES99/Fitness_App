@@ -51,8 +51,10 @@ class _HomeViewState extends State<HomeView> {
     return list;
   }
 
-  void workedToday(double caloriesBurned) {
+  void workedToday(double caloriesBurned, String exercise) {
     setState(() {
+      user!.streak++;
+      user!.exerciseIndex[exercise] = user!.exerciseIndex[exercise]! + 1;
       streaks++;
       if (daysWorked[endOfTheDay(DateTime.now())]![0] as bool) {
         _databaseService.updateDaysWorked(
@@ -152,6 +154,7 @@ class _HomeViewState extends State<HomeView> {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) => ExerciseListView(
+                      exercise: "ABS",
                       exercises: absExercise[absEasyDayIndex],
                       goBackHome: goToHome,
                       workedToday: workedToday,

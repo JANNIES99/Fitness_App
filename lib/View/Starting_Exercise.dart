@@ -12,10 +12,12 @@ class StartingExercise extends StatefulWidget {
       {required this.exercises,
       required this.goBackHome,
       required this.workedToday,
+      required this.exercise,
       super.key});
+  final String exercise;
   final List<Exercise> exercises;
   final void Function() goBackHome;
-  final void Function(double) workedToday;
+  final void Function(double, String) workedToday;
   @override
   State<StartingExercise> createState() => _StartingExerciseState();
 }
@@ -99,7 +101,7 @@ class _StartingExerciseState extends State<StartingExercise> {
               ),
               ElevatedButton(
                 onPressed: () {
-                  widget.workedToday(caloriesBurned);
+                  widget.workedToday(caloriesBurned, widget.exercise);
                   Navigator.of(context).pop();
                   goBack();
                   widget.goBackHome();

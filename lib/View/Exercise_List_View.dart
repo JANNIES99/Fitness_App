@@ -9,10 +9,12 @@ class ExerciseListView extends StatelessWidget {
       {required this.exercises,
       required this.goBackHome,
       required this.workedToday,
+      required this.exercise,
       super.key});
   final List<Exercise> exercises;
+  final String exercise;
   final void Function() goBackHome;
-  final void Function(double) workedToday;
+  final void Function(double, String) workedToday;
 
   @override
   Widget build(BuildContext context) {
@@ -44,6 +46,7 @@ class ExerciseListView extends StatelessWidget {
             onPressed: () {
               Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => StartingExercise(
+                        exercise: exercise,
                         exercises: exercises,
                         goBackHome: goBackHome,
                         workedToday: workedToday,
