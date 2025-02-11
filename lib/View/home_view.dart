@@ -113,9 +113,17 @@ class _HomeViewState extends State<HomeView> {
                         style: Theme.of(context).textTheme.bodySmall,
                       ),
                     ),
-                    Text(
-                      "$streaks days streak",
-                      style: Theme.of(context).textTheme.bodySmall,
+                    Row(
+                      children: [
+                        const Icon(
+                          Icons.local_fire_department,
+                          color: Colors.deepOrange,
+                        ),
+                        Text(
+                          "${user!.streak} days streak",
+                          style: Theme.of(context).textTheme.bodySmall,
+                        ),
+                      ],
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
