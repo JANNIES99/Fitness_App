@@ -91,11 +91,10 @@ class _HomeViewState extends State<HomeView> {
             width: double.infinity,
             child: GestureDetector(
               onTap: () {
-                print(user);
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) => Calender(
-                      allDaysWorked: allDaysWorked,
+                      DaysWorked: allDaysWorked,
                     ),
                   ),
                 );

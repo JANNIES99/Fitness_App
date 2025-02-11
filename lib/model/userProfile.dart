@@ -37,7 +37,7 @@ UserProfile user = UserProfile(
   weight: 70,
   dob: endOfTheDay(DateTime.now()),
   exerciseIndex: {
-    "FULL BODY": 0,
+    "FULLBODY": 0,
     "ABS": 0,
     "ARMS": 0,
     "CHEST": 0,

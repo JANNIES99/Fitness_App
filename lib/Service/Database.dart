@@ -24,7 +24,7 @@ class DatabaseService {
   final _tableName2 = "Profile";
   Future<Database> getDataBase() async {
     final databaseDirPath = await getDatabasesPath();
-    final databasePath = join(databaseDirPath, "Exercise_db.db");
+    final databasePath = join(databaseDirPath, "Fitness_db.db");
     final database = await openDatabase(
       databasePath,
       onCreate: (db, version) {
@@ -77,7 +77,7 @@ class DatabaseService {
       "HEIGHT": userInfo.height,
       "WEIGHT": userInfo.weight,
       "STREAKS": userInfo.streak,
-      "FULLBODY": userInfo.exerciseIndex["FULL BODY"]!,
+      "FULLBODY": userInfo.exerciseIndex["FULLBODY"]!,
       "ABS": userInfo.exerciseIndex["ABS"]!,
       "ARMS": userInfo.exerciseIndex["ARMS"]!,
       "CHEST": userInfo.exerciseIndex["CHEST"]!,
@@ -91,6 +91,7 @@ class DatabaseService {
   Future<UserProfile> getUserProfile() async {
     final db = await database;
     final datas = await db.query(_tableName2);
+    print(datas);
     final data = datas[0];
     return UserProfile(
       gmail: data["GMAIL"] as String,
