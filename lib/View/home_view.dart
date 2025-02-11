@@ -1,10 +1,11 @@
 import 'package:fitnessapp/Service/Database.dart';
 import 'package:fitnessapp/View/Calender.dart';
-import 'package:fitnessapp/View/Exercise_List_View.dart';
 import 'package:fitnessapp/Widget/chart/chart.dart';
+import 'package:fitnessapp/Widget/exerciseFocusAreaItem.dart';
 import 'package:fitnessapp/functions/dateTime.dart';
 import 'package:fitnessapp/functions/globalVariables.dart';
 import 'package:fitnessapp/model/ExercisePlain/absExercisePlain.dart';
+import 'package:fitnessapp/model/ExercisePlain/fullBodyExercisePlain.dart';
 import 'package:fitnessapp/model/userProfile.dart';
 import 'package:flutter/material.dart';
 
@@ -147,30 +148,19 @@ class _HomeViewState extends State<HomeView> {
             ),
           ),
           Chart(burnedCalories: burnedCalories),
-          Container(
-            padding: const EdgeInsets.all(10),
-            child: GestureDetector(
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => ExerciseListView(
-                      exercise: "ABS",
-                      exercises: absExercise[absEasyDayIndex],
-                      goBackHome: goToHome,
-                      workedToday: workedToday,
-                    ),
-                  ),
-                );
-              },
-              child: Card(
-                child: Container(
-                  margin: const EdgeInsets.all(20),
-                  width: double.infinity,
-                  height: 50,
-                  child: Image.asset("images/abs.jpg"),
-                ),
-              ),
-            ),
+          Exercisefocusareaitem(
+            exercise: "FULLBODY",
+            exercises: fullBodyExercise,
+            goBackHome: goToHome,
+            workedToday: workedToday,
+            exerciseIndex: user!.exerciseIndex["FULLBODY"]!,
+          ),
+          Exercisefocusareaitem(
+            exercise: "ABS",
+            exercises: absExercise,
+            goBackHome: goToHome,
+            workedToday: workedToday,
+            exerciseIndex: user!.exerciseIndex["ABS"]!,
           ),
         ],
       ),
