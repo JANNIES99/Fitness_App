@@ -112,4 +112,25 @@ class DatabaseService {
       },
     );
   }
+
+  void updateUserProfile(UserProfile userInfo) async {
+    final db = await database;
+    Map<String, Object> map = {
+      "FIRSTNAME": userInfo.firstName,
+      "LASTNAME": userInfo.lastName,
+      "GENDER": userInfo.gender,
+      "DOB": formatter.format(userInfo.dob),
+      "HEIGHT": userInfo.height,
+      "WEIGHT": userInfo.weight,
+      "STREAKS": userInfo.streak,
+      "FULLBODY": userInfo.exerciseIndex["FULLBODY"]!,
+      "ABS": userInfo.exerciseIndex["ABS"]!,
+      "ARMS": userInfo.exerciseIndex["ARMS"]!,
+      "CHEST": userInfo.exerciseIndex["CHEST"]!,
+      "BACK": userInfo.exerciseIndex["BACK"]!,
+      "LEGS": userInfo.exerciseIndex["LEGS"]!,
+    };
+    db.update(_tableName2, map,
+        where: "GMAIL = ?", whereArgs: [userInfo.gmail]);
+  }
 }
