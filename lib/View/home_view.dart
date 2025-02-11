@@ -5,6 +5,7 @@ import 'package:fitnessapp/Widget/exerciseFocusAreaItem.dart';
 import 'package:fitnessapp/functions/dateTime.dart';
 import 'package:fitnessapp/functions/globalVariables.dart';
 import 'package:fitnessapp/model/ExercisePlain/absExercisePlain.dart';
+import 'package:fitnessapp/model/ExercisePlain/armExercisePlain.dart';
 import 'package:fitnessapp/model/ExercisePlain/fullBodyExercisePlain.dart';
 import 'package:fitnessapp/model/userProfile.dart';
 import 'package:flutter/material.dart';
@@ -154,6 +155,13 @@ class _HomeViewState extends State<HomeView> {
             goBackHome: goToHome,
             workedToday: workedToday,
             exerciseIndex: user!.exerciseIndex["FULLBODY"]!,
+          ),
+          Exercisefocusareaitem(
+            exercise: "ARM",
+            exercises: armBodyExercise,
+            goBackHome: goToHome,
+            workedToday: workedToday,
+            exerciseIndex: user!.exerciseIndex["ARM"]!,
           ),
           Exercisefocusareaitem(
             exercise: "ABS",
