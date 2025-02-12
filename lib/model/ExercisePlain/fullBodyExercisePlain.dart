@@ -9,7 +9,13 @@ List<List<Exercise>> fullBodyExercise = [
     glutesKickback,
     pushUp,
   ],
-  [sitUp, tricepPushup, jumpSquat, plank, lunge],
+  [
+    sitUp,
+    tricepPushup,
+    jumpSquat,
+    plank,
+    lunge,
+  ],
   [
     mountainClimber,
     superman,
