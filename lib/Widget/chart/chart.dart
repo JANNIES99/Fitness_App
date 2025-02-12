@@ -30,6 +30,7 @@ class Chart extends StatelessWidget {
                 const Icon(
                   Icons.bar_chart_rounded,
                 ),
+                const SizedBox(width: 5),
                 Text(
                   "Calories Burned Graph",
                   style: Theme.of(context).textTheme.bodySmall,

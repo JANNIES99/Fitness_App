@@ -69,6 +69,8 @@ class _HomeViewState extends State<HomeView> {
             date.year == day.year) {
           widget.user.streak++;
         }
+      } else {
+        widget.user.streak++;
       }
       widget.user.exerciseIndex[exercise] =
           widget.user.exerciseIndex[exercise]! + 1;
@@ -109,7 +111,6 @@ class _HomeViewState extends State<HomeView> {
             width: double.infinity,
             child: GestureDetector(
               onTap: () {
-                print(daysWorked);
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) => Calender(
@@ -119,64 +120,69 @@ class _HomeViewState extends State<HomeView> {
                 );
               },
               child: Card(
-                child: Column(
-                  children: [
-                    Align(
-                      alignment: Alignment.topLeft,
-                      child: Row(
+                child: Container(
+                  margin: const EdgeInsets.all(10),
+                  child: Column(
+                    children: [
+                      Align(
+                        alignment: Alignment.topLeft,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Icon(Icons.calendar_month_outlined),
+                            const SizedBox(width: 5),
+                            Text(
+                              "Weekly goals",
+                              style: Theme.of(context).textTheme.headlineSmall,
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 15,
+                      ),
+                      Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          const Icon(Icons.calendar_month_outlined),
+                          const Icon(
+                            Icons.local_fire_department,
+                            color: Colors.deepOrange,
+                          ),
+                          const SizedBox(width: 5),
                           Text(
-                            "Weekly goals",
+                            "${widget.user.streak} days streak",
                             style: Theme.of(context).textTheme.bodySmall,
                           ),
                         ],
                       ),
-                    ),
-                    const SizedBox(
-                      height: 15,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Icon(
-                          Icons.local_fire_department,
-                          color: Colors.deepOrange,
-                        ),
-                        Text(
-                          "${widget.user.streak} days streak",
-                          style: Theme.of(context).textTheme.bodySmall,
-                        ),
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        ...daysWorked.keys.map(
-                          (days) => Container(
-                            margin: const EdgeInsets.all(10),
-                            height: 30,
-                            width: 30,
-                            decoration: BoxDecoration(
-                                color: daysWorked[days]![0] as bool
-                                    ? Theme.of(context)
-                                        .colorScheme
-                                        .secondaryContainer
-                                    : Theme.of(context).colorScheme.onSecondary,
-                                borderRadius: BorderRadius.circular(20)),
-                            child: Align(
-                              alignment: Alignment.center,
-                              child: Text(
-                                (days.day.toString()),
-                                style: Theme.of(context).textTheme.bodySmall,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          ...daysWorked.keys.map(
+                            (days) => Container(
+                              margin: const EdgeInsets.all(10),
+                              height: 30,
+                              width: 30,
+                              decoration: BoxDecoration(
+                                  color: daysWorked[days]![0] as bool
+                                      ? Theme.of(context).colorScheme.primary
+                                      : Theme.of(context)
+                                          .colorScheme
+                                          .onSecondary,
+                                  borderRadius: BorderRadius.circular(20)),
+                              child: Align(
+                                alignment: Alignment.center,
+                                child: Text(
+                                  (days.day.toString()),
+                                  style: Theme.of(context).textTheme.bodySmall,
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                      ],
-                    )
-                  ],
+                        ],
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),

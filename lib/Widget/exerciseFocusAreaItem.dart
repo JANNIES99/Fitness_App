@@ -1,6 +1,7 @@
 import 'package:fitnessapp/View/Exercise_List_View.dart';
 import 'package:fitnessapp/model/Exercise.dart';
 import 'package:flutter/material.dart';
+import 'package:percent_indicator/circular_percent_indicator.dart';
 
 class Exercisefocusareaitem extends StatelessWidget {
   const Exercisefocusareaitem(
@@ -33,13 +34,33 @@ class Exercisefocusareaitem extends StatelessWidget {
           );
         },
         child: Card(
-          child: Container(
-            margin: const EdgeInsets.all(20),
-            width: double.infinity,
-            height: 50,
-            child: Image.asset("images/abs.jpg"),
+            child: Container(
+          margin: const EdgeInsets.all(20),
+          width: double.infinity,
+          height: 50,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Column(
+                children: [
+                  Text("$exercise EXERCISES"),
+                ],
+              ),
+              const Spacer(),
+              CircularPercentIndicator(
+                radius: 25,
+                backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+                progressColor:
+                    Theme.of(context).colorScheme.onSecondaryContainer,
+                percent: exerciseIndex / exercises.length,
+                center: Text(
+                  "$exerciseIndex/${exercises.length}",
+                  style: TextStyle(fontSize: 14),
+                ),
+              )
+            ],
           ),
-        ),
+        )),
       ),
     );
   }
