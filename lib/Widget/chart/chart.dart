@@ -31,7 +31,7 @@ class Chart extends StatelessWidget {
                   Icons.bar_chart_rounded,
                 ),
                 Text(
-                  "Calorie",
+                  "Calories Burned Graph",
                   style: Theme.of(context).textTheme.bodySmall,
                 ),
               ],

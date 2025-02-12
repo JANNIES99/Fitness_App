@@ -43,3 +43,8 @@ DateTime earliestDate(List<DateTime> listOfDates) {
   DateTime lowestDate = listOfDates.reduce((a, b) => a.isBefore(b) ? a : b);
   return lowestDate;
 }
+
+DateTime latestDate(List<DateTime> listOfDates) {
+  DateTime highestDate = listOfDates.reduce((a, b) => a.isAfter(b) ? a : b);
+  return highestDate;
+}

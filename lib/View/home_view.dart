@@ -33,6 +33,14 @@ class _HomeViewState extends State<HomeView> {
           daysWorked[i] = [true, map[i]!];
         }
       }
+      final DateTime date = latestDate(allDaysWorked.keys.toList());
+      final DateTime day = DateTime.now();
+      if (date.day <= day.day - 1 &&
+          date.month == day.month &&
+          date.year == day.year) {
+      } else {
+        widget.user.streak = 0;
+      }
       burnedCalories = setBurnedCalories(daysWorked);
     });
   }
@@ -51,10 +59,16 @@ class _HomeViewState extends State<HomeView> {
 
   void workedToday(double caloriesBurned, String exercise) {
     setState(() {
-      widget.user.streak++;
+      final DateTime date = latestDate(allDaysWorked.keys.toList());
+      final DateTime day = DateTime.now();
+      if (date.day == day.day - 1 &&
+          date.month == day.month &&
+          date.year == day.year) {
+        widget.user.streak++;
+      }
       widget.user.exerciseIndex[exercise] =
           widget.user.exerciseIndex[exercise]! + 1;
-      streaks++;
+      _databaseService.updateUserProfile(widget.user);
       if (daysWorked[endOfTheDay(DateTime.now())]![0] as bool) {
         _databaseService.updateDaysWorked(
             endOfTheDay(DateTime.now()), caloriesBurned);
