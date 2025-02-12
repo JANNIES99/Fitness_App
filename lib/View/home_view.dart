@@ -11,7 +11,8 @@ import 'package:fitnessapp/model/userProfile.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatefulWidget {
-  const HomeView({super.key});
+  const HomeView({required this.user, super.key});
+  final UserProfile user;
   @override
   State<HomeView> createState() => _HomeViewState();
 }
@@ -20,8 +21,7 @@ class _HomeViewState extends State<HomeView> {
   int streaks = 0;
   final DatabaseService _databaseService = DatabaseService.instance;
   final Map<DateTime, double> allDaysWorked = {};
-  UserProfile? user;
-
+  int streak = 0;
   void setAllDaysWorked() async {
     final map = await _databaseService.getAllDaysWorked();
     setState(() {
@@ -35,10 +35,6 @@ class _HomeViewState extends State<HomeView> {
       }
       burnedCalories = setBurnedCalories(daysWorked);
     });
-  }
-
-  void getProfileData() async {
-    user = await _databaseService.getUserProfile();
   }
 
   void goToHome() {
@@ -55,8 +51,9 @@ class _HomeViewState extends State<HomeView> {
 
   void workedToday(double caloriesBurned, String exercise) {
     setState(() {
-      user!.streak++;
-      user!.exerciseIndex[exercise] = user!.exerciseIndex[exercise]! + 1;
+      widget.user.streak++;
+      widget.user.exerciseIndex[exercise] =
+          widget.user.exerciseIndex[exercise]! + 1;
       streaks++;
       if (daysWorked[endOfTheDay(DateTime.now())]![0] as bool) {
         _databaseService.updateDaysWorked(
@@ -76,7 +73,6 @@ class _HomeViewState extends State<HomeView> {
   @override
   void initState() {
     setState(() {
-      getProfileData();
       setAllDaysWorked();
     });
     super.initState();
@@ -108,19 +104,29 @@ class _HomeViewState extends State<HomeView> {
                   children: [
                     Align(
                       alignment: Alignment.topLeft,
-                      child: Text(
-                        "Weekly goals",
-                        style: Theme.of(context).textTheme.bodySmall,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Icon(Icons.calendar_month_outlined),
+                          Text(
+                            "Weekly goals",
+                            style: Theme.of(context).textTheme.bodySmall,
+                          ),
+                        ],
                       ),
                     ),
+                    const SizedBox(
+                      height: 15,
+                    ),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         const Icon(
                           Icons.local_fire_department,
                           color: Colors.deepOrange,
                         ),
                         Text(
-                          "${user!.streak} days streak",
+                          "${widget.user.streak} days streak",
                           style: Theme.of(context).textTheme.bodySmall,
                         ),
                       ],
@@ -162,21 +168,21 @@ class _HomeViewState extends State<HomeView> {
             exercises: fullBodyExercise,
             goBackHome: goToHome,
             workedToday: workedToday,
-            exerciseIndex: user!.exerciseIndex["FULLBODY"]!,
+            exerciseIndex: widget.user.exerciseIndex["FULLBODY"]!,
           ),
           Exercisefocusareaitem(
-            exercise: "ARM",
+            exercise: "ARMS",
             exercises: armBodyExercise,
             goBackHome: goToHome,
             workedToday: workedToday,
-            exerciseIndex: user!.exerciseIndex["ARM"]!,
+            exerciseIndex: widget.user.exerciseIndex["ARMS"]!,
           ),
           Exercisefocusareaitem(
             exercise: "ABS",
             exercises: absExercise,
             goBackHome: goToHome,
             workedToday: workedToday,
-            exerciseIndex: user!.exerciseIndex["ABS"]!,
+            exerciseIndex: widget.user.exerciseIndex["ABS"]!,
           ),
         ],
       ),

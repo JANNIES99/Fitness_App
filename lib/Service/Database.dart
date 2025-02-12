@@ -88,12 +88,12 @@ class DatabaseService {
     db.insert(_tableName2, map);
   }
 
-  Future<UserProfile> getUserProfile() async {
+  Future<UserProfile?> getUserProfile() async {
     final db = await database;
     final datas = await db.query(_tableName2);
-    print(datas);
     final data = datas[0];
-    return UserProfile(
+    print(data);
+    UserProfile? userData = UserProfile(
       gmail: data["GMAIL"] as String,
       firstName: data["FIRSTNAME"] as String,
       lastName: data["LASTNAME"] as String,
@@ -103,7 +103,7 @@ class DatabaseService {
       weight: data["WEIGHT"] as double,
       dob: format.parse(data["DOB"] as String),
       exerciseIndex: {
-        "FULL BODY": data["FULLBODY"] as int,
+        "FULLBODY": data["FULLBODY"] as int,
         "ABS": data["ABS"] as int,
         "ARMS": data["ARMS"] as int,
         "CHEST": data["CHEST"] as int,
@@ -111,6 +111,8 @@ class DatabaseService {
         "LEGS": data["LEGS"] as int,
       },
     );
+    print(userData.exerciseIndex);
+    return userData;
   }
 
   void updateUserProfile(UserProfile userInfo) async {

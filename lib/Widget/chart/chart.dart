@@ -24,9 +24,17 @@ class Chart extends StatelessWidget {
       child: Card(
         child: Column(
           children: [
-            Text(
-              "Calorie",
-              style: Theme.of(context).textTheme.bodySmall,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Icon(
+                  Icons.bar_chart_rounded,
+                ),
+                Text(
+                  "Calorie",
+                  style: Theme.of(context).textTheme.bodySmall,
+                ),
+              ],
             ),
             const SizedBox(height: 10),
             Expanded(

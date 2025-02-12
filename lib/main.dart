@@ -1,5 +1,7 @@
+import 'package:fitnessapp/Service/Database.dart';
 import 'package:fitnessapp/View/home_view.dart';
 import 'package:fitnessapp/model/Theme.dart';
+import 'package:fitnessapp/model/userProfile.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,10 +16,22 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  UserProfile? user;
+  final DatabaseService _databaseService = DatabaseService.instance;
+  void getProfileData() async {
+    UserProfile? userData = await _databaseService.getUserProfile();
+    print(userData!.streak);
+    setState(() {
+      user = userData;
+    });
+  }
+
   @override
   void initState() {
-    lightColorScheme = lightColorScheme;
-    lightThemeData = lightThemeData;
+    setState(() {
+      getProfileData();
+    });
+    print(user);
     super.initState();
   }
 
@@ -25,7 +39,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       theme: lightThemeData,
       darkTheme: darkThemeData,
-      home: const HomeView(),
+      home: user != null ? HomeView(user: user!) : const Scaffold(),
     );
   }
 }
