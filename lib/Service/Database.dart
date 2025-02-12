@@ -24,14 +24,14 @@ class DatabaseService {
   final _tableName2 = "Profile";
   Future<Database> getDataBase() async {
     final databaseDirPath = await getDatabasesPath();
-    final databasePath = join(databaseDirPath, "Fitness_db.db");
+    final databasePath = join(databaseDirPath, "Exercise1_db.db");
     final database = await openDatabase(
       databasePath,
       onCreate: (db, version) {
         db.execute(
             'CREATE TABLE $_tableName1(DATES TEXT PRIMARY KEY,CALORIES REAL)');
         db.execute(
-            'CREATE TABLE $_tableName2(GMAIL TEXT PRIMARY KEY,FIRSTNAME TEXT,LASTNAME TEXT,IMAGE BLOB,GENDER TEXT,DOB TEXT,WEIGHT REAL,HEIGHT REAL,STREAKS INTEGER,FULLBODY INTEGER,ABS INTEGER,ARMS INTEGER,CHEST INTEGER,BACK INTEGER,LEGS INTEGER)');
+            'CREATE TABLE $_tableName2(GMAIL TEXT PRIMARY KEY,FIRSTNAME TEXT,LASTNAME TEXT,IMAGE BLOB,GENDER TEXT,DOB TEXT,WEIGHT REAL,HEIGHT REAL,STREAKS INTEGER,FULLBODY INTEGER,ABS INTEGER,ARMS INTEGER,CHEST INTEGER,BACK INTEGER,LEGS INTEGER,YOGA INTEGER)');
       },
       version: 1,
     );
@@ -83,7 +83,9 @@ class DatabaseService {
       "CHEST": userInfo.exerciseIndex["CHEST"]!,
       "BACK": userInfo.exerciseIndex["BACK"]!,
       "LEGS": userInfo.exerciseIndex["LEGS"]!,
+      "YOGA": userInfo.exerciseIndex["YOGA"]!,
     };
+    print(map);
     final db = await database;
     db.insert(_tableName2, map);
   }
@@ -109,6 +111,7 @@ class DatabaseService {
         "CHEST": data["CHEST"] as int,
         "BACK": data["BACK"] as int,
         "LEGS": data["LEGS"] as int,
+        "YOGA": data["YOGA"] as int,
       },
     );
     print(userData.exerciseIndex);
@@ -131,6 +134,7 @@ class DatabaseService {
       "CHEST": userInfo.exerciseIndex["CHEST"]!,
       "BACK": userInfo.exerciseIndex["BACK"]!,
       "LEGS": userInfo.exerciseIndex["LEGS"]!,
+      "YOGA": userInfo.exerciseIndex["YOGA"]!,
     };
     db.update(_tableName2, map,
         where: "GMAIL = ?", whereArgs: [userInfo.gmail]);

@@ -35,11 +35,29 @@ class _MyAppState extends State<MyApp> {
     super.initState();
   }
 
+  void setData() {
+    _databaseService.addToProfile(defaultUser);
+    setState(() {
+      getProfileData();
+    });
+  }
+
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: lightThemeData,
       darkTheme: darkThemeData,
-      home: user != null ? HomeView(user: user!) : const Scaffold(),
+      home: user != null
+          ? HomeView(user: user!)
+          : Scaffold(
+              body: Center(
+                child: ElevatedButton(
+                  onPressed: () {
+                    setData();
+                  },
+                  child: const Text("Enter Data"),
+                ),
+              ),
+            ),
     );
   }
 }

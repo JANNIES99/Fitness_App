@@ -33,15 +33,17 @@ class _HomeViewState extends State<HomeView> {
           daysWorked[i] = [true, map[i]!];
         }
       }
-      final DateTime date = latestDate(allDaysWorked.keys.toList());
-      final DateTime day = DateTime.now();
-      if (date.day <= day.day - 1 &&
-          date.month == day.month &&
-          date.year == day.year) {
-      } else {
-        widget.user.streak = 0;
-      }
       burnedCalories = setBurnedCalories(daysWorked);
+      if (allDaysWorked.entries.isNotEmpty) {
+        final DateTime date = latestDate(allDaysWorked.keys.toList());
+        final DateTime day = DateTime.now();
+        if (date.day <= day.day - 1 &&
+            date.month == day.month &&
+            date.year == day.year) {
+        } else {
+          widget.user.streak = 0;
+        }
+      }
     });
   }
 
@@ -59,12 +61,14 @@ class _HomeViewState extends State<HomeView> {
 
   void workedToday(double caloriesBurned, String exercise) {
     setState(() {
-      final DateTime date = latestDate(allDaysWorked.keys.toList());
-      final DateTime day = DateTime.now();
-      if (date.day == day.day - 1 &&
-          date.month == day.month &&
-          date.year == day.year) {
-        widget.user.streak++;
+      if (allDaysWorked.entries.isNotEmpty) {
+        final DateTime date = latestDate(allDaysWorked.keys.toList());
+        final DateTime day = DateTime.now();
+        if (date.day == day.day - 1 &&
+            date.month == day.month &&
+            date.year == day.year) {
+          widget.user.streak++;
+        }
       }
       widget.user.exerciseIndex[exercise] =
           widget.user.exerciseIndex[exercise]! + 1;
@@ -105,6 +109,7 @@ class _HomeViewState extends State<HomeView> {
             width: double.infinity,
             child: GestureDetector(
               onTap: () {
+                print(daysWorked);
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) => Calender(
