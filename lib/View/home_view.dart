@@ -18,10 +18,8 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-  int streaks = 0;
   final DatabaseService _databaseService = DatabaseService.instance;
   final Map<DateTime, double> allDaysWorked = {};
-  int streak = 0;
   void setAllDaysWorked() async {
     final map = await _databaseService.getAllDaysWorked();
     setState(() {
@@ -36,8 +34,8 @@ class _HomeViewState extends State<HomeView> {
       burnedCalories = setBurnedCalories(daysWorked);
       if (allDaysWorked.entries.isNotEmpty) {
         final DateTime date = latestDate(allDaysWorked.keys.toList());
-        final DateTime day = DateTime.now();
-        if (date.day <= day.day - 1 &&
+        final DateTime day = endOfTheDay(DateTime.now());
+        if (date.day >= day.day - 1 &&
             date.month == day.month &&
             date.year == day.year) {
         } else {
@@ -63,7 +61,7 @@ class _HomeViewState extends State<HomeView> {
     setState(() {
       if (allDaysWorked.entries.isNotEmpty) {
         final DateTime date = latestDate(allDaysWorked.keys.toList());
-        final DateTime day = DateTime.now();
+        final DateTime day = endOfTheDay(DateTime.now());
         if (date.day == day.day - 1 &&
             date.month == day.month &&
             date.year == day.year) {

@@ -2,6 +2,7 @@ import 'package:fitnessapp/Widget/Exercise_Details.dart';
 import 'package:fitnessapp/Widget/Exercise_Timer.dart';
 import 'package:fitnessapp/model/Exercise.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 
 class DoingExercise extends StatelessWidget {
   const DoingExercise(
@@ -17,6 +18,8 @@ class DoingExercise extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    FlutterTts _flutterTts = FlutterTts();
+    _flutterTts.speak(exercise.instructions);
     return Scaffold(
       appBar: AppBar(
         title: Row(
