@@ -62,7 +62,7 @@ class _HomeViewState extends State<HomeView> {
       if (allDaysWorked.entries.isNotEmpty) {
         final DateTime date = latestDate(allDaysWorked.keys.toList());
         final DateTime day = endOfTheDay(DateTime.now());
-        if (date.day == day.day - 1 &&
+        if (date.day >= day.day - 1 &&
             date.month == day.month &&
             date.year == day.year) {
           widget.user.streak++;

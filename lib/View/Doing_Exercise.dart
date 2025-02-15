@@ -4,7 +4,7 @@ import 'package:fitnessapp/model/Exercise.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 
-class DoingExercise extends StatelessWidget {
+class DoingExercise extends StatefulWidget {
   const DoingExercise(
       {required this.switchPrevious,
       required this.switchView,
@@ -17,9 +17,39 @@ class DoingExercise extends StatelessWidget {
   final Exercise exercise;
 
   @override
+  State<DoingExercise> createState() => _DoingExerciseState();
+}
+
+class _DoingExerciseState extends State<DoingExercise> {
+  FlutterTts _flutterTts = FlutterTts();
+  @override
+  // void initState() {
+  //   setState(() {
+  //     //initTTS();
+  //     print("hello");
+  //     _flutterTts.setVoice({"name": "es-us-x-sfb-local", "locale": "es-US"});
+  //     _flutterTts.speak(widget.exercise.instructions);
+  //   });
+  //   super.initState();
+  // }
+
+  void initTTS() {
+    _flutterTts.getVoices.then((data) {
+      try {
+        List<Map> _voices = List<Map>.from(data);
+        print(_voices);
+      } catch (e) {
+        print(e);
+      }
+    });
+  }
+
+  void TTSStop() {
+    _flutterTts.stop();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    FlutterTts _flutterTts = FlutterTts();
-    _flutterTts.speak(exercise.instructions);
     return Scaffold(
       appBar: AppBar(
         title: Row(
@@ -39,7 +69,7 @@ class DoingExercise extends StatelessWidget {
                             TextButton(
                               onPressed: () {
                                 Navigator.pop(context);
-                                goBack();
+                                widget.goBack();
                               },
                               child: const Text("Quit"),
                             )
@@ -48,7 +78,7 @@ class DoingExercise extends StatelessWidget {
               },
               icon: const Icon(Icons.arrow_back),
             ),
-            Text(exercise.name),
+            Text(widget.exercise.name),
           ],
         ),
       ),
@@ -62,12 +92,12 @@ class DoingExercise extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            exercise.image,
+            widget.exercise.image,
             const Spacer(),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(exercise.name),
+                Text(widget.exercise.name),
                 IconButton(
                     onPressed: () {
                       showModalBottomSheet(
@@ -75,18 +105,19 @@ class DoingExercise extends StatelessWidget {
                         isScrollControlled: true,
                         useSafeArea: true,
                         builder: (BuildContext ctx) {
-                          return ExerciseDetails(exercise: exercise);
+                          return ExerciseDetails(exercise: widget.exercise);
                         },
                       );
                     },
                     icon: const Icon(Icons.question_mark)),
               ],
             ),
-            if (exercise.isRepetition) Text("x${exercise.repetition}"),
-            if (exercise.isTimer)
+            if (widget.exercise.isRepetition)
+              Text("x${widget.exercise.repetition}"),
+            if (widget.exercise.isTimer)
               ExerciseTimer(
-                minute: exercise.minute as int,
-                seconds: exercise.second as int,
+                minute: widget.exercise.minute as int,
+                seconds: widget.exercise.second as int,
               ),
             Align(
               alignment: Alignment.bottomCenter,
@@ -94,7 +125,7 @@ class DoingExercise extends StatelessWidget {
                 children: [
                   ElevatedButton(
                     onPressed: () {
-                      switchPrevious();
+                      widget.switchPrevious();
                     },
                     child: const Row(
                       children: [
@@ -106,7 +137,7 @@ class DoingExercise extends StatelessWidget {
                   const Spacer(),
                   ElevatedButton(
                     onPressed: () {
-                      switchView();
+                      widget.switchView();
                     },
                     child: const Row(
                       children: [
