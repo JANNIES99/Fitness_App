@@ -100,7 +100,10 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Fitness App"),
+        title: Text(
+          "Fitness App",
+          style: Theme.of(context).textTheme.headlineLarge,
+        ),
       ),
       body: SafeArea(
         child: SingleChildScrollView(

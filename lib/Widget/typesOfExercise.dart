@@ -36,14 +36,15 @@ class Typesofexercises extends StatelessWidget {
         child: Card(
             color: Theme.of(context).cardColor,
             child: Container(
-              margin: const EdgeInsets.all(20),
+              margin: const EdgeInsets.all(10),
               width: double.infinity,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const SizedBox(width: 5),
-                  Text("$exercise EXERCISES"),
+                  Text("$exercise EXERCISES",
+                      style: Theme.of(context).textTheme.headlineSmall),
                   CircularPercentIndicator(
                     radius: 27,
                     backgroundColor: Theme.of(context).colorScheme.onSecondary,

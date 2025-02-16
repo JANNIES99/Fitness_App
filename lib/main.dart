@@ -20,7 +20,6 @@ class _MyAppState extends State<MyApp> {
   final DatabaseService _databaseService = DatabaseService.instance;
   void getProfileData() async {
     UserProfile? userData = await _databaseService.getUserProfile();
-    print(userData!.streak);
     setState(() {
       user = userData;
     });
@@ -42,6 +41,7 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: lightThemeData,

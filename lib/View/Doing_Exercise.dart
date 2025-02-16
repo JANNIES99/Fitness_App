@@ -85,7 +85,10 @@ class _DoingExerciseState extends State<DoingExercise> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(widget.exercise.name),
+                Text(
+                  widget.exercise.name,
+                  style: Theme.of(context).textTheme.headlineSmall,
+                ),
                 IconButton(
                     onPressed: () {
                       showModalBottomSheet(

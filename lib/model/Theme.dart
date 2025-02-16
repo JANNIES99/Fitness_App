@@ -36,24 +36,34 @@ ThemeData lightThemeData = ThemeData().copyWith(
   colorScheme: lightColorScheme,
   brightness: Brightness.light,
   textTheme: const TextTheme().copyWith(
-    headlineLarge: const TextStyle(color: Colors.black, fontSize: 25),
-    headlineMedium: const TextStyle(color: Colors.blue, fontSize: 20),
-    headlineSmall: const TextStyle(color: Colors.black, fontSize: 20),
+    headlineLarge: const TextStyle(
+        color: Colors.black, fontSize: 25, fontWeight: FontWeight.bold),
+    headlineMedium: TextStyle(
+        color: lightColorScheme.primary,
+        fontSize: 20,
+        fontWeight: FontWeight.bold),
+    headlineSmall: const TextStyle(
+        color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
     bodyMedium: const TextStyle(color: Colors.black, fontSize: 16),
     bodySmall: const TextStyle(color: Colors.black, fontSize: 16),
   ),
   cardColor: lightColorScheme.secondaryContainer,
 );
 
-ColorScheme darkColorScheme =
+final ColorScheme darkColorScheme =
     ColorScheme.fromSeed(seedColor: Colors.deepPurple);
 ThemeData darkThemeData = ThemeData().copyWith(
   colorScheme: darkColorScheme,
   brightness: Brightness.dark,
   textTheme: const TextTheme().copyWith(
-    headlineLarge: const TextStyle(color: Colors.black, fontSize: 25),
-    headlineMedium: const TextStyle(color: Colors.blue, fontSize: 20),
-    headlineSmall: const TextStyle(color: Colors.black, fontSize: 20),
+    headlineLarge: const TextStyle(
+        color: Colors.black, fontSize: 25, fontWeight: FontWeight.bold),
+    headlineMedium: TextStyle(
+        color: darkColorScheme.primary,
+        fontSize: 20,
+        fontWeight: FontWeight.bold),
+    headlineSmall: const TextStyle(
+        color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
     bodyMedium: const TextStyle(color: Colors.black, fontSize: 16),
     bodySmall: const TextStyle(color: Colors.black, fontSize: 16),
   ),
