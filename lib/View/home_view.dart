@@ -102,113 +102,121 @@ class _HomeViewState extends State<HomeView> {
       appBar: AppBar(
         title: const Text("Fitness App"),
       ),
-      body: Column(
-        children: [
-          Container(
-            padding: const EdgeInsets.all(10),
-            width: double.infinity,
-            child: GestureDetector(
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => Calender(
-                      DaysWorked: allDaysWorked,
-                    ),
-                  ),
-                );
-              },
-              child: Card(
-                color: Theme.of(context).cardColor,
-                child: Container(
-                  margin: const EdgeInsets.all(10),
-                  child: Column(
-                    children: [
-                      Align(
-                        alignment: Alignment.topLeft,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            const Icon(Icons.calendar_month_outlined),
-                            const SizedBox(width: 5),
-                            Text(
-                              "Weekly goals",
-                              style: Theme.of(context).textTheme.headlineSmall,
-                            ),
-                          ],
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Container(
+                padding: const EdgeInsets.all(10),
+                width: double.infinity,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => Calender(
+                          DaysWorked: allDaysWorked,
                         ),
                       ),
-                      const SizedBox(
-                        height: 15,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                    );
+                  },
+                  child: Card(
+                    color: Theme.of(context).cardColor,
+                    child: Container(
+                      margin: const EdgeInsets.all(10),
+                      child: Column(
                         children: [
-                          const Icon(
-                            Icons.local_fire_department,
-                            color: Colors.deepOrange,
-                          ),
-                          const SizedBox(width: 5),
-                          Text(
-                            "${widget.user.streak} days streak",
-                            style: Theme.of(context).textTheme.bodySmall,
-                          ),
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          ...daysWorked.keys.map(
-                            (days) => Container(
-                              margin: const EdgeInsets.all(10),
-                              height: 30,
-                              width: 30,
-                              decoration: BoxDecoration(
-                                  color: daysWorked[days]![0] as bool
-                                      ? Theme.of(context).colorScheme.primary
-                                      : Theme.of(context)
-                                          .colorScheme
-                                          .onSecondary,
-                                  borderRadius: BorderRadius.circular(20)),
-                              child: Align(
-                                alignment: Alignment.center,
-                                child: Text(
-                                  (days.day.toString()),
-                                  style: Theme.of(context).textTheme.bodySmall,
+                          Align(
+                            alignment: Alignment.topLeft,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                const Icon(Icons.calendar_month_outlined),
+                                const SizedBox(width: 5),
+                                Text(
+                                  "Weekly goals",
+                                  style:
+                                      Theme.of(context).textTheme.headlineSmall,
                                 ),
-                              ),
+                              ],
                             ),
                           ),
+                          const SizedBox(
+                            height: 15,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const Icon(
+                                Icons.local_fire_department,
+                                color: Colors.deepOrange,
+                              ),
+                              const SizedBox(width: 5),
+                              Text(
+                                "${widget.user.streak} days streak",
+                                style: Theme.of(context).textTheme.bodySmall,
+                              ),
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              ...daysWorked.keys.map(
+                                (days) => Container(
+                                  margin: const EdgeInsets.all(10),
+                                  height: 30,
+                                  width: 30,
+                                  decoration: BoxDecoration(
+                                      color: daysWorked[days]![0] as bool
+                                          ? Theme.of(context)
+                                              .colorScheme
+                                              .primary
+                                          : Theme.of(context)
+                                              .colorScheme
+                                              .onSecondary,
+                                      borderRadius: BorderRadius.circular(20)),
+                                  child: Align(
+                                    alignment: Alignment.center,
+                                    child: Text(
+                                      (days.day.toString()),
+                                      style:
+                                          Theme.of(context).textTheme.bodySmall,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          )
                         ],
-                      )
-                    ],
+                      ),
+                    ),
                   ),
                 ),
               ),
-            ),
+              Chart(burnedCalories: burnedCalories),
+              Typesofexercises(
+                exercise: "FULLBODY",
+                exercises: fullBodyExercise,
+                goBackHome: goToHome,
+                workedToday: workedToday,
+                exerciseIndex: widget.user.exerciseIndex["FULLBODY"]!,
+              ),
+              Typesofexercises(
+                exercise: "ARMS",
+                exercises: armBodyExercise,
+                goBackHome: goToHome,
+                workedToday: workedToday,
+                exerciseIndex: widget.user.exerciseIndex["ARMS"]!,
+              ),
+              Typesofexercises(
+                exercise: "ABS",
+                exercises: absExercise,
+                goBackHome: goToHome,
+                workedToday: workedToday,
+                exerciseIndex: widget.user.exerciseIndex["ABS"]!,
+              ),
+            ],
           ),
-          Chart(burnedCalories: burnedCalories),
-          Typesofexercises(
-            exercise: "FULLBODY",
-            exercises: fullBodyExercise,
-            goBackHome: goToHome,
-            workedToday: workedToday,
-            exerciseIndex: widget.user.exerciseIndex["FULLBODY"]!,
-          ),
-          Typesofexercises(
-            exercise: "ARMS",
-            exercises: armBodyExercise,
-            goBackHome: goToHome,
-            workedToday: workedToday,
-            exerciseIndex: widget.user.exerciseIndex["ARMS"]!,
-          ),
-          Typesofexercises(
-            exercise: "ABS",
-            exercises: absExercise,
-            goBackHome: goToHome,
-            workedToday: workedToday,
-            exerciseIndex: widget.user.exerciseIndex["ABS"]!,
-          ),
-        ],
+        ),
       ),
     );
   }
