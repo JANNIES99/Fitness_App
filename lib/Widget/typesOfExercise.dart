@@ -45,7 +45,7 @@ class Typesofexercises extends StatelessWidget {
                   const SizedBox(width: 5),
                   Text("$exercise EXERCISES"),
                   CircularPercentIndicator(
-                    radius: 30,
+                    radius: 27,
                     backgroundColor: Theme.of(context).colorScheme.onSecondary,
                     progressColor:
                         Theme.of(context).colorScheme.onSecondaryContainer,
