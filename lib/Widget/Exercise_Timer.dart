@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:percent_indicator/circular_percent_indicator.dart';
 
 class ExerciseTimer extends StatefulWidget {
   const ExerciseTimer({required this.minute, required this.seconds, super.key});
@@ -12,9 +13,11 @@ class ExerciseTimer extends StatefulWidget {
 
 class _ExerciseTimerState extends State<ExerciseTimer> {
   int timeForTimer = 0;
+  int initalTime = 0;
   String timeToDisplay = "";
   @override
   void initState() {
+    initalTime = ((widget.minute * 60) + widget.seconds);
     timeForTimer = ((widget.minute * 60) + widget.seconds);
     timeToDisplay = timeForTimer.toString();
     startTimer();
@@ -50,6 +53,12 @@ class _ExerciseTimerState extends State<ExerciseTimer> {
 
   @override
   Widget build(BuildContext context) {
-    return Text(timeToDisplay);
+    return CircularPercentIndicator(
+      radius: 30,
+      backgroundColor: Theme.of(context).colorScheme.onSecondary,
+      progressColor: Theme.of(context).colorScheme.onSecondaryContainer,
+      percent: timeForTimer / initalTime,
+      center: Text(timeToDisplay),
+    );
   }
 }

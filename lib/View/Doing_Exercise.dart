@@ -24,10 +24,9 @@ class _DoingExerciseState extends State<DoingExercise> {
   final FlutterTts _flutterTts = FlutterTts();
   @override
   void initState() {
-    setState(() {
-      _flutterTts.setVoice({"name": "es-us-x-sfb-local", "locale": "es-US"});
-      _flutterTts.speak(widget.exercise.instructions);
-    });
+    print("hello");
+    _flutterTts.setVoice({"name": "es-us-x-sfb-local", "locale": "es-US"});
+    _flutterTts.speak(widget.exercise.instructions);
     super.initState();
   }
 

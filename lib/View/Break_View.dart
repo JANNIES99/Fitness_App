@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:percent_indicator/circular_percent_indicator.dart';
 
 class BreakView extends StatefulWidget {
   const BreakView({required this.switchView, super.key});
@@ -10,6 +11,7 @@ class BreakView extends StatefulWidget {
 }
 
 class _BreakViewState extends State<BreakView> {
+  int initalTime = 30;
   int timeForTimer = 30;
   String timeToDisplay = "30";
 
@@ -59,7 +61,16 @@ class _BreakViewState extends State<BreakView> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(timeToDisplay),
+            CircularPercentIndicator(
+              radius: 40,
+              backgroundColor: Theme.of(context).colorScheme.onSecondary,
+              progressColor: Theme.of(context).colorScheme.onSecondaryContainer,
+              percent: timeForTimer / initalTime,
+              center: Text(timeToDisplay),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -67,6 +78,7 @@ class _BreakViewState extends State<BreakView> {
                   onPressed: () {
                     setState(
                       () {
+                        initalTime = initalTime + 10;
                         timeForTimer = timeForTimer + 10;
                         if (timeForTimer > 60) {
                           int t = timeForTimer;
