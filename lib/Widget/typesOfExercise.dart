@@ -38,16 +38,12 @@ class Typesofexercises extends StatelessWidget {
             child: Container(
               margin: const EdgeInsets.all(20),
               width: double.infinity,
-              height: 50,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const SizedBox(width: 5),
-                  Column(
-                    children: [
-                      Text("$exercise EXERCISES"),
-                    ],
-                  ),
+                  Text("$exercise EXERCISES"),
                   CircularPercentIndicator(
                     radius: 30,
                     backgroundColor: Theme.of(context).colorScheme.onSecondary,
