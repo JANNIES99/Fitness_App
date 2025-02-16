@@ -21,7 +21,7 @@ class DoingExercise extends StatefulWidget {
 }
 
 class _DoingExerciseState extends State<DoingExercise> {
-  FlutterTts _flutterTts = FlutterTts();
+  final FlutterTts _flutterTts = FlutterTts();
   @override
   void initState() {
     setState(() {
