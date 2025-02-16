@@ -66,7 +66,10 @@ class _DoingExerciseState extends State<DoingExercise> {
               },
               icon: const Icon(Icons.arrow_back),
             ),
-            Text(widget.exercise.name),
+            Text(
+              widget.exercise.name,
+              style: Theme.of(context).textTheme.headlineLarge,
+            ),
           ],
         ),
       ),
