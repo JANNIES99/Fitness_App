@@ -23,28 +23,15 @@ class DoingExercise extends StatefulWidget {
 class _DoingExerciseState extends State<DoingExercise> {
   FlutterTts _flutterTts = FlutterTts();
   @override
-  // void initState() {
-  //   setState(() {
-  //     //initTTS();
-  //     print("hello");
-  //     _flutterTts.setVoice({"name": "es-us-x-sfb-local", "locale": "es-US"});
-  //     _flutterTts.speak(widget.exercise.instructions);
-  //   });
-  //   super.initState();
-  // }
-
-  void initTTS() {
-    _flutterTts.getVoices.then((data) {
-      try {
-        List<Map> _voices = List<Map>.from(data);
-        print(_voices);
-      } catch (e) {
-        print(e);
-      }
+  void initState() {
+    setState(() {
+      _flutterTts.setVoice({"name": "es-us-x-sfb-local", "locale": "es-US"});
+      _flutterTts.speak(widget.exercise.instructions);
     });
+    super.initState();
   }
 
-  void TTSStop() {
+  void stopTTS() {
     _flutterTts.stop();
   }
 
@@ -56,6 +43,7 @@ class _DoingExerciseState extends State<DoingExercise> {
           children: [
             IconButton(
               onPressed: () {
+                stopTTS();
                 showDialog(
                     context: context,
                     builder: (context) => AlertDialog(
@@ -125,6 +113,7 @@ class _DoingExerciseState extends State<DoingExercise> {
                 children: [
                   ElevatedButton(
                     onPressed: () {
+                      stopTTS();
                       widget.switchPrevious();
                     },
                     child: const Row(
@@ -137,6 +126,7 @@ class _DoingExerciseState extends State<DoingExercise> {
                   const Spacer(),
                   ElevatedButton(
                     onPressed: () {
+                      stopTTS();
                       widget.switchView();
                     },
                     child: const Row(
