@@ -1,7 +1,7 @@
 import 'package:fitnessapp/Service/Database.dart';
 import 'package:fitnessapp/View/Calender.dart';
 import 'package:fitnessapp/Widget/chart/chart.dart';
-import 'package:fitnessapp/Widget/exerciseFocusAreaItem.dart';
+import 'package:fitnessapp/Widget/typesOfExercise.dart';
 import 'package:fitnessapp/functions/dateTime.dart';
 import 'package:fitnessapp/functions/globalVariables.dart';
 import 'package:fitnessapp/model/ExercisePlain/absExercisePlain.dart';
@@ -62,7 +62,7 @@ class _HomeViewState extends State<HomeView> {
       if (allDaysWorked.entries.isNotEmpty) {
         final DateTime date = latestDate(allDaysWorked.keys.toList());
         final DateTime day = endOfTheDay(DateTime.now());
-        if (date.day >= day.day - 1 &&
+        if (date.day <= day.day - 1 &&
             date.month == day.month &&
             date.year == day.year) {
           widget.user.streak++;
@@ -118,6 +118,7 @@ class _HomeViewState extends State<HomeView> {
                 );
               },
               child: Card(
+                color: Theme.of(context).cardColor,
                 child: Container(
                   margin: const EdgeInsets.all(10),
                   child: Column(
@@ -186,21 +187,21 @@ class _HomeViewState extends State<HomeView> {
             ),
           ),
           Chart(burnedCalories: burnedCalories),
-          Exercisefocusareaitem(
+          Typesofexercises(
             exercise: "FULLBODY",
             exercises: fullBodyExercise,
             goBackHome: goToHome,
             workedToday: workedToday,
             exerciseIndex: widget.user.exerciseIndex["FULLBODY"]!,
           ),
-          Exercisefocusareaitem(
+          Typesofexercises(
             exercise: "ARMS",
             exercises: armBodyExercise,
             goBackHome: goToHome,
             workedToday: workedToday,
             exerciseIndex: widget.user.exerciseIndex["ARMS"]!,
           ),
-          Exercisefocusareaitem(
+          Typesofexercises(
             exercise: "ABS",
             exercises: absExercise,
             goBackHome: goToHome,

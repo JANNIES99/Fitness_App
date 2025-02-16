@@ -42,6 +42,7 @@ ThemeData lightThemeData = ThemeData().copyWith(
     bodyMedium: const TextStyle(color: Colors.black, fontSize: 16),
     bodySmall: const TextStyle(color: Colors.black, fontSize: 16),
   ),
+  cardColor: lightColorScheme.secondaryContainer,
 );
 
 ColorScheme darkColorScheme =
@@ -56,4 +57,5 @@ ThemeData darkThemeData = ThemeData().copyWith(
     bodyMedium: const TextStyle(color: Colors.black, fontSize: 16),
     bodySmall: const TextStyle(color: Colors.black, fontSize: 16),
   ),
+  cardColor: darkColorScheme.secondaryContainer,
 );

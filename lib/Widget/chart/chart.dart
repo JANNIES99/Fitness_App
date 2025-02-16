@@ -22,6 +22,7 @@ class Chart extends StatelessWidget {
       width: double.infinity,
       height: 200,
       child: Card(
+        color: Theme.of(context).cardColor,
         child: Column(
           children: [
             Row(

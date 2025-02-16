@@ -8,6 +8,7 @@ class ExerciseItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: Theme.of(context).cardColor,
       child: Container(
         padding: const EdgeInsets.all(10),
         child: Column(

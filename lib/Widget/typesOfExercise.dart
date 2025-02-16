@@ -3,8 +3,8 @@ import 'package:fitnessapp/model/Exercise.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
-class Exercisefocusareaitem extends StatelessWidget {
-  const Exercisefocusareaitem(
+class Typesofexercises extends StatelessWidget {
+  const Typesofexercises(
       {required this.exercise,
       required this.exercises,
       required this.goBackHome,
@@ -34,33 +34,37 @@ class Exercisefocusareaitem extends StatelessWidget {
           );
         },
         child: Card(
+            color: Theme.of(context).cardColor,
             child: Container(
-          margin: const EdgeInsets.all(20),
-          width: double.infinity,
-          height: 50,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Column(
+              margin: const EdgeInsets.all(20),
+              width: double.infinity,
+              height: 50,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("$exercise EXERCISES"),
+                  const SizedBox(width: 5),
+                  Column(
+                    children: [
+                      Text("$exercise EXERCISES"),
+                    ],
+                  ),
+                  CircularPercentIndicator(
+                    radius: 30,
+                    backgroundColor: Theme.of(context).colorScheme.onSecondary,
+                    progressColor:
+                        Theme.of(context).colorScheme.onSecondaryContainer,
+                    percent: exerciseIndex / exercises.length,
+                    center: Container(
+                      padding: const EdgeInsets.all(5),
+                      child: Text(
+                        "$exerciseIndex/${exercises.length}",
+                        style: const TextStyle(fontSize: 14),
+                      ),
+                    ),
+                  )
                 ],
               ),
-              const Spacer(),
-              CircularPercentIndicator(
-                radius: 25,
-                backgroundColor: Theme.of(context).colorScheme.primaryContainer,
-                progressColor:
-                    Theme.of(context).colorScheme.onSecondaryContainer,
-                percent: exerciseIndex / exercises.length,
-                center: Text(
-                  "$exerciseIndex/${exercises.length}",
-                  style: TextStyle(fontSize: 14),
-                ),
-              )
-            ],
-          ),
-        )),
+            )),
       ),
     );
   }
