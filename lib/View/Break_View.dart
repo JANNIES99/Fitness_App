@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
 class BreakView extends StatefulWidget {
@@ -14,6 +15,7 @@ class _BreakViewState extends State<BreakView> {
   int initalTime = 30;
   int timeForTimer = 30;
   String timeToDisplay = "30";
+  final FlutterTts _flutterTts = FlutterTts();
 
   void endTheBreak() {
     timeForTimer = 0;
@@ -43,6 +45,9 @@ class _BreakViewState extends State<BreakView> {
               timeToDisplay = timeForTimer.toString();
             }
           }
+          if (timeForTimer <= 10) {
+            _flutterTts.speak(timeForTimer.toString());
+          }
         });
       },
     );
@@ -51,6 +56,7 @@ class _BreakViewState extends State<BreakView> {
   @override
   void initState() {
     startTimer();
+    _flutterTts.setVoice({"name": "es-us-x-sfb-local", "locale": "es-US"});
     super.initState();
   }
 
