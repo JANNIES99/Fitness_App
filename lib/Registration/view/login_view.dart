@@ -160,7 +160,7 @@ class _LoginViewState extends State<LoginView> {
                           borderRadius: BorderRadius.circular(15),
                         ),
                         child: Image.asset(
-                          "assets/images/google.png",
+                          "images/Registration/google.png",
                           width: 50,
                           height: 50,
                         ),

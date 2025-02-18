@@ -1,0 +1,90 @@
+{
+  "project_info": {
+    "project_number": "103016701862",
+    "project_id": "login-database-7793d",
+    "storage_bucket": "login-database-7793d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:103016701862:android:00a0451c954d22ba55f967",
+        "android_client_info": {
+          "package_name": "com.example.fitness_loginpage"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "103016701862-jbbvpek4i2ti1uq8d9vjkg467c00vm8p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fitness_loginpage",
+            "certificate_hash": "6bc870384ebc5fbae1bd5b2661877aa7dc19a6ef"
+          }
+        },
+        {
+          "client_id": "103016701862-addfusb79c9rrqi69oancudqd0j3a8g3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLSUBmfkc8QRvqcM9QWvSeQybnzqvaLyM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "103016701862-addfusb79c9rrqi69oancudqd0j3a8g3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "103016701862-3h3daltnuajp8tv6dldo8mbvu9jhpeu2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.fitnessLoginpage"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:103016701862:android:32f4f7699710424655f967",
+        "android_client_info": {
+          "package_name": "com.example.fitnessapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "103016701862-addfusb79c9rrqi69oancudqd0j3a8g3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLSUBmfkc8QRvqcM9QWvSeQybnzqvaLyM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "103016701862-addfusb79c9rrqi69oancudqd0j3a8g3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "103016701862-3h3daltnuajp8tv6dldo8mbvu9jhpeu2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.fitnessLoginpage"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
