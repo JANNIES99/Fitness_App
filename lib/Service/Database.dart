@@ -24,7 +24,7 @@ class DatabaseService {
   final _tableName2 = "Profile";
   Future<Database> getDataBase() async {
     final databaseDirPath = await getDatabasesPath();
-    final databasePath = join(databaseDirPath, "Exercise2_db.db");
+    final databasePath = join(databaseDirPath, "Exercise3_db.db");
     final database = await openDatabase(
       databasePath,
       onCreate: (db, version) {

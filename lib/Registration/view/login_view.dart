@@ -21,7 +21,8 @@ class _LoginViewState extends State<LoginView> {
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
 
-  bool isCheck = false;
+  bool isHidden = true;
+  IconData hiddenIcon = Icons.remove_red_eye_outlined;
   @override
   Widget build(BuildContext context) {
     var media = MediaQuery.of(context).size;
@@ -58,7 +59,7 @@ class _LoginViewState extends State<LoginView> {
                 RoundTextField(
                   controller: email,
                   hitText: "Email",
-                  icon: "assets/images/mail.png",
+                  icon: Icons.mail_outline_rounded,
                   keyboardType: TextInputType.emailAddress,
                 ),
                 SizedBox(
@@ -67,21 +68,26 @@ class _LoginViewState extends State<LoginView> {
                 RoundTextField(
                   controller: password,
                   hitText: "Password",
-                  icon: "assets/images/passwd.png",
-                  obscureText: true,
+                  icon: Icons.lock_outline_rounded,
+                  obscureText: isHidden,
                   rigtIcon: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        setState(() {
+                          if (isHidden) {
+                            hiddenIcon = Icons.remove_red_eye_rounded;
+                            isHidden = !isHidden;
+                          } else {
+                            hiddenIcon = Icons.remove_red_eye_outlined;
+                            isHidden = !isHidden;
+                          }
+                        });
+                      },
                       child: Container(
-                          alignment: Alignment.center,
-                          width: 20,
-                          height: 20,
-                          child: Image.asset(
-                            "assets/images/Hide-Password.png",
-                            width: 20,
-                            height: 20,
-                            fit: BoxFit.contain,
-                            color: TColor.gray,
-                          ))),
+                        alignment: Alignment.center,
+                        width: 20,
+                        height: 20,
+                        child: Icon(hiddenIcon),
+                      )),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,

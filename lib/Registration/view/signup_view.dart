@@ -60,7 +60,7 @@ class _SignUpViewState extends State<SignUpView> {
                   ),
                   RoundTextField(
                     hitText: 'First Name',
-                    icon: "assets/images/user_fn.png",
+                    icon: Icons.person_outline_rounded,
                     controller: fname,
                   ),
                   SizedBox(
@@ -68,7 +68,7 @@ class _SignUpViewState extends State<SignUpView> {
                   ),
                   RoundTextField(
                     hitText: "Last Name",
-                    icon: "assets/images/user_ln.png",
+                    icon: Icons.person_outline_rounded,
                     controller: lname,
                   ),
                   SizedBox(
@@ -76,7 +76,7 @@ class _SignUpViewState extends State<SignUpView> {
                   ),
                   RoundTextField(
                     hitText: "Email",
-                    icon: "assets/images/mail.png",
+                    icon: Icons.mail_outline_rounded,
                     keyboardType: TextInputType.emailAddress,
                     controller: email,
                   ),
@@ -85,7 +85,7 @@ class _SignUpViewState extends State<SignUpView> {
                   ),
                   RoundTextField(
                     hitText: "Password",
-                    icon: "assets/images/passwd.png",
+                    icon: Icons.lock_outline_rounded,
                     controller: password,
                     obscureText: true,
                     rigtIcon: TextButton(

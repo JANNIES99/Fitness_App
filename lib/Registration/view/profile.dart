@@ -139,7 +139,7 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
                       RoundTextField(
                         controller: txtDate,
                         hitText: displayDate,
-                        icon: "assets/images/Calendar.png",
+                        icon: Icons.calendar_today_rounded,
                         rigtIcon: IconButton(
                             onPressed: () {
                               _openDatePicker();
@@ -151,10 +151,10 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
                       ),
                       Row(
                         children: [
-                          Expanded(
+                          const Expanded(
                             child: RoundTextField(
                               hitText: "Your Weight",
-                              icon: "assets/images/weight-scale 1.png",
+                              icon: Icons.monitor_weight_rounded,
                             ),
                           ),
                           const SizedBox(
@@ -183,10 +183,10 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
                       ),
                       Row(
                         children: [
-                          Expanded(
+                          const Expanded(
                             child: RoundTextField(
                               hitText: "Your Height",
-                              icon: "assets/images/Swap.png",
+                              icon: Icons.swap_vert_rounded,
                             ),
                           ),
                           const SizedBox(
@@ -203,7 +203,7 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
                               borderRadius: BorderRadius.circular(15),
                             ),
                             child: Text(
-                              "CM",
+                              "M",
                               style:
                                   TextStyle(color: TColor.white, fontSize: 12),
                             ),
