@@ -13,8 +13,10 @@ class StartingExercise extends StatefulWidget {
       required this.goBackHome,
       required this.workedToday,
       required this.exercise,
+      required this.buff,
       super.key});
   final String exercise;
+  final double buff;
   final List<Exercise> exercises;
   final void Function() goBackHome;
   final void Function(double, String) workedToday;
@@ -38,6 +40,7 @@ class _StartingExerciseState extends State<StartingExercise> {
           switchPrevious: switchToPreviousExercise,
           switchView: switchToBreakView,
           goBack: goBack,
+          buff: widget.buff,
           exercise: widget.exercises[selector]);
     });
   }
@@ -51,6 +54,7 @@ class _StartingExerciseState extends State<StartingExercise> {
             switchPrevious: switchToPreviousExercise,
             switchView: switchToBreakView,
             goBack: goBack,
+            buff: widget.buff,
             exercise: widget.exercises[selector]);
       });
     }

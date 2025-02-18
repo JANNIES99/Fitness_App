@@ -10,10 +10,12 @@ class Typesofexercises extends StatelessWidget {
       required this.goBackHome,
       required this.workedToday,
       required this.exerciseIndex,
+      required this.buff,
       super.key});
   final String exercise;
   final List<List<Exercise>> exercises;
   final int exerciseIndex;
+  final double buff;
   final void Function() goBackHome;
   final void Function(double, String) workedToday;
   @override
@@ -29,6 +31,7 @@ class Typesofexercises extends StatelessWidget {
                 exercises: exercises[exerciseIndex],
                 goBackHome: goBackHome,
                 workedToday: workedToday,
+                buff: buff,
               ),
             ),
           );

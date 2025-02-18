@@ -10,10 +10,12 @@ class DoingExercise extends StatefulWidget {
       required this.switchView,
       required this.exercise,
       required this.goBack,
+      required this.buff,
       super.key});
   final void Function() switchPrevious;
   final void Function() switchView;
   final void Function() goBack;
+  final double buff;
   final Exercise exercise;
 
   @override
@@ -106,11 +108,13 @@ class _DoingExerciseState extends State<DoingExercise> {
               ],
             ),
             if (widget.exercise.isRepetition)
-              Text("x${widget.exercise.repetition}"),
+              Text(
+                  "x${widget.exercise.repetition! + (widget.exercise.repetition! * widget.buff).round()}"),
             if (widget.exercise.isTimer)
               ExerciseTimer(
                 minute: widget.exercise.minute as int,
-                seconds: widget.exercise.second as int,
+                seconds: widget.exercise.second! +
+                    (widget.exercise.second! * widget.buff).round(),
               ),
             Align(
               alignment: Alignment.bottomCenter,

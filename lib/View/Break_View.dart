@@ -20,6 +20,7 @@ class _BreakViewState extends State<BreakView> {
   void endTheBreak() {
     timeForTimer = 0;
     widget.switchView();
+    _flutterTts.stop();
   }
 
   void startTimer() {
@@ -44,6 +45,9 @@ class _BreakViewState extends State<BreakView> {
             } else {
               timeToDisplay = timeForTimer.toString();
             }
+          }
+          if (timeForTimer == 15) {
+            _flutterTts.speak("Get ready for the next exercise:");
           }
           if (timeForTimer <= 10) {
             _flutterTts.speak(timeForTimer.toString());

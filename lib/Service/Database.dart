@@ -24,14 +24,14 @@ class DatabaseService {
   final _tableName2 = "Profile";
   Future<Database> getDataBase() async {
     final databaseDirPath = await getDatabasesPath();
-    final databasePath = join(databaseDirPath, "Exercise1_db.db");
+    final databasePath = join(databaseDirPath, "Exercise2_db.db");
     final database = await openDatabase(
       databasePath,
       onCreate: (db, version) {
         db.execute(
             'CREATE TABLE $_tableName1(DATES TEXT PRIMARY KEY,CALORIES REAL)');
         db.execute(
-            'CREATE TABLE $_tableName2(GMAIL TEXT PRIMARY KEY,FIRSTNAME TEXT,LASTNAME TEXT,IMAGE BLOB,GENDER TEXT,DOB TEXT,WEIGHT REAL,HEIGHT REAL,STREAKS INTEGER,FULLBODY INTEGER,ABS INTEGER,ARMS INTEGER,CHEST INTEGER,BACK INTEGER,LEGS INTEGER,YOGA INTEGER)');
+            'CREATE TABLE $_tableName2(GMAIL TEXT PRIMARY KEY,FIRSTNAME TEXT,LASTNAME TEXT,IMAGE BLOB,EXPERIENCE INTEGER,GENDER TEXT,DOB TEXT,WEIGHT REAL,HEIGHT REAL,STREAKS INTEGER,FULLBODY INTEGER,ABS INTEGER,ARMS INTEGER,CHEST INTEGER,BACK INTEGER,LEGS INTEGER,YOGA INTEGER)');
       },
       version: 1,
     );
@@ -77,6 +77,7 @@ class DatabaseService {
       "HEIGHT": userInfo.height,
       "WEIGHT": userInfo.weight,
       "STREAKS": userInfo.streak,
+      "EXPERIENCE": userInfo.experience,
       "FULLBODY": userInfo.exerciseIndex["FULLBODY"]!,
       "ABS": userInfo.exerciseIndex["ABS"]!,
       "ARMS": userInfo.exerciseIndex["ARMS"]!,
@@ -103,6 +104,7 @@ class DatabaseService {
       gender: data["GENDER"] as String,
       height: data["HEIGHT"] as double,
       weight: data["WEIGHT"] as double,
+      experience: data["EXPERIENCE"] as int,
       dob: format.parse(data["DOB"] as String),
       exerciseIndex: {
         "FULLBODY": data["FULLBODY"] as int,
@@ -128,6 +130,7 @@ class DatabaseService {
       "HEIGHT": userInfo.height,
       "WEIGHT": userInfo.weight,
       "STREAKS": userInfo.streak,
+      "EXPERIENCE": userInfo.experience,
       "FULLBODY": userInfo.exerciseIndex["FULLBODY"]!,
       "ABS": userInfo.exerciseIndex["ABS"]!,
       "ARMS": userInfo.exerciseIndex["ARMS"]!,

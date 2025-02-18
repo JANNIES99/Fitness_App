@@ -20,6 +20,7 @@ class HomeView extends StatefulWidget {
 class _HomeViewState extends State<HomeView> {
   final DatabaseService _databaseService = DatabaseService.instance;
   final Map<DateTime, double> allDaysWorked = {};
+  double buff = 0;
   void setAllDaysWorked() async {
     final map = await _databaseService.getAllDaysWorked();
     setState(() {
@@ -92,6 +93,17 @@ class _HomeViewState extends State<HomeView> {
   void initState() {
     setState(() {
       setAllDaysWorked();
+      double weightclass =
+          widget.user.weight / (widget.user.height * widget.user.height);
+      if (weightclass <= 18.5) {
+        buff += -0.1;
+      }
+      if (weightclass >= 30) {
+        buff += -0.2;
+      } else if (weightclass >= 25) {
+        buff += -0.1;
+      }
+      buff += widget.user.experience * 0.1;
     });
     super.initState();
   }
@@ -201,6 +213,7 @@ class _HomeViewState extends State<HomeView> {
                 exercises: fullBodyExercise,
                 goBackHome: goToHome,
                 workedToday: workedToday,
+                buff: buff,
                 exerciseIndex: widget.user.exerciseIndex["FULLBODY"]!,
               ),
               Typesofexercises(
@@ -208,6 +221,7 @@ class _HomeViewState extends State<HomeView> {
                 exercises: armBodyExercise,
                 goBackHome: goToHome,
                 workedToday: workedToday,
+                buff: buff,
                 exerciseIndex: widget.user.exerciseIndex["ARMS"]!,
               ),
               Typesofexercises(
@@ -215,6 +229,7 @@ class _HomeViewState extends State<HomeView> {
                 exercises: absExercise,
                 goBackHome: goToHome,
                 workedToday: workedToday,
+                buff: buff,
                 exerciseIndex: widget.user.exerciseIndex["ABS"]!,
               ),
             ],

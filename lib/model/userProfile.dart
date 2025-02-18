@@ -12,6 +12,7 @@ class UserProfile {
     required this.height,
     required this.weight,
     required this.dob,
+    required this.experience,
     required this.exerciseIndex,
     this.image,
   });
@@ -24,6 +25,7 @@ class UserProfile {
   double height;
   double weight;
   final DateTime dob;
+  final int experience;
   Map<String, int> exerciseIndex;
 }
 
@@ -35,6 +37,7 @@ UserProfile defaultUser = UserProfile(
   gender: "Male",
   height: 1.73,
   weight: 70,
+  experience: 3,
   dob: endOfTheDay(DateTime.now()),
   exerciseIndex: {
     "FULLBODY": 0,

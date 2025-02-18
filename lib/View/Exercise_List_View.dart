@@ -10,9 +10,11 @@ class ExerciseListView extends StatelessWidget {
       required this.goBackHome,
       required this.workedToday,
       required this.exercise,
+      required this.buff,
       super.key});
   final List<Exercise> exercises;
   final String exercise;
+  final double buff;
   final void Function() goBackHome;
   final void Function(double, String) workedToday;
 
@@ -44,13 +46,17 @@ class ExerciseListView extends StatelessWidget {
       persistentFooterButtons: [
         ElevatedButton(
             onPressed: () {
-              Navigator.of(context).push(MaterialPageRoute(
+              Navigator.of(context).push(
+                MaterialPageRoute(
                   builder: (context) => StartingExercise(
-                        exercise: exercise,
-                        exercises: exercises,
-                        goBackHome: goBackHome,
-                        workedToday: workedToday,
-                      )));
+                    exercise: exercise,
+                    exercises: exercises,
+                    goBackHome: goBackHome,
+                    workedToday: workedToday,
+                    buff: buff,
+                  ),
+                ),
+              );
             },
             child: const Text("Start"))
       ],
