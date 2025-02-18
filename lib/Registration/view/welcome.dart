@@ -95,7 +95,7 @@ class _WelcomeViewState extends State<WelcomeView> {
                       return false;
                     });
                   },
-                  child: Text("Logout")),
+                  child: const Text("Logout")),
               const Spacer(),
 
               //        RoundButton(
