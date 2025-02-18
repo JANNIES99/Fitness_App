@@ -25,7 +25,8 @@ class _SignUpViewState extends State<SignUpView> {
   TextEditingController password = TextEditingController();
   TextEditingController fname = TextEditingController();
   TextEditingController lname = TextEditingController();
-
+  bool isHidden = true;
+  IconData hiddenIcon = Icons.remove_red_eye_outlined;
   bool isCheck = false;
   @override
   Widget build(BuildContext context) {
@@ -87,9 +88,19 @@ class _SignUpViewState extends State<SignUpView> {
                     hitText: "Password",
                     icon: Icons.lock_outline_rounded,
                     controller: password,
-                    obscureText: true,
+                    obscureText: isHidden,
                     rigtIcon: TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          setState(() {
+                            if (isHidden) {
+                              hiddenIcon = Icons.remove_red_eye_rounded;
+                              isHidden = !isHidden;
+                            } else {
+                              hiddenIcon = Icons.remove_red_eye_outlined;
+                              isHidden = !isHidden;
+                            }
+                          });
+                        },
                         //  {
                         //   setState(() {
                         //               // ignore: unused_label
@@ -101,13 +112,7 @@ class _SignUpViewState extends State<SignUpView> {
                             alignment: Alignment.center,
                             width: 20,
                             height: 20,
-                            child: Image.asset(
-                              "assets/images/Hide-Password.png",
-                              width: 20,
-                              height: 20,
-                              fit: BoxFit.contain,
-                              color: TColor.gray,
-                            ))),
+                            child: Icon(hiddenIcon))),
                   ),
                   SizedBox(
                     height: media.width * 0.03,
