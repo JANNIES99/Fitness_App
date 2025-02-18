@@ -99,9 +99,9 @@ class _HomeViewState extends State<HomeView> {
         buff += -0.1;
       }
       if (weightclass >= 30) {
-        buff += -0.2;
+        buff += -0.3;
       } else if (weightclass >= 25) {
-        buff += -0.1;
+        buff += -0.2;
       }
       buff += widget.user.experience * 0.1;
     });
