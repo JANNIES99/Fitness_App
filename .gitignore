@@ -11,7 +11,8 @@
 migrate_working_dir/
 
 #secretValues
-/lib/functions/secretValues.dart
+**/lib/firebase_options.dart
+
 
 # IntelliJ related
 *.iml
@@ -44,3 +45,6 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+lib/firebase_options.dart
+lib/firebase_options.dart
+lib/firebase_options.dart
