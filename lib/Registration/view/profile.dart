@@ -1,5 +1,6 @@
 import 'package:fitnessapp/Registration/view/goal.dart';
 import 'package:flutter/material.dart';
+import 'package:group_button/group_button.dart';
 
 import '../common/color_extention.dart';
 // ignore: unused_import
@@ -18,6 +19,7 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
   DateTime? _selectedData = DateTime.now();
   String displayDate = "Date of Brith";
   String? selectedGender;
+  int experienceValue = 0;
 
   void _openDatePicker() async {
     final now = DateTime.now();
@@ -245,6 +247,51 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
                         //     ],
                         //   ),
                         // )
+                        Container(
+                          margin: EdgeInsets.all(media.width * 0.04),
+                          padding: const EdgeInsets.all(10),
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                              color: TColor.lightGray,
+                              borderRadius: BorderRadius.circular(15)),
+                          child: GroupButton(
+                            isRadio: true,
+                            onSelected: (value, index, isSelected) =>
+                                experienceValue = int.parse(value),
+                            buttons: const [
+                              "0",
+                              "1",
+                              "2",
+                              "3",
+                              "4",
+                              "5",
+                              "6",
+                              "7",
+                              "8",
+                              "9",
+                              "10",
+                            ],
+                            buttonBuilder: (selected, value, context) =>
+                                Container(
+                              margin: const EdgeInsets.all(10),
+                              height: 30,
+                              width: 30,
+                              decoration: BoxDecoration(
+                                  color: selected
+                                      ? Theme.of(context).colorScheme.primary
+                                      : Theme.of(context)
+                                          .colorScheme
+                                          .onSecondary,
+                                  borderRadius: BorderRadius.circular(20)),
+                              child: Align(
+                                alignment: Alignment.center,
+                                child: Text((value),
+                                    style:
+                                        Theme.of(context).textTheme.bodySmall),
+                              ),
+                            ),
+                          ),
+                        )
                       ],
                     ),
                   ),
