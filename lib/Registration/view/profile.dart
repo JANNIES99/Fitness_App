@@ -143,15 +143,24 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
                         SizedBox(
                           height: media.width * 0.04,
                         ),
-                        RoundTextField(
-                          controller: txtDate,
-                          hitText: displayDate,
-                          icon: Icons.calendar_today_rounded,
-                          rigtIcon: IconButton(
-                              onPressed: () {
-                                _openDatePicker();
-                              },
-                              icon: const Icon(Icons.calendar_month_outlined)),
+                        Container(
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                              color: TColor.lightGray,
+                              borderRadius: BorderRadius.circular(15)),
+                          child: Row(
+                            children: [
+                              IconButton(
+                                  onPressed: () {
+                                    _openDatePicker();
+                                  },
+                                  icon: const Icon(
+                                      Icons.calendar_month_outlined)),
+                              Text(displayDate,
+                                  style: TextStyle(
+                                      color: TColor.gray, fontSize: 12)),
+                            ],
+                          ),
                         ),
                         SizedBox(
                           height: media.width * 0.04,
@@ -259,7 +268,6 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
                             onSelected: (value, index, isSelected) =>
                                 experienceValue = int.parse(value),
                             buttons: const [
-                              "0",
                               "1",
                               "2",
                               "3",

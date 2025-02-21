@@ -1,4 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
+import 'package:fitnessapp/Registration/view/profile.dart';
 import 'package:fitnessapp/Registration/view/splashscreen.dart';
 import 'package:fitnessapp/firebase_options.dart';
 import 'package:fitnessapp/model/Theme.dart';
@@ -27,8 +28,11 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        theme: lightThemeData,
-        darkTheme: darkThemeData,
-        home: const Splashscreen());
+      theme: lightThemeData,
+      darkTheme: darkThemeData,
+      home: CompleteProfileView() //const Splashscreen()
+
+      ,
+    );
   }
 }
