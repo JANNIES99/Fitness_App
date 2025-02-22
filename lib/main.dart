@@ -1,5 +1,4 @@
 import 'package:firebase_core/firebase_core.dart';
-import 'package:fitnessapp/Registration/view/profile.dart';
 import 'package:fitnessapp/Registration/view/splashscreen.dart';
 import 'package:fitnessapp/firebase_options.dart';
 import 'package:fitnessapp/model/Theme.dart';
