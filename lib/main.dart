@@ -30,9 +30,9 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       theme: lightThemeData,
       darkTheme: darkThemeData,
-      home: CompleteProfileView() //const Splashscreen()
-
-      ,
+      home:
+          // CompleteProfileView(gmail: "Hello@gmail.com")
+          const Splashscreen(),
     );
   }
 }

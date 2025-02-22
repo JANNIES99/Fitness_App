@@ -1,4 +1,6 @@
-import 'package:fitnessapp/Registration/view/goal.dart';
+import 'package:fitnessapp/Service/Database.dart';
+import 'package:fitnessapp/View/home_view.dart';
+import 'package:fitnessapp/model/userProfile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:group_button/group_button.dart';
@@ -9,7 +11,8 @@ import '../common_widget/round_button.dart';
 import '../common_widget/round_textfield.dart';
 
 class CompleteProfileView extends StatefulWidget {
-  const CompleteProfileView({super.key});
+  const CompleteProfileView({required this.gmail, super.key});
+  final String gmail;
 
   @override
   State<CompleteProfileView> createState() => _CompleteProfileViewState();
@@ -18,10 +21,70 @@ class CompleteProfileView extends StatefulWidget {
 class _CompleteProfileViewState extends State<CompleteProfileView> {
   TextEditingController firstName = TextEditingController();
   TextEditingController lastName = TextEditingController();
-  DateTime? _selectedData = DateTime.now();
+  TextEditingController height = TextEditingController();
+  TextEditingController weight = TextEditingController();
+  DateTime? _selectedData;
   String displayDate = "Date of Brith";
   String? selectedGender;
-  int experienceValue = 0;
+  int? experienceValue;
+
+  void registerUser() {
+    if (firstName.text != "" &&
+        lastName.text != "" &&
+        _selectedData != null &&
+        selectedGender != null &&
+        experienceValue != null &&
+        height.text != "" &&
+        weight.text != "") {
+      UserProfile user = UserProfile(
+        gmail: widget.gmail,
+        firstName: firstName.text,
+        lastName: lastName.text,
+        streak: 0,
+        gender: selectedGender!,
+        height: double.parse(height.text),
+        weight: double.parse(weight.text),
+        dob: _selectedData!,
+        experience: experienceValue!,
+        exerciseIndex: {
+          "FULLBODY": 0,
+          "ABS": 0,
+          "ARMS": 0,
+          "CHEST": 0,
+          "BACK": 0,
+          "LEGS": 0,
+          "YOGA": 0
+        },
+      );
+      final DatabaseService _databaseService = DatabaseService.instance;
+      _databaseService.addToProfile(user);
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
+        return HomeView(user: user);
+      }));
+    } else {
+      showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: Text(
+            "Invalid Input",
+            style:
+                Theme.of(context).textTheme.bodyMedium!.copyWith(fontSize: 18),
+          ),
+          content: const Text(
+              "Plase make sure you have valid First Name, Last Name, Gender, D.O.B, Weight, Height, and Experience that was entered"),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: const Text("Okay"),
+            )
+          ],
+        ),
+      );
+      return;
+    }
+  }
 
   void _openDatePicker() async {
     final now = DateTime.now();
@@ -53,10 +116,7 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
         RoundButton(
             title: "Next >",
             onPressed: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const WhatYourGoalView()));
+              registerUser();
             }),
       ],
       backgroundColor: TColor.white,
@@ -198,6 +258,7 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
                                 keyboardType:
                                     const TextInputType.numberWithOptions(
                                         decimal: true),
+                                controller: weight,
                               ),
                             ),
                             const SizedBox(
@@ -237,6 +298,7 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
                                 keyboardType:
                                     const TextInputType.numberWithOptions(
                                         decimal: true),
+                                controller: height,
                               ),
                             ),
                             const SizedBox(

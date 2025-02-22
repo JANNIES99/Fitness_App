@@ -52,7 +52,10 @@ class SignupController {
         // Redirect to CompleteProfileView
         Navigator.pushAndRemoveUntil(
           context,
-          MaterialPageRoute(builder: (context) => CompleteProfileView()),
+          MaterialPageRoute(
+              builder: (context) => CompleteProfileView(
+                    gmail: email,
+                  )),
           (route) => false, // Remove all previous routes from the stack
         );
         print("Account created successfully");

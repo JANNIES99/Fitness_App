@@ -22,7 +22,9 @@ class LoginController {
 
       Navigator.pushAndRemoveUntil(context,
           MaterialPageRoute(builder: (context) {
-        return CompleteProfileView();
+        return CompleteProfileView(
+          gmail: email,
+        );
       }), (route) {
         return false;
       } // Remove all previous routes from the stack
