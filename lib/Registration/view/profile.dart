@@ -1,5 +1,6 @@
 import 'package:fitnessapp/Registration/view/goal.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:group_button/group_button.dart';
 
 import '../common/color_extention.dart';
@@ -15,7 +16,8 @@ class CompleteProfileView extends StatefulWidget {
 }
 
 class _CompleteProfileViewState extends State<CompleteProfileView> {
-  TextEditingController txtDate = TextEditingController();
+  TextEditingController firstName = TextEditingController();
+  TextEditingController lastName = TextEditingController();
   DateTime? _selectedData = DateTime.now();
   String displayDate = "Date of Brith";
   String? selectedGender;
@@ -91,6 +93,23 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
                     padding: const EdgeInsets.symmetric(horizontal: 15.0),
                     child: Column(
                       children: [
+                        RoundTextField(
+                          hitText: "First Name",
+                          icon: Icons.person,
+                          controller: firstName,
+                        ),
+                        SizedBox(
+                          height: media.width * 0.04,
+                        ),
+                        RoundTextField(
+                          hitText: "Last Name",
+                          icon: Icons.person_outline_rounded,
+                          controller: lastName,
+                        ),
+
+                        SizedBox(
+                          height: media.width * 0.04,
+                        ),
                         Container(
                           decoration: BoxDecoration(
                               color: TColor.lightGray,
@@ -128,8 +147,9 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
                                     isExpanded: true,
                                     hint: Text(
                                       "Choose Gender",
-                                      style: TextStyle(
-                                          color: TColor.gray, fontSize: 12),
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .labelSmall,
                                     ),
                                   ),
                                 ),
@@ -157,8 +177,8 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
                                   icon: const Icon(
                                       Icons.calendar_month_outlined)),
                               Text(displayDate,
-                                  style: TextStyle(
-                                      color: TColor.gray, fontSize: 12)),
+                                  style:
+                                      Theme.of(context).textTheme.labelSmall),
                             ],
                           ),
                         ),
@@ -167,10 +187,17 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
                         ),
                         Row(
                           children: [
-                            const Expanded(
+                            Expanded(
                               child: RoundTextField(
                                 hitText: "Your Weight",
                                 icon: Icons.monitor_weight_rounded,
+                                inputFormat: [
+                                  FilteringTextInputFormatter.allow(
+                                      RegExp(r'^\d*\.?\d*'))
+                                ],
+                                keyboardType:
+                                    const TextInputType.numberWithOptions(
+                                        decimal: true),
                               ),
                             ),
                             const SizedBox(
@@ -199,10 +226,17 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
                         ),
                         Row(
                           children: [
-                            const Expanded(
+                            Expanded(
                               child: RoundTextField(
                                 hitText: "Your Height",
                                 icon: Icons.swap_vert_rounded,
+                                inputFormat: [
+                                  FilteringTextInputFormatter.allow(
+                                      RegExp(r'^\d*\.?\d*'))
+                                ],
+                                keyboardType:
+                                    const TextInputType.numberWithOptions(
+                                        decimal: true),
                               ),
                             ),
                             const SizedBox(
@@ -227,9 +261,8 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
                           ],
                         ),
                         SizedBox(
-                          height: media.width * 0.07,
+                          height: media.width * 0.04,
                         ),
-                        const Text("What is your experience with exercise"),
                         // Container(
                         //   decoration: BoxDecoration(
                         //       color: TColor.lightGray,
@@ -257,47 +290,72 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
                         //   ),
                         // )
                         Container(
-                          margin: EdgeInsets.all(media.width * 0.04),
                           padding: const EdgeInsets.all(10),
                           width: double.infinity,
                           decoration: BoxDecoration(
                               color: TColor.lightGray,
                               borderRadius: BorderRadius.circular(15)),
-                          child: GroupButton(
-                            isRadio: true,
-                            onSelected: (value, index, isSelected) =>
-                                experienceValue = int.parse(value),
-                            buttons: const [
-                              "1",
-                              "2",
-                              "3",
-                              "4",
-                              "5",
-                              "6",
-                              "7",
-                              "8",
-                              "9",
-                              "10",
-                            ],
-                            buttonBuilder: (selected, value, context) =>
-                                Container(
-                              margin: const EdgeInsets.all(10),
-                              height: 30,
-                              width: 30,
-                              decoration: BoxDecoration(
-                                  color: selected
-                                      ? Theme.of(context).colorScheme.primary
-                                      : Theme.of(context)
-                                          .colorScheme
-                                          .onSecondary,
-                                  borderRadius: BorderRadius.circular(20)),
-                              child: Align(
-                                alignment: Alignment.center,
-                                child: Text((value),
+                          child: Column(
+                            children: [
+                              Row(
+                                children: [
+                                  const Icon(
+                                    Icons.fitness_center,
+                                    size: 20,
+                                  ),
+                                  const SizedBox(
+                                    width: 10,
+                                  ),
+                                  Text(
+                                    "Rate your exercise background",
                                     style:
-                                        Theme.of(context).textTheme.bodySmall),
+                                        Theme.of(context).textTheme.labelSmall,
+                                  ),
+                                ],
                               ),
-                            ),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              GroupButton(
+                                isRadio: true,
+                                onSelected: (value, index, isSelected) =>
+                                    experienceValue = int.parse(value),
+                                buttons: const [
+                                  "1",
+                                  "2",
+                                  "3",
+                                  "4",
+                                  "5",
+                                  "6",
+                                  "7",
+                                  "8",
+                                  "9",
+                                  "10",
+                                ],
+                                buttonBuilder: (selected, value, context) =>
+                                    Container(
+                                  margin: const EdgeInsets.all(10),
+                                  height: 30,
+                                  width: 30,
+                                  decoration: BoxDecoration(
+                                      color: selected
+                                          ? Theme.of(context)
+                                              .colorScheme
+                                              .primary
+                                          : Theme.of(context)
+                                              .colorScheme
+                                              .onSecondary,
+                                      borderRadius: BorderRadius.circular(20)),
+                                  child: Align(
+                                    alignment: Alignment.center,
+                                    child: Text((value),
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .bodySmall),
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
                         )
                       ],

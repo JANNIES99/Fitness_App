@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../common/color_extention.dart';
 
@@ -10,6 +11,7 @@ class RoundTextField extends StatelessWidget {
   final Widget? rigtIcon;
   final bool obscureText;
   final EdgeInsets? margin;
+  final List<TextInputFormatter>? inputFormat;
   const RoundTextField(
       {super.key,
       required this.hitText,
@@ -18,6 +20,7 @@ class RoundTextField extends StatelessWidget {
       this.margin,
       this.keyboardType,
       this.obscureText = false,
+      this.inputFormat,
       this.rigtIcon});
 
   @override
@@ -30,6 +33,7 @@ class RoundTextField extends StatelessWidget {
         style: const TextStyle(color: Colors.black),
         controller: controller,
         keyboardType: keyboardType,
+        inputFormatters: inputFormat,
         obscureText: obscureText,
         decoration: InputDecoration(
             contentPadding:
@@ -43,7 +47,7 @@ class RoundTextField extends StatelessWidget {
                 width: 20,
                 height: 20,
                 child: Icon(icon)),
-            hintStyle: TextStyle(color: TColor.gray, fontSize: 12)),
+            hintStyle: Theme.of(context).textTheme.labelSmall),
       ),
     );
   }

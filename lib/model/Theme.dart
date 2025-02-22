@@ -36,17 +36,17 @@ ThemeData lightThemeData = ThemeData().copyWith(
   colorScheme: lightColorScheme,
   brightness: Brightness.light,
   textTheme: const TextTheme().copyWith(
-    headlineLarge: const TextStyle(
-        color: Colors.black, fontSize: 25, fontWeight: FontWeight.bold),
-    headlineMedium: TextStyle(
-        color: lightColorScheme.primary,
-        fontSize: 20,
-        fontWeight: FontWeight.bold),
-    headlineSmall: const TextStyle(
-        color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
-    bodyMedium: const TextStyle(color: Colors.black, fontSize: 16),
-    bodySmall: const TextStyle(color: Colors.black, fontSize: 16),
-  ),
+      headlineLarge: const TextStyle(
+          color: Colors.black, fontSize: 25, fontWeight: FontWeight.bold),
+      headlineMedium: TextStyle(
+          color: lightColorScheme.primary,
+          fontSize: 20,
+          fontWeight: FontWeight.bold),
+      headlineSmall: const TextStyle(
+          color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
+      bodyMedium: const TextStyle(color: Colors.black, fontSize: 16),
+      bodySmall: const TextStyle(color: Colors.black, fontSize: 16),
+      labelSmall: const TextStyle(color: Colors.grey, fontSize: 14)),
   cardColor: lightColorScheme.secondaryContainer,
 );
 
@@ -56,16 +56,16 @@ ThemeData darkThemeData = ThemeData().copyWith(
   colorScheme: darkColorScheme,
   brightness: Brightness.dark,
   textTheme: const TextTheme().copyWith(
-    headlineLarge: const TextStyle(
-        color: Colors.black, fontSize: 25, fontWeight: FontWeight.bold),
-    headlineMedium: TextStyle(
-        color: darkColorScheme.primary,
-        fontSize: 20,
-        fontWeight: FontWeight.bold),
-    headlineSmall: const TextStyle(
-        color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
-    bodyMedium: const TextStyle(color: Colors.black, fontSize: 16),
-    bodySmall: const TextStyle(color: Colors.black, fontSize: 16),
-  ),
+      headlineLarge: const TextStyle(
+          color: Colors.black, fontSize: 25, fontWeight: FontWeight.bold),
+      headlineMedium: TextStyle(
+          color: darkColorScheme.primary,
+          fontSize: 20,
+          fontWeight: FontWeight.bold),
+      headlineSmall: const TextStyle(
+          color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
+      bodyMedium: const TextStyle(color: Colors.black, fontSize: 16),
+      bodySmall: const TextStyle(color: Colors.black, fontSize: 16),
+      labelSmall: const TextStyle(color: Colors.grey, fontSize: 14)),
   cardColor: darkColorScheme.secondaryContainer,
 );
