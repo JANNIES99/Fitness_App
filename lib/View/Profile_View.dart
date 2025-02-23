@@ -15,9 +15,21 @@ class _ProfileViewState extends State<ProfileView> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          widget.userData.firstName,
+          "Profile",
           style: Theme.of(context).textTheme.headlineLarge,
         ),
+      ),
+      body: Column(
+        children: [
+          Text(
+            "Name",
+            style: Theme.of(context).textTheme.headlineMedium,
+          ),
+          Text(
+            "${widget.userData.firstName} ${widget.userData.lastName}",
+            style: Theme.of(context).textTheme.bodyMedium,
+          )
+        ],
       ),
     );
   }
