@@ -1,6 +1,9 @@
 import 'dart:typed_data';
 
 import 'package:fitnessapp/functions/dateTime.dart';
+import 'package:intl/intl.dart';
+
+final DateFormat formatter = DateFormat.yMd();
 
 class UserProfile {
   UserProfile({
@@ -27,6 +30,8 @@ class UserProfile {
   final DateTime dob;
   final int experience;
   Map<String, int> exerciseIndex;
+
+  String get formateedDate => formatter.format(dob);
 }
 
 UserProfile defaultUser = UserProfile(

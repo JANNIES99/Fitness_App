@@ -19,17 +19,51 @@ class _ProfileViewState extends State<ProfileView> {
           style: Theme.of(context).textTheme.headlineLarge,
         ),
       ),
-      body: Column(
-        children: [
-          Text(
-            "Name",
-            style: Theme.of(context).textTheme.headlineMedium,
-          ),
-          Text(
-            "${widget.userData.firstName} ${widget.userData.lastName}",
-            style: Theme.of(context).textTheme.bodyMedium,
-          )
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Text(
+              "Name",
+              style: Theme.of(context).textTheme.headlineMedium,
+            ),
+            const SizedBox(height: 10),
+            Text(
+              "${widget.userData.firstName} ${widget.userData.lastName}",
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
+            const SizedBox(height: 10),
+            Text(
+              "Date of Birth",
+              style: Theme.of(context).textTheme.headlineMedium,
+            ),
+            const SizedBox(height: 10),
+            Text(
+              widget.userData.formateedDate,
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
+            const SizedBox(height: 10),
+            Text(
+              "Height",
+              style: Theme.of(context).textTheme.headlineMedium,
+            ),
+            const SizedBox(height: 10),
+            Text(
+              "${widget.userData.height} Meters",
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
+            const SizedBox(height: 10),
+            Text(
+              "Weight",
+              style: Theme.of(context).textTheme.headlineMedium,
+            ),
+            const SizedBox(height: 10),
+            Text(
+              "${widget.userData.weight} KG",
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
+            const SizedBox(height: 10),
+          ],
+        ),
       ),
     );
   }
