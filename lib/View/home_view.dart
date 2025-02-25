@@ -132,16 +132,26 @@ class _HomeViewState extends State<HomeView> {
         actions: [
           GestureDetector(
             onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => ProfileView(userData: widget.user)));
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => ProfileView(
+                    userData: widget.user,
+                    addImage: addImage,
+                  ),
+                ),
+              );
             },
             child: Container(
-              height: 50,
+              height: 70,
+              width: 70,
               decoration: const BoxDecoration(
                 shape: BoxShape.circle,
                 color: Colors.grey,
               ),
-              child: const Center(child: Text("Default\n Picture")),
+              child: widget.user.image != null
+                  ? CircleAvatar(
+                      backgroundImage: MemoryImage(widget.user.image!))
+                  : const Center(child: Text("Default\n Picture")),
             ),
           ),
           const SizedBox(width: 10)

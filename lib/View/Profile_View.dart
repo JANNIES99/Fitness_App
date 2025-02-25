@@ -6,8 +6,10 @@ import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
 
 class ProfileView extends StatefulWidget {
-  const ProfileView({required this.userData, super.key});
+  const ProfileView(
+      {required this.userData, required this.addImage, super.key});
   final UserProfile userData;
+  final void Function(Uint8List) addImage;
 
   @override
   State<ProfileView> createState() => _ProfileViewState();
@@ -21,6 +23,7 @@ class _ProfileViewState extends State<ProfileView> {
       File img = File(image.path);
       setState(() {
         widget.userData.image = img.readAsBytesSync();
+        widget.addImage(img.readAsBytesSync());
         Navigator.of(context).pop();
       });
     } on PlatformException catch (e) {
