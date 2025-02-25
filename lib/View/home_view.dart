@@ -151,7 +151,8 @@ class _HomeViewState extends State<HomeView> {
               child: widget.user.image != null
                   ? CircleAvatar(
                       backgroundImage: MemoryImage(widget.user.image!))
-                  : const Center(child: Text("Default\n Picture")),
+                  : const CircleAvatar(
+                      backgroundImage: AssetImage("images/default.jpeg")),
             ),
           ),
           const SizedBox(width: 10)

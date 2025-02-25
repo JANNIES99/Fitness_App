@@ -1,3 +1,5 @@
+import 'dart:typed_data';
+
 import 'package:fitnessapp/functions/dateTime.dart';
 import 'package:fitnessapp/model/userProfile.dart';
 import 'package:intl/intl.dart';
@@ -86,6 +88,9 @@ class DatabaseService {
       "LEGS": userInfo.exerciseIndex["LEGS"]!,
       "YOGA": userInfo.exerciseIndex["YOGA"]!,
     };
+    if (userInfo.image != null) {
+      map["IMAGE"] = userInfo.image!;
+    }
     print(map);
     final db = await database;
     db.insert(_tableName2, map);
@@ -101,6 +106,7 @@ class DatabaseService {
       firstName: data["FIRSTNAME"] as String,
       lastName: data["LASTNAME"] as String,
       streak: data["STREAKS"] as int,
+      image: data["IMAGE"] as Uint8List?,
       gender: data["GENDER"] as String,
       height: data["HEIGHT"] as double,
       weight: data["WEIGHT"] as double,
@@ -139,6 +145,9 @@ class DatabaseService {
       "LEGS": userInfo.exerciseIndex["LEGS"]!,
       "YOGA": userInfo.exerciseIndex["YOGA"]!,
     };
+    if (userInfo.image != null) {
+      map["IMAGE"] = userInfo.image!;
+    }
     db.update(_tableName2, map,
         where: "GMAIL = ?", whereArgs: [userInfo.gmail]);
   }

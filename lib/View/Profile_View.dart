@@ -90,7 +90,8 @@ class _ProfileViewState extends State<ProfileView> {
                     color: Colors.grey,
                   ),
                   child: widget.userData.image == null
-                      ? const Center(child: Text("Default Picture"))
+                      ? const CircleAvatar(
+                          backgroundImage: AssetImage("images/default.jpeg"))
                       : CircleAvatar(
                           backgroundImage: MemoryImage(widget.userData.image!),
                         ),
