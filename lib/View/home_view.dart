@@ -1,5 +1,8 @@
+import 'dart:typed_data';
+
 import 'package:fitnessapp/Service/Database.dart';
 import 'package:fitnessapp/View/Calender.dart';
+import 'package:fitnessapp/View/Profile_View.dart';
 import 'package:fitnessapp/Widget/chart/chart.dart';
 import 'package:fitnessapp/Widget/typesOfExercise.dart';
 import 'package:fitnessapp/functions/dateTime.dart';
@@ -43,6 +46,13 @@ class _HomeViewState extends State<HomeView> {
           widget.user.streak = 0;
         }
       }
+    });
+  }
+
+  void addImage(Uint8List image) {
+    setState(() {
+      widget.user.image = image;
+      _databaseService.updateUserProfile(widget.user);
     });
   }
 
@@ -119,6 +129,23 @@ class _HomeViewState extends State<HomeView> {
           "Fitness App",
           style: Theme.of(context).textTheme.headlineLarge,
         ),
+        actions: [
+          GestureDetector(
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => ProfileView(userData: widget.user)));
+            },
+            child: Container(
+              height: 50,
+              decoration: const BoxDecoration(
+                shape: BoxShape.circle,
+                color: Colors.grey,
+              ),
+              child: const Center(child: Text("Default\n Picture")),
+            ),
+          ),
+          const SizedBox(width: 10)
+        ],
       ),
       body: SafeArea(
         child: SingleChildScrollView(
