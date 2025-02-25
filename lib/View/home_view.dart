@@ -103,7 +103,10 @@ class _HomeViewState extends State<HomeView> {
       } else if (weightclass >= 25) {
         buff += -0.2;
       }
-      buff += (widget.user.experience - 4) * 0.1;
+      if (widget.user.gender == "Female") {
+        buff += -0.25;
+      }
+      buff += (widget.user.experience - 3) * 0.1;
     });
     super.initState();
   }
