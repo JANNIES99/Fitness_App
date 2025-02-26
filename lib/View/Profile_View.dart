@@ -4,6 +4,7 @@ import 'package:fitnessapp/model/userProfile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class ProfileView extends StatefulWidget {
   const ProfileView(
@@ -24,12 +25,72 @@ class _ProfileViewState extends State<ProfileView> {
       setState(() {
         widget.userData.image = img.readAsBytesSync();
         widget.addImage(img.readAsBytesSync());
-        Navigator.of(context).pop();
       });
     } on PlatformException catch (e) {
       print(e);
-      Navigator.of(context).pop();
       return;
+    }
+  }
+
+  Future _galleryImage() async {
+    Navigator.of(context).pop();
+    var status = await Permission.storage.status;
+    if (status.isGranted) {
+      _pickImage(ImageSource.gallery);
+    } else {
+      requestStorageAccess();
+    }
+  }
+
+  void requestStorageAccess() async {
+    var status = await Permission.photos.request();
+    if (status.isGranted) {
+      _pickImage(ImageSource.gallery);
+    } else if (status.isDenied) {
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+        duration: Duration(seconds: 3),
+        margin: EdgeInsets.all(10),
+        content: Text("Gallery access denied"),
+        behavior: SnackBarBehavior.floating,
+      ));
+    } else if (status.isPermanentlyDenied) {
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+        duration: Duration(seconds: 3),
+        margin: EdgeInsets.all(10),
+        content: Text("Gallery access Permanently denied"),
+        behavior: SnackBarBehavior.floating,
+      ));
+    }
+  }
+
+  Future _cameraImage() async {
+    Navigator.of(context).pop();
+    var status = await Permission.camera.status;
+    if (status.isGranted) {
+      _pickImage(ImageSource.camera);
+    } else {
+      requestStorageAccess();
+    }
+  }
+
+  void requestCameraAccess() async {
+    var status = await Permission.camera.request();
+    if (status.isGranted) {
+      _pickImage(ImageSource.camera);
+    } else if (status.isDenied) {
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+        duration: Duration(seconds: 3),
+        margin: EdgeInsets.all(10),
+        content: Text("Camera access denied"),
+        behavior: SnackBarBehavior.floating,
+      ));
+    } else if (status.isPermanentlyDenied) {
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+        duration: Duration(seconds: 3),
+        margin: EdgeInsets.all(10),
+        content: Text("Camera access Permanently denied"),
+        behavior: SnackBarBehavior.floating,
+      ));
     }
   }
 
@@ -50,7 +111,9 @@ class _ProfileViewState extends State<ProfileView> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               GestureDetector(
-                onTap: () {
+                onTap: () async {
+                  Permission.camera.request();
+                  Permission.photos.request();
                   showModalBottomSheet(
                     context: context,
                     isScrollControlled: true,
@@ -63,7 +126,7 @@ class _ProfileViewState extends State<ProfileView> {
                           children: [
                             ElevatedButton(
                               onPressed: () {
-                                _pickImage(ImageSource.gallery);
+                                _galleryImage();
                               },
                               child: Text("Gallery"),
                             ),
@@ -72,7 +135,7 @@ class _ProfileViewState extends State<ProfileView> {
                             const SizedBox(height: 10),
                             ElevatedButton(
                               onPressed: () {
-                                _pickImage(ImageSource.camera);
+                                _cameraImage();
                               },
                               child: Text("Use Camera"),
                             ),
