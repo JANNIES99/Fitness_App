@@ -1,12 +1,13 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:flutter_tts/flutter_tts.dart';
+//import 'package:flutter_tts/flutter_tts.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
 class BreakView extends StatefulWidget {
-  const BreakView({required this.switchView, super.key});
-
-  final void Function() switchView;
+  const BreakView(
+      {required this.switchView, required this.selector, super.key});
+  final int selector;
+  final void Function(int) switchView;
   @override
   State<BreakView> createState() => _BreakViewState();
 }
@@ -15,12 +16,12 @@ class _BreakViewState extends State<BreakView> {
   int initalTime = 30;
   int timeForTimer = 30;
   String timeToDisplay = "30";
-  final FlutterTts _flutterTts = FlutterTts();
+  //final FlutterTts _flutterTts = FlutterTts();
 
   void endTheBreak() {
     timeForTimer = 0;
-    widget.switchView();
-    _flutterTts.stop();
+    //_flutterTts.stop();
+    widget.switchView(widget.selector);
   }
 
   void startTimer() {
@@ -46,12 +47,12 @@ class _BreakViewState extends State<BreakView> {
               timeToDisplay = timeForTimer.toString();
             }
           }
-          if (timeForTimer == 15) {
-            _flutterTts.speak("Get ready for the next exercise:");
-          }
-          if (timeForTimer <= 10) {
-            _flutterTts.speak(timeForTimer.toString());
-          }
+          // if (timeForTimer == 15) {
+          //   _flutterTts.speak("Get ready for the next exercise:");
+          // }
+          // if (timeForTimer <= 10) {
+          //   _flutterTts.speak(timeForTimer.toString());
+          // }
         });
       },
     );
@@ -60,8 +61,13 @@ class _BreakViewState extends State<BreakView> {
   @override
   void initState() {
     startTimer();
-    _flutterTts.setVoice({"name": "es-us-x-sfb-local", "locale": "es-US"});
+    //_flutterTts.setVoice({"name": "es-us-x-sfb-local", "locale": "es-US"});
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
   }
 
   @override

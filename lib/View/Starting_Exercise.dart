@@ -33,9 +33,8 @@ class _StartingExerciseState extends State<StartingExercise> {
     Navigator.of(context).pop();
   }
 
-  void switchToExerciseView() {
+  void switchToExerciseView(int selector) {
     setState(() {
-      selector++;
       frontView = DoingExercise(
           switchPrevious: switchToPreviousExercise,
           switchView: switchToBreakView,
@@ -65,6 +64,7 @@ class _StartingExerciseState extends State<StartingExercise> {
     if (selector + 1 < widget.exercises.length) {
       setState(() {
         frontView = BreakView(
+          selector: ++selector,
           switchView: switchToExerciseView,
         );
       });
@@ -77,6 +77,7 @@ class _StartingExerciseState extends State<StartingExercise> {
   void initState() {
     setState(() {
       frontView = BreakView(
+        selector: ++selector,
         switchView: switchToExerciseView,
       );
       super.initState();
