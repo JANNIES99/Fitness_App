@@ -8,9 +8,13 @@ import 'package:permission_handler/permission_handler.dart';
 
 class ProfileView extends StatefulWidget {
   const ProfileView(
-      {required this.userData, required this.addImage, super.key});
+      {required this.userData,
+      required this.addImage,
+      required this.logOut,
+      super.key});
   final UserProfile userData;
   final void Function(Uint8List) addImage;
+  final void Function() logOut;
 
   @override
   State<ProfileView> createState() => _ProfileViewState();
@@ -199,6 +203,14 @@ class _ProfileViewState extends State<ProfileView> {
               Text(
                 "${widget.userData.weight} KG",
                 style: Theme.of(context).textTheme.bodyMedium,
+              ),
+              const SizedBox(height: 10),
+              ElevatedButton(
+                onPressed: () => widget.logOut(),
+                child: Text(
+                  "Log Out",
+                  style: Theme.of(context).textTheme.bodyMedium,
+                ),
               ),
               const SizedBox(height: 10),
             ],

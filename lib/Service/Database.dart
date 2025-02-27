@@ -151,4 +151,9 @@ class DatabaseService {
     db.update(_tableName2, map,
         where: "GMAIL = ?", whereArgs: [userInfo.gmail]);
   }
+
+  void deleteUserProfile(UserProfile userInfo) async {
+    final db = await database;
+    db.delete(_tableName2, where: "GMAIL = ?", whereArgs: [userInfo.gmail]);
+  }
 }

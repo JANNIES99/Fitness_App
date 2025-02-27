@@ -1,5 +1,6 @@
 import 'dart:typed_data';
 
+import 'package:fitnessapp/Registration/view/splashscreen.dart';
 import 'package:fitnessapp/Service/Database.dart';
 import 'package:fitnessapp/View/Calender.dart';
 import 'package:fitnessapp/View/Profile_View.dart';
@@ -47,6 +48,14 @@ class _HomeViewState extends State<HomeView> {
         }
       }
     });
+  }
+
+  void logOut() {
+    Navigator.pop(context);
+    _databaseService.deleteUserProfile(widget.user);
+    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
+      return const Splashscreen();
+    }));
   }
 
   void addImage(Uint8List image) {
@@ -137,6 +146,7 @@ class _HomeViewState extends State<HomeView> {
                   builder: (context) => ProfileView(
                     userData: widget.user,
                     addImage: addImage,
+                    logOut: logOut,
                   ),
                 ),
               );
