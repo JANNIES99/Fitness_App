@@ -1,7 +1,6 @@
 import 'package:fitnessapp/View/Break_View.dart';
 import 'package:fitnessapp/View/Doing_Exercise.dart';
 import 'package:fitnessapp/functions/dateTime.dart';
-import 'package:fitnessapp/functions/globalVariables.dart';
 import 'package:fitnessapp/model/Exercise.dart';
 import 'package:fitnessapp/model/Theme.dart';
 import 'package:flutter/material.dart';
@@ -14,12 +13,14 @@ class StartingExercise extends StatefulWidget {
       required this.workedToday,
       required this.exercise,
       required this.buff,
+      required this.daysWorked,
       super.key});
   final String exercise;
   final double buff;
   final List<Exercise> exercises;
   final void Function() goBackHome;
   final void Function(double, String) workedToday;
+  final Map<DateTime, List<Object>> daysWorked;
   @override
   State<StartingExercise> createState() => _StartingExerciseState();
 }
@@ -27,7 +28,8 @@ class StartingExercise extends StatefulWidget {
 class _StartingExerciseState extends State<StartingExercise> {
   Widget? frontView;
   int selector = -1;
-  double caloriesBurned = daysWorked[endOfTheDay(DateTime.now())]![1] as double;
+  late double caloriesBurned =
+      widget.daysWorked[endOfTheDay(DateTime.now())]![1] as double;
 
   void goBack() {
     Navigator.of(context).pop();

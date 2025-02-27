@@ -69,6 +69,11 @@ class DatabaseService {
     return map;
   }
 
+  void deleteAllDaysWorked() async {
+    final db = await database;
+    db.delete(_tableName1);
+  }
+
   void addToProfile(UserProfile userInfo) async {
     Map<String, Object> map = {
       "GMAIL": userInfo.gmail,

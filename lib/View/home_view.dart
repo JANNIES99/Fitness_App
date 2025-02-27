@@ -7,7 +7,6 @@ import 'package:fitnessapp/View/Profile_View.dart';
 import 'package:fitnessapp/Widget/chart/chart.dart';
 import 'package:fitnessapp/Widget/typesOfExercise.dart';
 import 'package:fitnessapp/functions/dateTime.dart';
-import 'package:fitnessapp/functions/globalVariables.dart';
 import 'package:fitnessapp/model/ExercisePlain/absExercisePlain.dart';
 import 'package:fitnessapp/model/ExercisePlain/armExercisePlain.dart';
 import 'package:fitnessapp/model/ExercisePlain/fullBodyExercisePlain.dart';
@@ -22,6 +21,16 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
+  final Map<DateTime, List<Object>> daysWorked = {
+    findSunday(DateTime.now()): [false, 0.0],
+    findMonday(DateTime.now()): [false, 0.0],
+    findTuesday(DateTime.now()): [false, 0.0],
+    findWednesday(DateTime.now()): [false, 0.0],
+    findThursday(DateTime.now()): [false, 0.0],
+    findFriday(DateTime.now()): [false, 0.0],
+    findSaturday(DateTime.now()): [false, 0.0],
+  };
+
   final DatabaseService _databaseService = DatabaseService.instance;
   final Map<DateTime, double> allDaysWorked = {};
   double buff = 0;
@@ -53,6 +62,7 @@ class _HomeViewState extends State<HomeView> {
   void logOut() {
     Navigator.pop(context);
     _databaseService.deleteUserProfile(widget.user);
+    _databaseService.deleteAllDaysWorked();
     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
       return const Splashscreen();
     }));
@@ -265,6 +275,7 @@ class _HomeViewState extends State<HomeView> {
                 goBackHome: goToHome,
                 workedToday: workedToday,
                 buff: buff,
+                daysWorked: daysWorked,
                 exerciseIndex: widget.user.exerciseIndex["FULLBODY"]!,
               ),
               Typesofexercises(
@@ -273,6 +284,7 @@ class _HomeViewState extends State<HomeView> {
                 goBackHome: goToHome,
                 workedToday: workedToday,
                 buff: buff,
+                daysWorked: daysWorked,
                 exerciseIndex: widget.user.exerciseIndex["ARMS"]!,
               ),
               Typesofexercises(
@@ -281,6 +293,7 @@ class _HomeViewState extends State<HomeView> {
                 goBackHome: goToHome,
                 workedToday: workedToday,
                 buff: buff,
+                daysWorked: daysWorked,
                 exerciseIndex: widget.user.exerciseIndex["ABS"]!,
               ),
             ],

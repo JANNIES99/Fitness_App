@@ -11,12 +11,14 @@ class ExerciseListView extends StatelessWidget {
       required this.workedToday,
       required this.exercise,
       required this.buff,
+      required this.daysWorked,
       super.key});
   final List<Exercise> exercises;
   final String exercise;
   final double buff;
   final void Function() goBackHome;
   final void Function(double, String) workedToday;
+  final Map<DateTime, List<Object>> daysWorked;
 
   @override
   Widget build(BuildContext context) {
@@ -54,6 +56,7 @@ class ExerciseListView extends StatelessWidget {
                     goBackHome: goBackHome,
                     workedToday: workedToday,
                     buff: buff,
+                    daysWorked: daysWorked,
                   ),
                 ),
               );

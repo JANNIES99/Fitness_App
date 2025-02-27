@@ -11,6 +11,7 @@ class Typesofexercises extends StatelessWidget {
       required this.workedToday,
       required this.exerciseIndex,
       required this.buff,
+      required this.daysWorked,
       super.key});
   final String exercise;
   final List<List<Exercise>> exercises;
@@ -18,6 +19,7 @@ class Typesofexercises extends StatelessWidget {
   final double buff;
   final void Function() goBackHome;
   final void Function(double, String) workedToday;
+  final Map<DateTime, List<Object>> daysWorked;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -32,6 +34,7 @@ class Typesofexercises extends StatelessWidget {
                 goBackHome: goBackHome,
                 workedToday: workedToday,
                 buff: buff,
+                daysWorked: daysWorked,
               ),
             ),
           );
