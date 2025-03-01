@@ -1,7 +1,7 @@
 import 'package:fitnessapp/model/Exercise.dart';
 import 'package:fitnessapp/model/allExercise.dart';
 
-List<List<Exercise>> armBodyExercise = [
+List<List<Exercise>> backExercise = [
   [
     flutterKick,
     cobraStretch,
