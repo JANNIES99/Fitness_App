@@ -26,48 +26,51 @@ class Typesofexercises extends StatelessWidget {
       padding: const EdgeInsets.all(10),
       child: GestureDetector(
         onTap: () {
-          Navigator.of(context).push(
-            MaterialPageRoute(
-              builder: (context) => ExerciseListView(
-                exercise: exercise,
-                exercises: exercises[exerciseIndex],
-                goBackHome: goBackHome,
-                workedToday: workedToday,
-                buff: buff,
-                daysWorked: daysWorked,
+          if (exerciseIndex < exercises.length) {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => ExerciseListView(
+                  exercise: exercise,
+                  exercises: exercises[exerciseIndex],
+                  goBackHome: goBackHome,
+                  workedToday: workedToday,
+                  buff: buff,
+                  daysWorked: daysWorked,
+                ),
               ),
-            ),
-          );
+            );
+          }
         },
         child: Card(
-            color: Theme.of(context).cardColor,
-            child: Container(
-              margin: const EdgeInsets.all(10),
-              width: double.infinity,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const SizedBox(width: 5),
-                  Text("$exercise EXERCISES",
-                      style: Theme.of(context).textTheme.headlineSmall),
-                  CircularPercentIndicator(
-                    radius: 27,
-                    backgroundColor: Theme.of(context).colorScheme.onSecondary,
-                    progressColor:
-                        Theme.of(context).colorScheme.onSecondaryContainer,
-                    percent: exerciseIndex / exercises.length,
-                    center: Container(
-                      padding: const EdgeInsets.all(5),
-                      child: Text(
-                        "$exerciseIndex/${exercises.length}",
-                        style: const TextStyle(fontSize: 14),
-                      ),
+          color: Theme.of(context).cardColor,
+          child: Container(
+            margin: const EdgeInsets.all(10),
+            width: double.infinity,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const SizedBox(width: 5),
+                Text("$exercise EXERCISES",
+                    style: Theme.of(context).textTheme.headlineSmall),
+                CircularPercentIndicator(
+                  radius: 27,
+                  backgroundColor: Theme.of(context).colorScheme.onSecondary,
+                  progressColor:
+                      Theme.of(context).colorScheme.onSecondaryContainer,
+                  percent: exerciseIndex / exercises.length,
+                  center: Container(
+                    padding: const EdgeInsets.all(5),
+                    child: Text(
+                      "$exerciseIndex/${exercises.length}",
+                      style: const TextStyle(fontSize: 14),
                     ),
-                  )
-                ],
-              ),
-            )),
+                  ),
+                )
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }
