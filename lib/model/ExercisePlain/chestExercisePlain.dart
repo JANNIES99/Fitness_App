@@ -1,7 +1,7 @@
 import 'package:fitnessapp/model/Exercise.dart';
 import 'package:fitnessapp/model/allExercise.dart';
 
-List<List<Exercise>> backExercise = [
+List<List<Exercise>> chestExercise = [
   [armCircle, mountainClimber, jumpingJacks, pushUp, plank],
   [sitUp, jumpSquat, legRaise, pushUp, plank],
   [pushUp, superman, tricepsSideStretch, squats, abdominalCrunches],

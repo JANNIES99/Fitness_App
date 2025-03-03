@@ -10,6 +10,7 @@ import 'package:fitnessapp/functions/dateTime.dart';
 import 'package:fitnessapp/model/ExercisePlain/absExercisePlain.dart';
 import 'package:fitnessapp/model/ExercisePlain/armExercisePlain.dart';
 import 'package:fitnessapp/model/ExercisePlain/backExercisePlain.dart';
+import 'package:fitnessapp/model/ExercisePlain/chestExercisePlain.dart';
 import 'package:fitnessapp/model/ExercisePlain/fullBodyExercisePlain.dart';
 import 'package:fitnessapp/model/userProfile.dart';
 import 'package:flutter/material.dart';
@@ -305,6 +306,15 @@ class _HomeViewState extends State<HomeView> {
                 buff: buff,
                 daysWorked: daysWorked,
                 exerciseIndex: widget.user.exerciseIndex["BACK"]!,
+              ),
+              Typesofexercises(
+                exercise: "CHEST",
+                exercises: chestExercise,
+                goBackHome: goToHome,
+                workedToday: workedToday,
+                buff: buff,
+                daysWorked: daysWorked,
+                exerciseIndex: widget.user.exerciseIndex["CHEST"]!,
               ),
             ],
           ),
