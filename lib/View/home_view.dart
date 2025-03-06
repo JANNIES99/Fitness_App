@@ -1,4 +1,9 @@
+import 'dart:typed_data';
+
+import 'package:fitnessapp/Registration/view/splashscreen.dart';
+import 'package:fitnessapp/Service/Database.dart';
 import 'package:fitnessapp/View/sections/fitness_section.dart';
+import 'package:fitnessapp/View/sections/profile_section.dart';
 import 'package:fitnessapp/model/userProfile.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -17,13 +22,39 @@ class _HomeViewState extends State<HomeView> {
     Colors.blueAccent,
     Colors.blueGrey
   ];
+  late List<Widget> tabSections;
   late Color currentTabColor;
+  late Widget currentTabSection;
   @override
   void initState() {
     setState(() {
       currentTabColor = tabColor[0];
+      tabSections = [
+        FitnessSection(user: widget.user),
+        FitnessSection(user: widget.user),
+        FitnessSection(user: widget.user),
+        ProfileSection(
+            userData: widget.user, addImage: addImage, logOut: logOut),
+      ];
+      currentTabSection = tabSections[0];
     });
     super.initState();
+  }
+
+  final DatabaseService _databaseService = DatabaseService.instance;
+  void logOut() {
+    _databaseService.deleteUserProfile(widget.user);
+    _databaseService.deleteAllDaysWorked();
+    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
+      return const Splashscreen();
+    }));
+  }
+
+  void addImage(Uint8List image) {
+    setState(() {
+      widget.user.image = image;
+      _databaseService.updateUserProfile(widget.user);
+    });
   }
 
   @override
@@ -38,6 +69,7 @@ class _HomeViewState extends State<HomeView> {
             onTabChange: (index) {
               setState(() {
                 currentTabColor = tabColor[index];
+                currentTabSection = tabSections[index];
               });
             },
             tabs: const [
@@ -67,6 +99,6 @@ class _HomeViewState extends State<HomeView> {
             style: Theme.of(context).textTheme.headlineLarge,
           ),
         ),
-        body: FitnessSection(user: widget.user));
+        body: currentTabSection);
   }
 }
