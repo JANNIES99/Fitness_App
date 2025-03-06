@@ -14,6 +14,7 @@ import 'package:fitnessapp/model/ExercisePlain/chestExercisePlain.dart';
 import 'package:fitnessapp/model/ExercisePlain/fullBodyExercisePlain.dart';
 import 'package:fitnessapp/model/userProfile.dart';
 import 'package:flutter/material.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({required this.user, super.key});
@@ -145,6 +146,27 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: const GNav(
+        gap: 8,
+        tabs: [
+          GButton(
+            icon: Icons.fitness_center,
+            text: "Exercise",
+          ),
+          GButton(
+            icon: Icons.accessibility_new_sharp,
+            text: "Yoga",
+          ),
+          GButton(
+            icon: Icons.food_bank_rounded,
+            text: "Recipes",
+          ),
+          GButton(
+            icon: Icons.person,
+            text: "Profile",
+          )
+        ],
+      ),
       appBar: AppBar(
         title: Text(
           "Fitness App",
