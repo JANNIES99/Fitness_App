@@ -1,9 +1,11 @@
+import 'package:fitnessapp/View/sections/fitness_section.dart';
+import 'package:fitnessapp/model/userProfile.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
 class HomeView extends StatefulWidget {
-  const HomeView({super.key});
-
+  const HomeView({required this.user, super.key});
+  final UserProfile user;
   @override
   State<HomeView> createState() => _HomeViewState();
 }
@@ -68,6 +70,6 @@ class _HomeViewState extends State<HomeView> {
             style: Theme.of(context).textTheme.headlineLarge,
           ),
         ),
-        body: Placeholder());
+        body: FitnessSection(user: widget.user));
   }
 }
