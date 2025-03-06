@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:fitnessapp/model/userProfile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

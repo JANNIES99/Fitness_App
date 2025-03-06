@@ -30,12 +30,9 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     return Scaffold(
         bottomNavigationBar: Container(
-          color: Colors.black,
           padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
           child: GNav(
             padding: const EdgeInsets.all(15),
-            backgroundColor: Colors.black,
-            color: Colors.white,
             gap: 8,
             tabBackgroundColor: currentTabColor,
             onTabChange: (index) {
