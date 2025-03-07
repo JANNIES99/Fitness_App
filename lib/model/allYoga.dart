@@ -52,8 +52,14 @@ List<Yoga> allYoga = [
       second: 30),
   Yoga(
       name: "Ardha Matsyendrasana",
-      image: Image.asset("images/Yoga/Ardha Matsyendrasana.png"),
+      image: Image.asset("images/Yoga/Ardha-Matsyendrasana.png"),
       instructions:
           "Start by sitting on the floor with your legs extended straight in front of you. \nBend your right knee and place your right foot flat on the floor, crossing it over your left leg. \nBring your left leg's foot toward your right hip, keeping your left knee on the floor. \nInhale, lengthen your spine, and sit up tall. \nExhale and twist your torso to the right, placing your left elbow on the outside of your right knee. \nBring your right hand to the floor behind you, fingers pointing away from your body. \nKeep your spine long and your chest open, deepening the twist with each exhale. \nGaze over your right shoulder or keep your neck relaxed in a neutral position.",
+      second: 30),
+  Yoga(
+      name: "Ardha Navasana",
+      image: Image.asset("images/Yoga/Ardha-Navasana.jpeg"),
+      instructions:
+          "\nStart by sitting on the floor with your knees bent and your feet flat on the ground. \nLean back slightly and engage your core muscles. \nLift your feet off the floor, bringing your shins parallel to the ground, with your knees bent at a 90-degree angle. \nExtend your arms straight forward at shoulder height, palms facing each other. \nKeep your back straight, avoiding rounding your spine, and engage your core to maintain balance. \nHold the position while breathing deeply, keeping your gaze forward.",
       second: 30),
 ];
