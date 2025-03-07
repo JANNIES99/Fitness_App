@@ -44,4 +44,16 @@ List<Yoga> allYoga = [
       instructions:
           "Start in a standing position (Tadasana), then step one foot back about 3–4 feet. \nBend your front knee to 90 degrees, ensuring the knee is directly over the ankle. \nKeep your back leg straight and your back heel lifted off the floor. \nEngage your core to stabilize your body. \nReach your arms overhead with your palms facing each other or bring your hands to a prayer position at your chest. \nKeep your chest lifted and your gaze forward. \nPress your feet into the mat for stability, with the back leg strong and straight.",
       second: 30),
+  Yoga(
+      name: "Ardha Chandrasana",
+      image: Image.asset("images/Yoga/Ardha-Chandrasana.png"),
+      instructions:
+          "Start in Triangle Pose (Trikonasana) with your feet wide apart. \nBend your front knee, reaching your front hand to the floor or a block (just inside your front foot). \nShift your weight onto your front leg and lift your back leg parallel to the floor, keeping it straight. \nStack your hips and shoulders, opening your chest toward the ceiling. \nExtend your top arm straight up, with the palm facing forward. \nEngage your core and focus on a steady point to help with balance.",
+      second: 30),
+  Yoga(
+      name: "Ardha Matsyendrasana",
+      image: Image.asset("images/Yoga/Ardha Matsyendrasana.png"),
+      instructions:
+          "Start by sitting on the floor with your legs extended straight in front of you. \nBend your right knee and place your right foot flat on the floor, crossing it over your left leg. \nBring your left leg's foot toward your right hip, keeping your left knee on the floor. \nInhale, lengthen your spine, and sit up tall. \nExhale and twist your torso to the right, placing your left elbow on the outside of your right knee. \nBring your right hand to the floor behind you, fingers pointing away from your body. \nKeep your spine long and your chest open, deepening the twist with each exhale. \nGaze over your right shoulder or keep your neck relaxed in a neutral position.",
+      second: 30),
 ];
