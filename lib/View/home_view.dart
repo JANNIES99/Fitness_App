@@ -4,6 +4,7 @@ import 'package:fitnessapp/Registration/view/splashscreen.dart';
 import 'package:fitnessapp/Service/Database.dart';
 import 'package:fitnessapp/View/sections/fitness_section.dart';
 import 'package:fitnessapp/View/sections/profile_section.dart';
+import 'package:fitnessapp/View/sections/yoga_section.dart';
 import 'package:fitnessapp/model/userProfile.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -31,7 +32,7 @@ class _HomeViewState extends State<HomeView> {
       currentTabColor = tabColor[0];
       tabSections = [
         FitnessSection(user: widget.user),
-        FitnessSection(user: widget.user),
+        const YogaSection(),
         FitnessSection(user: widget.user),
         ProfileSection(
             userData: widget.user, addImage: addImage, logOut: logOut),
