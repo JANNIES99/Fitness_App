@@ -32,4 +32,16 @@ List<Yoga> allYoga = [
       instructions:
           "Start by standing tall with your feet hip-width apart. \n Shift your weight onto one foot (e.g., left foot). \nBend the opposite knee and place the sole of that foot on the inner thigh, calf, or ankle of the standing leg (avoid the knee). \nPress your foot into the leg and your leg into the foot for stability. \nBring your hands to a prayer position at your chest, or extend them overhead with palms facing each other. \nKeep your hips squared forward and your gaze focused on a fixed point to help with balance. \nEngage your core and hold the position.",
       second: 30),
+  Yoga(
+      name: "Adho Mukha Vrksasana",
+      image: Image.asset("images/Yoga/Adho-Mukha-Vrksasana.png"),
+      instructions:
+          "Start in a Downward Dog position with your feet hip-width apart and your hands shoulder-width apart. \nEngage your core and kick one leg up towards the ceiling, keeping the other leg grounded. \nUse your core and shoulders to support your weight as you shift your hips over your shoulders. \nAs you kick up, try to find balance by lifting both feet off the ground, coming into a handstand. \nOnce in the handstand, keep your body in a straight line from head to toes. \nPress firmly into the ground with your hands and engage your core to maintain balance. \nLook slightly between your hands to keep your neck neutral.",
+      second: 10),
+  Yoga(
+      name: "Anjaneyasana",
+      image: Image.asset("images/Yoga/Anjaneyasana.png"),
+      instructions:
+          "Start in a standing position (Tadasana), then step one foot back about 3–4 feet. \nBend your front knee to 90 degrees, ensuring the knee is directly over the ankle. \nKeep your back leg straight and your back heel lifted off the floor. \nEngage your core to stabilize your body. \nReach your arms overhead with your palms facing each other or bring your hands to a prayer position at your chest. \nKeep your chest lifted and your gaze forward. \nPress your feet into the mat for stability, with the back leg strong and straight.",
+      second: 30),
 ];
