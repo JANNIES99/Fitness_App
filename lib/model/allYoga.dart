@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 List<Yoga> allYoga = [
   Yoga(
-      name: "Downward Dog",
-      image: Image.asset("images/Yoga/downwarddog.jpg"),
+      name: "Adho Mukha Svanasana",
+      image: Image.asset("images/Yoga/Adho-Mukha-Svanasana.jpg"),
       instructions:
           "Lift your hips toward the ceiling, forming an upside-down V. \nStraighten your legs, keeping a slight bend if necessary. \nRelax your neck and let your head hang naturally. \nEngage your core muscles to support your spine. \nBreathe deeply, inhaling as you lengthen your spine and exhaling to deepen the stretch. \nHold the pose for the given time then bend your knees and return to tabletop.\nDepending on your experience and comfort level, you can hold it longer—up to 1 minute or more",
       second: 30),
