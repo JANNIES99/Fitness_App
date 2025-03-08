@@ -133,5 +133,29 @@ List<Yoga> allYoga = [
       image: Image.asset("images/Yoga/Navasana.jpeg"),
       instructions:
           "Start by sitting on the floor with your legs extended in front of you. \nBend your knees and place your feet flat on the floor, keeping them hip-width apart. \nLean back slightly, engaging your core, and lift your feet off the floor. \nStraighten your legs so that your body forms a V shape. \nKeep your spine straight and your chest open, avoiding rounding your back. \nExtend your arms parallel to the floor, palms facing each other. \nHold the pose, keeping your core engaged and breathing deeply. \nTo release, slowly lower your legs and come back to a seated position.",
+      second: 30),
+  Yoga(
+      name: "Padmasana",
+      image: Image.asset("images/Yoga/Padmasana.png"),
+      instructions:
+          "Sit on the floor with your legs extended straight in front of you. \nBend your right knee and bring your right foot towards your left thigh, placing it on your left hip crease. \nBend your left knee and bring your left foot on top of your right thigh, placing it near your right hip crease. \nKeep your spine straight and shoulders relaxed. \nRest your hands on your knees with your palms facing upward or in a mudra of your choice. \nClose your eyes and focus on your breath, maintaining a calm and steady posture. \nHold the position, ensuring your body stays aligned and balanced. \nTo release, gently unwind your legs and come back to a seated position.",
+      second: 300),
+  Yoga(
+      name: "Salamba Bhujangasana",
+      image: Image.asset("images/Yoga/Salamba-Bhujangasana.png"),
+      instructions:
+          "Begin by lying on your stomach with your legs extended straight behind you and the tops of your feet pressing into the floor. \nPlace your elbows directly beneath your shoulders, and keep your forearms parallel to each other on the ground. \nPress your palms gently into the floor, engaging your forearms and upper arms to lift your chest. \nKeep your elbows slightly bent and draw your shoulder blades down your back, opening the chest. \nLift your chest upward, keeping your lower body grounded on the mat. \nEngage your core and thighs, avoiding any arching in the lower back. \nHold the position, breathing deeply and relaxing your neck and face. \nTo release, slowly lower your chest back down to the mat.",
       second: 60),
+  Yoga(
+      name: "Supta Kapotasana",
+      image: Image.asset("images/Yoga/Supta-Kapotasana.jpeg"),
+      instructions:
+          "Begin by lying flat on your back with your legs extended and arms by your sides. \nBend your right knee and bring it toward your chest. \nCross your right ankle over your left thigh, just above the knee, to form a figure-four shape with your legs. \nThread your right hand through the space created by your right leg and interlace your fingers behind your left thigh or shin. \nGently draw your left leg toward your chest while keeping your head and shoulders relaxed on the floor. \nKeep your left foot flexed to protect your knee and avoid straining. \nHold the position, breathing deeply and relaxing into the stretch. \nTo release, gently lower your left leg and uncross your right ankle. Repeat on the other side.",
+      second: 60),
+  Yoga(
+      name: "Urdhva Mukha Svsnssana",
+      image: Image.asset("images/Yoga/Urdhva-Mukha-Svsnssana.png"),
+      instructions:
+          "Start by lying on your stomach with your legs extended behind you and the tops of your feet pressing into the floor. \nPlace your hands on the mat, palms down, directly beneath your shoulders with your fingers spread wide. \nPress into your hands and begin to straighten your arms, lifting your chest and upper body off the ground. \nRoll your shoulders back and down, away from your ears, opening your chest. \nEngage your legs, lifting your thighs off the floor and pressing the tops of your feet into the mat. \nKeep your arms straight and gaze slightly forward or upward, ensuring your neck stays long and relaxed. \nLift your hips slightly, but avoid arching the lower back excessively. \nHold the position, breathing deeply and keeping your core engaged.",
+      second: 30),
 ];
