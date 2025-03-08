@@ -158,4 +158,22 @@ List<Yoga> allYoga = [
       instructions:
           "Start by lying on your stomach with your legs extended behind you and the tops of your feet pressing into the floor. \nPlace your hands on the mat, palms down, directly beneath your shoulders with your fingers spread wide. \nPress into your hands and begin to straighten your arms, lifting your chest and upper body off the ground. \nRoll your shoulders back and down, away from your ears, opening your chest. \nEngage your legs, lifting your thighs off the floor and pressing the tops of your feet into the mat. \nKeep your arms straight and gaze slightly forward or upward, ensuring your neck stays long and relaxed. \nLift your hips slightly, but avoid arching the lower back excessively. \nHold the position, breathing deeply and keeping your core engaged.",
       second: 30),
+  Yoga(
+      name: "Ustrasana",
+      image: Image.asset("images/Yoga/Ustrasana.png"),
+      instructions:
+          "Begin by kneeling on the mat with your knees hip-width apart and your thighs perpendicular to the floor. \nPlace your hands on your hips, with your fingers pointing downward. \nInhale and gently lift your chest, lengthening your spine. \nExhale and slowly begin to lean back, reaching your hands one at a time to your heels. \nPress your hips forward as you arch your back, keeping your chest open and your head neutral or gently allowing your head to drop back. \nKeep your thighs engaged and avoid letting your lower back collapse. \nHold the position, breathing deeply and maintaining length in your spine. \nTo release, slowly bring your hands back to your hips, engage your core, and lift your chest back up to a neutral position.",
+      second: 30),
+  Yoga(
+      name: "Utthita Hasta Padangusthasana",
+      image: Image.asset("images/Yoga/Utthita-Hasta-Padangusthasana.png"),
+      instructions:
+          "Begin by standing tall in Mountain Pose with your feet together and arms by your sides. \nShift your weight onto your left leg and engage your core for balance. \nSlowly lift your right leg, keeping it straight, and hold your right big toe with your right hand. \nExtend your left arm out to the side for balance or place it on your waist. \nKeep your right leg straight and your torso upright as you open your right leg to the side. \nKeep your chest open, shoulders relaxed, and gaze forward or toward your raised foot. \nHold the position, breathing deeply, and engage your core to maintain stability. \nTo release, slowly lower your right leg back down to the ground and return to standing.",
+      second: 30),
+  Yoga(
+      name: "Utthita Parsvakonasana",
+      image: Image.asset("images/Yoga/Utthita-Parsvakonasana.png"),
+      instructions:
+          "Start in a standing position with your feet about 3-4 feet apart. \nTurn your right foot out 90 degrees and your left foot slightly inward. \nBend your right knee, making sure it is directly above your right ankle. \nExtend your arms out to the sides, parallel to the floor, with your palms facing down. \nExhale and reach your right hand forward, then lower it to the floor or a block beside your right foot. \nExtend your left arm straight up toward the ceiling, keeping both arms in one straight line. \nOpen your chest and rotate your torso slightly upward, gazing up at your left hand. \nEngage your legs and core, ensuring your left leg is strong and straight, and your hips remain open. \nHold the pose, breathing deeply and maintaining balance and stability. \nTo release, press into your feet and come back to standing, then repeat on the other side.",
+      second: 60),
 ];
