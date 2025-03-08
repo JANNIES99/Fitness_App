@@ -60,12 +60,30 @@ List<Yoga> allYoga = [
       name: "Ardha Navasana",
       image: Image.asset("images/Yoga/Ardha-Navasana.jpeg"),
       instructions:
-          "\nStart by sitting on the floor with your knees bent and your feet flat on the ground. \nLean back slightly and engage your core muscles. \nLift your feet off the floor, bringing your shins parallel to the ground, with your knees bent at a 90-degree angle. \nExtend your arms straight forward at shoulder height, palms facing each other. \nKeep your back straight, avoiding rounding your spine, and engage your core to maintain balance. \nHold the position while breathing deeply, keeping your gaze forward.",
+          "Start by sitting on the floor with your knees bent and your feet flat on the ground. \nLean back slightly and engage your core muscles. \nLift your feet off the floor, bringing your shins parallel to the ground, with your knees bent at a 90-degree angle. \nExtend your arms straight forward at shoulder height, palms facing each other. \nKeep your back straight, avoiding rounding your spine, and engage your core to maintain balance. \nHold the position while breathing deeply, keeping your gaze forward.",
       second: 30),
   Yoga(
-      name: "Ardha Navasana",
-      image: Image.asset("images/Yoga/Ardha-Navasana.jpeg"),
+      name: "Baddha Konasana",
+      image: Image.asset("images/Yoga/Baddha-Konasana.png"),
       instructions:
-          "\nStart by sitting on the floor with your knees bent and your feet flat on the ground. \nLean back slightly and engage your core muscles. \nLift your feet off the floor, bringing your shins parallel to the ground, with your knees bent at a 90-degree angle. \nExtend your arms straight forward at shoulder height, palms facing each other. \nKeep your back straight, avoiding rounding your spine, and engage your core to maintain balance. \nHold the position while breathing deeply, keeping your gaze forward.",
+          "Sit on the floor with your legs extended straight in front of you. \nBend your knees and bring the soles of your feet together, allowing your knees to fall open to the sides. \nHold your feet with your hands, keeping your spine straight and your chest open. \nGently press your knees down toward the floor while maintaining the stretch. \nBreathe deeply and hold the pose for 30 seconds to a few minutes.",
+      second: 60),
+  Yoga(
+      name: "Bakasana",
+      image: Image.asset("images/Yoga/Bakasana.png"),
+      instructions:
+          "Start in a squat position with your feet hip-width apart and your knees bent. \nPlace your hands on the floor in front of you, shoulder-width apart, with your fingers spread wide. \nShift your weight forward, lifting your hips and bending your elbows slightly. \nBring your knees toward your upper arms, keeping your gaze forward. \nEngage your core and slowly begin to lift your feet off the ground, balancing on your hands. \nHold the pose for a few breaths, then gently lower your feet back to the floor.",
+      second: 15),
+  Yoga(
+      name: "Balasana",
+      image: Image.asset("images/Yoga/Balasana.png"),
+      instructions:
+          "Begin in a kneeling position with your big toes touching and knees spread apart. \nSit back onto your heels, lowering your torso toward the floor. \nExtend your arms in front of you, placing your forehead on the mat. \nRelax your neck, face, and shoulders, allowing your body to release tension. \nBreathe deeply and hold the position",
+      second: 180),
+  Yoga(
+      name: "Bitilasana",
+      image: Image.asset("images/Yoga/Bitilasana.png"),
+      instructions:
+          "Start on your hands and knees in a tabletop position, with your wrists directly under your shoulders and knees under your hips. \nInhale as you arch your back, dropping your belly towards the floor, and lifting your chest and tailbone toward the sky. \nKeep your shoulders relaxed and away from your ears. \nGaze gently upward, without straining your neck. \nHold the pose for a few breaths, then exhale as you move into Marjaryasana (Cat Pose).",
       second: 30),
 ];
