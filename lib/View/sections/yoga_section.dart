@@ -1,3 +1,4 @@
+import 'package:fitnessapp/View/YogaView.dart';
 import 'package:fitnessapp/Widget/Yoga_Item.dart';
 import 'package:fitnessapp/model/allYoga.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +21,10 @@ class YogaSection extends StatelessWidget {
                   height: 20,
                 ),
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => Yogaview(yoga: allYoga[index])));
+                  },
                   child: YogaItem(yoga: allYoga[index]),
                 ),
               ],
