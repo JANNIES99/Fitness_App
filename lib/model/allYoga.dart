@@ -86,4 +86,22 @@ List<Yoga> allYoga = [
       instructions:
           "Start on your hands and knees in a tabletop position, with your wrists directly under your shoulders and knees under your hips. \nInhale as you arch your back, dropping your belly towards the floor, and lifting your chest and tailbone toward the sky. \nKeep your shoulders relaxed and away from your ears. \nGaze gently upward, without straining your neck. \nHold the pose for a few breaths, then exhale as you move into Marjaryasana (Cat Pose).",
       second: 30),
+  Yoga(
+      name: "Camatkarasana",
+      image: Image.asset("images/Yoga/Camatkarasana.png"),
+      instructions:
+          "Start in a tabletop position with your wrists directly under your shoulders and knees under your hips. \nOn an inhale, reach your right arm forward and your left leg back, keeping your body in a straight line. \nAs you exhale, bend your right elbow and left knee, bringing them toward each other while lifting your left leg and opening your chest to the left side. \nExtend your right arm up and over your head, reaching for the back leg. \nGently arch your back and open your chest, looking toward your lifted hand. \nHold the pose for 3-5 breaths, then slowly release and repeat on the other side.",
+      second: 30),
+  Yoga(
+      name: "Dhanurasana",
+      image: Image.asset("images/Yoga/Dhanurasana.png"),
+      instructions:
+          "Start by lying flat on your stomach with your arms by your sides and your legs extended. \nBend your knees and bring your heels toward your glutes, reaching back with your hands to grasp your ankles. \nInhale as you lift your chest, head, and thighs off the floor, pressing your feet into your hands. \nKeep your gaze forward or slightly up, and open your chest while drawing your shoulder blades toward each other. \nHold the pose with breathing deeply and evenly. \nTo release, gently lower your chest, head, and legs back to the floor.",
+      second: 30),
+  Yoga(
+      name: "Eka Pada Rajakapotasana",
+      image: Image.asset("images/Yoga/Eka-Pada-Rajakapotasana.png"),
+      instructions:
+          "Start in a tabletop position and bring your right knee forward, placing it behind your right wrist. \nExtend your left leg straight behind you, keeping your hips square to the floor. \nInhale and lengthen your spine, then exhale as you fold forward, lowering your chest toward the floor. \nReach your arms forward or place them beside your body for support. \nFor a deeper stretch, you can bend your left leg and reach back with your hand to grasp the left foot. \nHold the pose with breathing deeply and relaxing into the stretch. \nTo release, slowly come back up and repeat on the other side.",
+      second: 60),
 ];
