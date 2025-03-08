@@ -104,4 +104,34 @@ List<Yoga> allYoga = [
       instructions:
           "Start in a tabletop position and bring your right knee forward, placing it behind your right wrist. \nExtend your left leg straight behind you, keeping your hips square to the floor. \nInhale and lengthen your spine, then exhale as you fold forward, lowering your chest toward the floor. \nReach your arms forward or place them beside your body for support. \nFor a deeper stretch, you can bend your left leg and reach back with your hand to grasp the left foot. \nHold the pose with breathing deeply and relaxing into the stretch. \nTo release, slowly come back up and repeat on the other side.",
       second: 60),
+  Yoga(
+      name: "Halasana",
+      image: Image.asset("images/Yoga/Halasana.png"),
+      instructions:
+          "Begin by lying flat on your back with your arms by your sides and your legs extended. \nInhale and lift your legs overhead, bringing them toward the floor behind you while keeping them straight. \nPress your arms into the floor for support, and keep your feet active, reaching toward the ground. \nEngage your core to help stabilize your spine and avoid strain in the neck. \nKeep your neck long, avoiding compression, and gaze toward the ceiling or close your eyes for a deeper relaxation. \nHold the pose with breathing deeply. \nTo release, slowly roll your spine back down and return to the starting position.",
+      second: 30),
+  Yoga(
+      name: "Hanumanasana",
+      image: Image.asset("images/Yoga/Hanumanasana.png"),
+      instructions:
+          "Begin by lying flat on your back with your arms by your sides and your legs extended. \nInhale and lift your legs overhead, bringing them toward the floor behind you while keeping them straight. \nPress your arms into the floor for support, and keep your feet active, reaching toward the ground. \nEngage your core to help stabilize your spine and avoid strain in the neck. \nKeep your neck long, avoiding compression, and gaze toward the ceiling or close your eyes for a deeper relaxation. \nHold the pose with breathing deeply. \nTo release, slowly roll your spine back down and return to the starting position.",
+      second: 30),
+  Yoga(
+      name: "Hanumanasana",
+      image: Image.asset("images/Yoga/Hanumanasana.png"),
+      instructions:
+          "Begin by lying flat on your back with your arms by your sides and your legs extended. \nInhale and lift your legs overhead, bringing them toward the floor behind you while keeping them straight. \nPress your arms into the floor for support, and keep your feet active, reaching toward the ground. \nEngage your core to help stabilize your spine and avoid strain in the neck. \nKeep your neck long, avoiding compression, and gaze toward the ceiling or close your eyes for a deeper relaxation. \nHold the pose with breathing deeply. \nTo release, slowly roll your spine back down and return to the starting position.",
+      second: 30),
+  Yoga(
+      name: "Malasana",
+      image: Image.asset("images/Yoga/Malasana.png"),
+      instructions:
+          "Begin by standing with your feet slightly wider than hip-width apart. \nTurn your toes out and bend your knees deeply, bringing your hips down toward the floor. \nKeep your chest lifted and your spine long. \nBring your palms together in a prayer position in front of your chest. \nPress your elbows against the inside of your knees to open your hips further. \nKeep your weight evenly distributed on your feet, pressing your heels down. \nHold the position, breathing deeply and maintaining the stretch in your hips and groin. \nTo release, slowly straighten your legs and return to a standing position.",
+      second: 60),
+  Yoga(
+      name: "Navasana",
+      image: Image.asset("images/Yoga/Navasana.jpeg"),
+      instructions:
+          "Start by sitting on the floor with your legs extended in front of you. \nBend your knees and place your feet flat on the floor, keeping them hip-width apart. \nLean back slightly, engaging your core, and lift your feet off the floor. \nStraighten your legs so that your body forms a V shape. \nKeep your spine straight and your chest open, avoiding rounding your back. \nExtend your arms parallel to the floor, palms facing each other. \nHold the pose, keeping your core engaged and breathing deeply. \nTo release, slowly lower your legs and come back to a seated position.",
+      second: 60),
 ];
