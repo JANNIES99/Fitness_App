@@ -54,7 +54,7 @@ class _ExerciseTimerState extends State<ExerciseTimer> {
   @override
   Widget build(BuildContext context) {
     return CircularPercentIndicator(
-      radius: 30,
+      radius: 60,
       backgroundColor: Theme.of(context).colorScheme.onSecondary,
       progressColor: Theme.of(context).colorScheme.onSecondaryContainer,
       percent: timeForTimer / initalTime,
