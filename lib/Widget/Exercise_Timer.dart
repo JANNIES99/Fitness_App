@@ -58,7 +58,10 @@ class _ExerciseTimerState extends State<ExerciseTimer> {
       backgroundColor: Theme.of(context).colorScheme.onSecondary,
       progressColor: Theme.of(context).colorScheme.onSecondaryContainer,
       percent: timeForTimer / initalTime,
-      center: Text(timeToDisplay),
+      center: Text(
+        timeToDisplay,
+        style: const TextStyle(fontSize: 20, color: Colors.black),
+      ),
     );
   }
 }
