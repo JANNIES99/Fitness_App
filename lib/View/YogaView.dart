@@ -52,6 +52,9 @@ class _YogaviewState extends State<Yogaview> {
           child: Column(
             children: [
               widget.yoga.image,
+              const SizedBox(height: 60),
+              Text("Instructions",
+                  style: Theme.of(context).textTheme.headlineMedium),
               const SizedBox(height: 20),
               Text(
                 widget.yoga.instructions,

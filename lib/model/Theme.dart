@@ -40,7 +40,7 @@ ThemeData lightThemeData = ThemeData().copyWith(
           color: Colors.black, fontSize: 25, fontWeight: FontWeight.bold),
       headlineMedium: TextStyle(
           color: lightColorScheme.primary,
-          fontSize: 20,
+          fontSize: 22,
           fontWeight: FontWeight.bold),
       headlineSmall: const TextStyle(
           color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
@@ -60,7 +60,7 @@ ThemeData darkThemeData = ThemeData().copyWith(
           color: Colors.black, fontSize: 25, fontWeight: FontWeight.bold),
       headlineMedium: TextStyle(
           color: darkColorScheme.primary,
-          fontSize: 20,
+          fontSize: 22,
           fontWeight: FontWeight.bold),
       headlineSmall: const TextStyle(
           color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
