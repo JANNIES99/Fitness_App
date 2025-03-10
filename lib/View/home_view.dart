@@ -2,6 +2,7 @@ import 'dart:typed_data';
 
 import 'package:fitnessapp/Registration/view/splashscreen.dart';
 import 'package:fitnessapp/Service/Database.dart';
+import 'package:fitnessapp/View/sections/diet_section.dart';
 import 'package:fitnessapp/View/sections/fitness_section.dart';
 import 'package:fitnessapp/View/sections/profile_section.dart';
 import 'package:fitnessapp/View/sections/yoga_section.dart';
@@ -33,7 +34,7 @@ class _HomeViewState extends State<HomeView> {
       tabSections = [
         FitnessSection(user: widget.user),
         const YogaSection(),
-        FitnessSection(user: widget.user),
+        const DietSection(),
         ProfileSection(
             userData: widget.user, addImage: addImage, logOut: logOut),
       ];
