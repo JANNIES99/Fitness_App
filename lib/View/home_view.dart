@@ -24,9 +24,16 @@ class _HomeViewState extends State<HomeView> {
     Colors.blueAccent,
     Colors.blueGrey
   ];
+  final List<String> appBarName = [
+    "Fitness",
+    "Yoga",
+    "Meal Planner",
+    "User Profile"
+  ];
   late List<Widget> tabSections;
   late Color currentTabColor;
   late Widget currentTabSection;
+  late String currentAppBarName;
   @override
   void initState() {
     setState(() {
@@ -39,6 +46,7 @@ class _HomeViewState extends State<HomeView> {
             userData: widget.user, addImage: addImage, logOut: logOut),
       ];
       currentTabSection = tabSections[0];
+      currentAppBarName = appBarName[0];
     });
     super.initState();
   }
@@ -72,6 +80,7 @@ class _HomeViewState extends State<HomeView> {
               setState(() {
                 currentTabColor = tabColor[index];
                 currentTabSection = tabSections[index];
+                currentAppBarName = appBarName[index];
               });
             },
             tabs: const [
@@ -97,7 +106,7 @@ class _HomeViewState extends State<HomeView> {
         appBar: AppBar(
           backgroundColor: currentTabColor,
           title: Text(
-            "Fitness/Diet App",
+            currentAppBarName,
             style: Theme.of(context).textTheme.headlineLarge,
           ),
         ),

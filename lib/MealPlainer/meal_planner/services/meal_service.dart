@@ -1,4 +1,6 @@
 import 'dart:convert';
+import 'package:fitnessapp/Service/Database.dart';
+import 'package:fitnessapp/model/userProfile.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../models/meal_model.dart';
@@ -11,6 +13,13 @@ class MealService {
   static const String _mealPlanKeyPrefix = 'meal_plan_';
   static const String _mealCacheKeyPrefix = 'meal_cache_';
   static const Duration _cacheDuration = Duration(days: 7);
+  final DatabaseService _databaseService = DatabaseService.instance;
+  UserProfile? user;
+
+  void getProfileData() async {
+    UserProfile? userData = await _databaseService.getUserProfile();
+    user = userData;
+  }
 
   final SpoonacularService _spoonacularService = SpoonacularService();
   final LocalMealDatabase _localDb = LocalMealDatabase();
@@ -117,16 +126,49 @@ class MealService {
           _getEmergencyFallbackMeal(type);
       meals.add(meal);
     }
-
-    return MealPlan(
-      meals: meals,
-      nutrients: Nutrients(
-        calories: userPrefs.targetCalories.toDouble(),
-        protein: userPrefs.targetCalories * 0.8,
-        fat: userPrefs.targetCalories * 0.3,
-        carbohydrates: userPrefs.targetCalories * 0.5,
-      ),
-    );
+    getProfileData();
+    double BMI = user!.weight / (user!.height * user!.height);
+    if (BMI < 18.5) {
+      return MealPlan(
+        meals: meals,
+        nutrients: Nutrients(
+          calories: userPrefs.targetCalories.toDouble(),
+          protein: user!.weight * 0.8,
+          fat: userPrefs.targetCalories * 0.25,
+          carbohydrates: userPrefs.targetCalories * 0.45,
+        ),
+      );
+    } else if (BMI < 22.9) {
+      return MealPlan(
+        meals: meals,
+        nutrients: Nutrients(
+          calories: userPrefs.targetCalories.toDouble(),
+          protein: user!.weight * 0.8,
+          fat: userPrefs.targetCalories * 0.2,
+          carbohydrates: userPrefs.targetCalories * 0.5,
+        ),
+      );
+    } else if (BMI < 29.9) {
+      return MealPlan(
+        meals: meals,
+        nutrients: Nutrients(
+          calories: userPrefs.targetCalories.toDouble(),
+          protein: user!.weight * 0.8,
+          fat: userPrefs.targetCalories * 0.15,
+          carbohydrates: userPrefs.targetCalories * 0.5,
+        ),
+      );
+    } else {
+      return MealPlan(
+        meals: meals,
+        nutrients: Nutrients(
+          calories: userPrefs.targetCalories.toDouble(),
+          protein: user!.weight * 0.8,
+          fat: userPrefs.targetCalories * 0.15,
+          carbohydrates: userPrefs.targetCalories * 0.6,
+        ),
+      );
+    }
   }
 
   Meal _getEmergencyFallbackMeal(String type) {

@@ -73,6 +73,12 @@ class _MealScheduleViewState extends State<MealScheduleView> {
 
       // If no meals exist, generate random meals for each type
       if (_currentMealPlan == null || _currentMealPlan!.meals.isEmpty) {
+        DateTime nextDay = DateTime(_selectedDateAppBBar.day,
+            _selectedDateAppBBar.month, _selectedDateAppBBar.day + 1 % 28);
+        await _loadMealPlan(nextDay);
+      }
+
+      if (_currentMealPlan == null || _currentMealPlan!.meals.isEmpty) {
         await _generateRandomMeals();
       }
 
@@ -112,7 +118,7 @@ class _MealScheduleViewState extends State<MealScheduleView> {
           meals: meals,
           nutrients: Nutrients(
             calories: userPrefs.targetCalories.toDouble(),
-            protein: userPrefs.targetCalories * 0.2,
+            protein: userPrefs.targetCalories * 0.25,
             fat: userPrefs.targetCalories * 0.3,
             carbohydrates: userPrefs.targetCalories * 0.5,
           ),
