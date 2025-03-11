@@ -489,20 +489,14 @@ class _MealScheduleViewState extends State<MealScheduleView> {
             Navigator.pop(context);
           },
           child: Container(
-            margin: const EdgeInsets.all(8),
-            height: 40,
-            width: 40,
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-                color: TColor.lightGray,
-                borderRadius: BorderRadius.circular(10)),
-            child: Image.asset(
-              "assets/img/black_btn.png",
-              width: 15,
-              height: 15,
-              fit: BoxFit.contain,
-            ),
-          ),
+              margin: const EdgeInsets.all(8),
+              height: 40,
+              width: 40,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                  color: TColor.lightGray,
+                  borderRadius: BorderRadius.circular(10)),
+              child: const Icon(Icons.arrow_back_rounded)),
         ),
         title: Text(
           "Meal Schedule",
@@ -576,7 +570,7 @@ class _MealScheduleViewState extends State<MealScheduleView> {
               color: TColor.white,
               boxShadow: [
                 BoxShadow(
-                  color: TColor.gray.withOpacity(0.1),
+                  color: TColor.gray.withValues(alpha: 0.1),
                   blurRadius: 10,
                   offset: const Offset(0, 4),
                 ),
@@ -586,22 +580,11 @@ class _MealScheduleViewState extends State<MealScheduleView> {
               controller: _calendarAgendaControllerAppBar,
               appbar: false,
               selectedDayPosition: SelectedDayPosition.center,
-              leading: IconButton(
-                onPressed: () {},
-                icon: Image.asset(
-                  "assets/img/ArrowLeft.png",
-                  width: 15,
-                  height: 15,
-                ),
-              ),
-              training: IconButton(
-                onPressed: () {},
-                icon: Image.asset(
-                  "assets/img/ArrowRight.png",
-                  width: 15,
-                  height: 15,
-                ),
-              ),
+              // leading: IconButton(
+              //     onPressed: () {}, icon: const Icon(Icons.arrow_back_rounded)),
+              // training: IconButton(
+              //     onPressed: () {},
+              //     icon: const Icon(Icons.arrow_forward_rounded)),
               weekDay: WeekDay.short,
               dayNameFontSize: 12,
               dayNumberFontSize: 16,

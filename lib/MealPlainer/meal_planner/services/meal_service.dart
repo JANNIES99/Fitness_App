@@ -122,7 +122,7 @@ class MealService {
       meals: meals,
       nutrients: Nutrients(
         calories: userPrefs.targetCalories.toDouble(),
-        protein: userPrefs.targetCalories * 0.2,
+        protein: userPrefs.targetCalories * 0.8,
         fat: userPrefs.targetCalories * 0.3,
         carbohydrates: userPrefs.targetCalories * 0.5,
       ),

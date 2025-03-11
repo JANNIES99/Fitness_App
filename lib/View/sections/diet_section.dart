@@ -112,7 +112,7 @@ class _DietSectionState extends State<DietSection> {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: TColor.primaryColor2.withOpacity(0.1),
+        color: TColor.primaryColor2.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(16),
       ),
       child: Column(

@@ -3,7 +3,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class UserPreferences {
   static const String _prefsKey = 'user_preferences';
-  
+
   final int targetCalories;
   final bool vegetarian;
   final bool vegan;
@@ -71,7 +71,7 @@ class UserPreferences {
   static Future<UserPreferences> load() async {
     final prefs = await SharedPreferences.getInstance();
     final String? prefsJson = prefs.getString(_prefsKey);
-    
+
     if (prefsJson != null) {
       try {
         return UserPreferences.fromJson(json.decode(prefsJson));
@@ -79,7 +79,7 @@ class UserPreferences {
         print('Error loading preferences: $e');
       }
     }
-    
+
     return UserPreferences();
   }
 
@@ -112,8 +112,10 @@ class UserPreferences {
       lowCarb: lowCarb ?? this.lowCarb,
       mediterranean: mediterranean ?? this.mediterranean,
       allergies: allergies ?? List<String>.from(this.allergies),
-      excludedIngredients: excludedIngredients ?? List<String>.from(this.excludedIngredients),
-      culturalPreferences: culturalPreferences ?? List<String>.from(this.culturalPreferences),
+      excludedIngredients:
+          excludedIngredients ?? List<String>.from(this.excludedIngredients),
+      culturalPreferences:
+          culturalPreferences ?? List<String>.from(this.culturalPreferences),
       maxPrepTime: maxPrepTime ?? this.maxPrepTime,
     );
   }

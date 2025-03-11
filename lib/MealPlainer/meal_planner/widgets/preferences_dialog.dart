@@ -85,7 +85,8 @@ class _PreferencesDialogState extends State<PreferencesDialog> {
   void _removeExclusion(String item) {
     setState(() {
       _preferences = _preferences.copyWith(
-        excludedIngredients: _preferences.excludedIngredients.where((i) => i != item).toList(),
+        excludedIngredients:
+            _preferences.excludedIngredients.where((i) => i != item).toList(),
       );
     });
   }
@@ -94,7 +95,9 @@ class _PreferencesDialogState extends State<PreferencesDialog> {
     setState(() {
       if (_preferences.culturalPreferences.contains(cuisine)) {
         _preferences = _preferences.copyWith(
-          culturalPreferences: _preferences.culturalPreferences.where((c) => c != cuisine).toList(),
+          culturalPreferences: _preferences.culturalPreferences
+              .where((c) => c != cuisine)
+              .toList(),
         );
       } else {
         _preferences = _preferences.copyWith(
@@ -125,7 +128,7 @@ class _PreferencesDialogState extends State<PreferencesDialog> {
               ),
             ),
             const SizedBox(height: 20),
-            
+
             // Calories and Prep Time
             Row(
               children: [
@@ -196,10 +199,12 @@ class _PreferencesDialogState extends State<PreferencesDialog> {
                       );
                     });
                   },
-                  backgroundColor: _preferences.vegetarian ? Colors.blue : Colors.grey[200],
+                  backgroundColor:
+                      _preferences.vegetarian ? Colors.blue : Colors.grey[200],
                   selectedColor: Colors.blue,
                   labelStyle: TextStyle(
-                    color: _preferences.vegetarian ? Colors.white : Colors.black87,
+                    color:
+                        _preferences.vegetarian ? Colors.white : Colors.black87,
                   ),
                 ),
                 FilterChip(
@@ -213,13 +218,15 @@ class _PreferencesDialogState extends State<PreferencesDialog> {
                       );
                     });
                   },
-                  backgroundColor: _preferences.vegan ? Colors.blue : Colors.grey[200],
+                  backgroundColor:
+                      _preferences.vegan ? Colors.blue : Colors.grey[200],
                   selectedColor: Colors.blue,
                   labelStyle: TextStyle(
                     color: _preferences.vegan ? Colors.white : Colors.black87,
                   ),
                 ),
-                _buildDietChip('Gluten Free', _preferences.glutenFree, (selected) {
+                _buildDietChip('Gluten Free', _preferences.glutenFree,
+                    (selected) {
                   setState(() {
                     _preferences = _preferences.copyWith(glutenFree: selected);
                   });
@@ -239,9 +246,11 @@ class _PreferencesDialogState extends State<PreferencesDialog> {
                     _preferences = _preferences.copyWith(lowCarb: selected);
                   });
                 }),
-                _buildDietChip('Mediterranean', _preferences.mediterranean, (selected) {
+                _buildDietChip('Mediterranean', _preferences.mediterranean,
+                    (selected) {
                   setState(() {
-                    _preferences = _preferences.copyWith(mediterranean: selected);
+                    _preferences =
+                        _preferences.copyWith(mediterranean: selected);
                   });
                 }),
               ],
@@ -261,7 +270,8 @@ class _PreferencesDialogState extends State<PreferencesDialog> {
             Wrap(
               spacing: 8,
               children: _availableCuisines.map((cuisine) {
-                final isSelected = _preferences.culturalPreferences.contains(cuisine);
+                final isSelected =
+                    _preferences.culturalPreferences.contains(cuisine);
                 return FilterChip(
                   label: Text(cuisine),
                   selected: isSelected,
@@ -395,8 +405,10 @@ class _PreferencesDialogState extends State<PreferencesDialog> {
                 const SizedBox(width: 10),
                 ElevatedButton(
                   onPressed: () {
-                    widget.onSave(_preferences);
-                    Navigator.pop(context);
+                    setState(() {
+                      widget.onSave(_preferences);
+                      Navigator.pop(context);
+                    });
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.blue,
@@ -420,7 +432,8 @@ class _PreferencesDialogState extends State<PreferencesDialog> {
     );
   }
 
-  Widget _buildDietChip(String label, bool selected, Function(bool) onSelected) {
+  Widget _buildDietChip(
+      String label, bool selected, Function(bool) onSelected) {
     return FilterChip(
       label: Text(label),
       selected: selected,
