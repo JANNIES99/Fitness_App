@@ -20,6 +20,8 @@ class ProfileSection extends StatefulWidget {
 }
 
 class _ProfileSectionState extends State<ProfileSection> {
+  late String defaultImage =
+      widget.userData.gender == "Male" ? "images/u1.png" : "images/u2.png";
   Future _pickImage(ImageSource source) async {
     try {
       final image = await ImagePicker().pickImage(source: source);
@@ -149,8 +151,7 @@ class _ProfileSectionState extends State<ProfileSection> {
                   color: Colors.grey,
                 ),
                 child: widget.userData.image == null
-                    ? const CircleAvatar(
-                        backgroundImage: AssetImage("images/default.jpeg"))
+                    ? CircleAvatar(backgroundImage: AssetImage(defaultImage))
                     : CircleAvatar(
                         backgroundImage: MemoryImage(widget.userData.image!),
                       ),

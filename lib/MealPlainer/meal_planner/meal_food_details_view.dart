@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../common/colo_extension.dart';
 import 'models/meal_model.dart';
 import 'package:fitnessapp/Service/spoonacular_service.dart';
+import 'package:'
 
 class MealFoodDetailsView extends StatefulWidget {
   final Meal meal;
