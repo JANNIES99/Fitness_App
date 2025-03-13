@@ -57,6 +57,7 @@ dependencies:
   simple_animation_progress_bar: ^1.8.2
   calendar_agenda:
     path: dev_lib/calendar_agenda/
+  flutter_html: ^3.0.0
 
 dependency_overrides:
   intl: ^0.18.1

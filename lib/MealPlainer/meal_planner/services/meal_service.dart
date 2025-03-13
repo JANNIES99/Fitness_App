@@ -11,8 +11,8 @@ import 'local_meal_database.dart';
 
 class MealService {
   static const String _mealPlanKeyPrefix = 'meal_plan_';
-  static const String _mealCacheKeyPrefix = 'meal_cache_';
-  static const Duration _cacheDuration = Duration(days: 7);
+  //static const String _mealCacheKeyPrefix = 'meal_cache_';
+  //static const Duration _cacheDuration = Duration(days: 7);
   final DatabaseService _databaseService = DatabaseService.instance;
   UserProfile? user;
 
@@ -24,8 +24,8 @@ class MealService {
   final SpoonacularService _spoonacularService = SpoonacularService();
   final LocalMealDatabase _localDb = LocalMealDatabase();
 
-  int _apiFailureCount = 0;
-  static const int _maxApiFailures = 3;
+  int apiFailureCount = 0;
+  static const int maxApiFailures = 3;
 
   String getMealPlanKey(DateTime date) {
     return _mealPlanKeyPrefix + date.toIso8601String().split('T')[0];
@@ -103,12 +103,12 @@ class MealService {
           continue;
         }
 
-        _apiFailureCount = 0; // Reset failure count on success
+        apiFailureCount = 0; // Reset failure count on success
         return _createMealPlanFromData(mealPlanData, userPrefs);
       } catch (e) {
         print('API attempt $attempt failed: $e');
         if (attempt == 3) {
-          _apiFailureCount++;
+          apiFailureCount++;
           rethrow;
         }
         await Future.delayed(Duration(seconds: attempt * 2));
@@ -299,7 +299,7 @@ class MealService {
       return MealPlan(
         meals: meals,
         nutrients: Nutrients(
-            calories: userPrefs.targetCalories.toDouble() ?? 2000.0,
+            calories: userPrefs.targetCalories.toDouble(),
             protein: 0,
             fat: 0,
             carbohydrates: 0),
@@ -310,7 +310,7 @@ class MealService {
       return MealPlan(
         meals: [],
         nutrients: Nutrients(
-            calories: userPrefs.targetCalories.toDouble() ?? 2000.0,
+            calories: userPrefs.targetCalories.toDouble(),
             protein: 0,
             fat: 0,
             carbohydrates: 0),
@@ -345,7 +345,7 @@ class MealService {
       return MealPlan(
         meals: allMeals,
         nutrients: Nutrients(
-            calories: preferences.targetCalories.toDouble() ?? 2000.0,
+            calories: preferences.targetCalories.toDouble(),
             protein: 0,
             fat: 0,
             carbohydrates: 0),
@@ -361,7 +361,7 @@ class MealService {
     return MealPlan(
       meals: [],
       nutrients: Nutrients(
-          calories: preferences.targetCalories.toDouble() ?? 2000.0,
+          calories: preferences.targetCalories.toDouble(),
           protein: 0,
           fat: 0,
           carbohydrates: 0),
@@ -410,29 +410,29 @@ class MealService {
     return null;
   }
 
-  bool _preferencesEqual(UserPreferences saved, UserPreferences current) {
-    return saved.targetCalories == current.targetCalories &&
-        saved.vegetarian == current.vegetarian &&
-        saved.vegan == current.vegan &&
-        saved.glutenFree == current.glutenFree &&
-        saved.keto == current.keto &&
-        saved.paleo == current.paleo &&
-        saved.lowCarb == current.lowCarb &&
-        saved.mediterranean == current.mediterranean &&
-        saved.maxPrepTime == current.maxPrepTime &&
-        _listEquals(saved.allergies, current.allergies) &&
-        _listEquals(saved.excludedIngredients, current.excludedIngredients) &&
-        _listEquals(saved.culturalPreferences, current.culturalPreferences);
-  }
+  // bool _preferencesEqual(UserPreferences saved, UserPreferences current) {
+  //   return saved.targetCalories == current.targetCalories &&
+  //       saved.vegetarian == current.vegetarian &&
+  //       saved.vegan == current.vegan &&
+  //       saved.glutenFree == current.glutenFree &&
+  //       saved.keto == current.keto &&
+  //       saved.paleo == current.paleo &&
+  //       saved.lowCarb == current.lowCarb &&
+  //       saved.mediterranean == current.mediterranean &&
+  //       saved.maxPrepTime == current.maxPrepTime &&
+  //       _listEquals(saved.allergies, current.allergies) &&
+  //       _listEquals(saved.excludedIngredients, current.excludedIngredients) &&
+  //       _listEquals(saved.culturalPreferences, current.culturalPreferences);
+  // }
 
-  bool _listEquals<T>(List<T> a, List<T> b) {
-    if (identical(a, b)) return true;
-    if (a.length != b.length) return false;
-    for (int i = 0; i < a.length; i++) {
-      if (!b.contains(a[i])) return false;
-    }
-    return true;
-  }
+  // bool _listEquals<T>(List<T> a, List<T> b) {
+  //   if (identical(a, b)) return true;
+  //   if (a.length != b.length) return false;
+  //   for (int i = 0; i < a.length; i++) {
+  //     if (!b.contains(a[i])) return false;
+  //   }
+  //   return true;
+  // }
 
   Future<void> clearSavedMealPlan([DateTime? date]) async {
     try {

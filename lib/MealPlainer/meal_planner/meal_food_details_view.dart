@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../common/colo_extension.dart';
 import 'models/meal_model.dart';
 import 'package:fitnessapp/Service/spoonacular_service.dart';
-import 'package:'
+import 'package:flutter_html/flutter_html.dart';
 
 class MealFoodDetailsView extends StatefulWidget {
   final Meal meal;
@@ -207,15 +207,18 @@ class _MealFoodDetailsViewState extends State<MealFoodDetailsView> {
                                 ),
                               ),
                               const SizedBox(height: 8),
-                              Text(
-                                _recipeDetails!['instructions'] ??
-                                    'No instructions available',
-                                style: TextStyle(
-                                  color: TColor.gray,
-                                  fontSize: 14,
-                                  height: 1.5,
-                                ),
-                              ),
+                              Html(
+                                  data: _recipeDetails!['instructions'] ??
+                                      'No instructions available'),
+                              // Text(
+                              //   _recipeDetails!['instructions'] ??
+                              //       'No instructions available',
+                              //   style: TextStyle(
+                              //     color: TColor.gray,
+                              //     fontSize: 14,
+                              //     height: 1.5,
+                              //   ),
+                              // ),
                               const SizedBox(height: 24),
                               Text(
                                 'Ingredients',
