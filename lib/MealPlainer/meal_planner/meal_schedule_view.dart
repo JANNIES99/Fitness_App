@@ -7,7 +7,6 @@ import 'models/nutrients.dart';
 import 'models/user_preferences.dart';
 import 'services/meal_service.dart';
 import 'widgets/preferences_dialog.dart';
-import 'meal_type_view.dart';
 
 extension StringExtension on String {
   String capitalize() {
@@ -247,20 +246,20 @@ class _MealScheduleViewState extends State<MealScheduleView> {
     }
   }
 
-  void _showFullMealTypeView(String mealType) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => MealTypeView(
-          mealType: mealType,
-          onMealSelected: (meal) async {
-            Navigator.pop(context);
-            await _selectMeal(meal, mealType);
-          },
-        ),
-      ),
-    );
-  }
+  // void _showFullMealTypeView(String mealType) {
+  //   Navigator.push(
+  //     context,
+  //     MaterialPageRoute(
+  //       builder: (context) => MealTypeView(
+  //         mealType: mealType,
+  //         onMealSelected: (meal) async {
+  //           Navigator.pop(context);
+  //           await _selectMeal(meal, mealType);
+  //         },
+  //       ),
+  //     ),
+  //   );
+  // }
 
   Future<void> _selectMeal(Meal meal, String mealType) async {
     try {
@@ -371,20 +370,20 @@ class _MealScheduleViewState extends State<MealScheduleView> {
     );
   }
 
-  String _getMealTime(Meal meal) {
-    // Simple logic to assign times based on meal order
-    final index = _currentMealPlan!.meals.indexOf(meal);
-    switch (index) {
-      case 0:
-        return '8:00 AM';
-      case 1:
-        return '1:00 PM';
-      case 2:
-        return '7:00 PM';
-      default:
-        return '${index + 8}:00';
-    }
-  }
+  // String _getMealTime(Meal meal) {
+  //   // Simple logic to assign times based on meal order
+  //   final index = _currentMealPlan!.meals.indexOf(meal);
+  //   switch (index) {
+  //     case 0:
+  //       return '8:00 AM';
+  //     case 1:
+  //       return '1:00 PM';
+  //     case 2:
+  //       return '7:00 PM';
+  //     default:
+  //       return '${index + 8}:00';
+  //   }
+  // }
 
   void _showPreferencesDialog() async {
     final userPrefs = await UserPreferences.load();
