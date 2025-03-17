@@ -34,29 +34,29 @@ class _MealScheduleViewState extends State<MealScheduleView> {
   bool _isLoading = true;
 
   // Nutrition values
-  late double _calories;
-  late double _protein;
-  late double _fat;
-  late double _carbs;
+  late double calories;
+  late double protein;
+  late double fat;
+  late double carbs;
 
   @override
   void initState() {
     super.initState();
     // Initialize nutrition values
-    _calories = 0;
-    _protein = 0;
-    _fat = 0;
-    _carbs = 0;
+    calories = 0;
+    protein = 0;
+    fat = 0;
+    carbs = 0;
     _loadInitialMealPlan();
   }
 
   void _updateNutritionValues() {
     if (_currentMealPlan != null) {
       setState(() {
-        _calories = _currentMealPlan!.nutrients.calories;
-        _protein = _currentMealPlan!.nutrients.protein;
-        _fat = _currentMealPlan!.nutrients.fat;
-        _carbs = _currentMealPlan!.nutrients.carbohydrates;
+        calories = _currentMealPlan!.nutrients.calories;
+        protein = _currentMealPlan!.nutrients.protein;
+        fat = _currentMealPlan!.nutrients.fat;
+        carbs = _currentMealPlan!.nutrients.carbohydrates;
       });
     }
   }

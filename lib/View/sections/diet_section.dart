@@ -3,11 +3,9 @@ import 'package:fitnessapp/MealPlainer/meal_planner/meal_schedule_view.dart';
 import 'package:fitnessapp/MealPlainer/common/colo_extension.dart';
 import 'package:fitnessapp/MealPlainer/common_widget/today_meal_row.dart';
 import 'package:fitnessapp/MealPlainer/meal_planner/models/meal_model.dart';
-import 'package:fitnessapp/MealPlainer/meal_planner/models/nutrients.dart';
 import 'package:fitnessapp/MealPlainer/meal_planner/models/user_preferences.dart';
 import 'package:fitnessapp/MealPlainer/meal_planner/widgets/preferences_dialog.dart';
 import 'package:fitnessapp/MealPlainer/meal_planner/services/meal_service.dart';
-import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class DietSection extends StatefulWidget {
@@ -22,7 +20,7 @@ class _DietSectionState extends State<DietSection> {
   MealPlan? _mealPlan;
   bool _isLoading = false;
   String? _error;
-  Set<int> _favoriteMeals = {};
+  Set<int> favoriteMeals = {};
   late UserPreferences _userPreferences;
 
   @override
@@ -59,24 +57,9 @@ class _DietSectionState extends State<DietSection> {
     final favorites = prefs.getStringList('favorite_meals');
     if (favorites != null) {
       setState(() {
-        _favoriteMeals = favorites.map((s) => int.parse(s)).toSet();
+        favoriteMeals = favorites.map((s) => int.parse(s)).toSet();
       });
     }
-  }
-
-  Future<void> _toggleFavorite(int mealId) async {
-    final prefs = await SharedPreferences.getInstance();
-    setState(() {
-      if (_favoriteMeals.contains(mealId)) {
-        _favoriteMeals.remove(mealId);
-      } else {
-        _favoriteMeals.add(mealId);
-      }
-    });
-    await prefs.setStringList(
-      'favorite_meals',
-      _favoriteMeals.map((id) => id.toString()).toList(),
-    );
   }
 
   Future<void> _loadMealPlan([bool forceRefresh = false]) async {
