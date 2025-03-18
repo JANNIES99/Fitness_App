@@ -43,7 +43,7 @@ class SignupController {
       }
       // Check if the user was created successfully
       if (userCredential.user != null) {
-        SnackBar messageSnackBar = SnackBar(
+        SnackBar messageSnackBar = const SnackBar(
           backgroundColor: Colors.green,
           content: Text("Account Created Successfully"),
         );

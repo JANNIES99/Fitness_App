@@ -120,22 +120,29 @@ class _ProfileSectionState extends State<ProfileSection> {
                     return SizedBox(
                       width: double.infinity,
                       height: 200,
-                      child: Column(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           ElevatedButton(
                             onPressed: () {
                               _galleryImage();
                             },
-                            child: Text("Gallery"),
+                            child: const Icon(
+                              Icons.image,
+                              size: 100,
+                            ),
                           ),
                           const SizedBox(height: 10),
-                          Text("OR"),
+                          const Text("OR"),
                           const SizedBox(height: 10),
                           ElevatedButton(
                             onPressed: () {
                               _cameraImage();
                             },
-                            child: Text("Use Camera"),
+                            child: const Icon(
+                              Icons.camera_alt_outlined,
+                              size: 100,
+                            ),
                           ),
                         ],
                       ),
