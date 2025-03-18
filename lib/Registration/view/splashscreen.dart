@@ -24,6 +24,11 @@ class _SplashscreenState extends State<Splashscreen> {
     });
   }
 
+  void updateUserProfile(UserProfile userInfo) {
+    user = userInfo;
+    _databaseService.updateUserProfile(userInfo);
+  }
+
   @override
   void initState() {
     getProfileData();

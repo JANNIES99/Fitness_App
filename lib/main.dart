@@ -9,8 +9,6 @@ Future<void> main() async {
   await Firebase.initializeApp(
       options: DefaultFirebaseOptions().currentPlatform);
   WidgetsFlutterBinding.ensureInitialized();
-  //SharedPreferences prefs = await SharedPreferences.getInstance();
-  //bool hasSeenOnboarding = prefs.getBool('seenOnboarding') ?? false;
 
   runApp(const MyApp());
 }
@@ -24,14 +22,11 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   @override
-  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: lightThemeData,
       darkTheme: darkThemeData,
-      home:
-          // CompleteProfileView(gmail: "Hello@gmail.com")
-          const Splashscreen(),
+      home: const Splashscreen(),
     );
   }
 }

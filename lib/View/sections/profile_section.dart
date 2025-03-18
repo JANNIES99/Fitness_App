@@ -205,12 +205,24 @@ class _ProfileSectionState extends State<ProfileSection> {
               style: Theme.of(context).textTheme.bodyMedium,
             ),
             const SizedBox(height: 10),
-            ElevatedButton(
-              onPressed: () => widget.logOut(),
-              child: Text(
-                "Log Out",
-                style: Theme.of(context).textTheme.bodyMedium,
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                ElevatedButton(
+                  onPressed: () => widget.logOut(),
+                  child: Text(
+                    "Edit",
+                    style: Theme.of(context).textTheme.bodyMedium,
+                  ),
+                ),
+                ElevatedButton(
+                  onPressed: () => widget.logOut(),
+                  child: Text(
+                    "Log Out",
+                    style: Theme.of(context).textTheme.bodyMedium,
+                  ),
+                ),
+              ],
             ),
             const SizedBox(height: 10),
           ],
