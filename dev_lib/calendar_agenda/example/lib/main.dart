@@ -4,7 +4,7 @@ import 'package:calendar_agenda/calendar_agenda.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -29,11 +29,11 @@ class ExamplePage extends StatefulWidget {
 class _ExamplePageState extends State<ExamplePage> {
   final CalendarAgendaController _calendarAgendaControllerAppBar =
       CalendarAgendaController();
-  final CalendarAgendaController _calendarAgendaControllerNotAppBar =
+  final CalendarAgendaController calendarAgendaControllerNotAppBar =
       CalendarAgendaController();
 
   late DateTime _selectedDateAppBBar;
-  late DateTime _selectedDateNotAppBBar;
+  late DateTime selectedDateNotAppBBar;
 
   Random random = Random();
 
@@ -41,7 +41,7 @@ class _ExamplePageState extends State<ExamplePage> {
   void initState() {
     super.initState();
     _selectedDateAppBBar = DateTime.now();
-    _selectedDateNotAppBBar = DateTime.now();
+    selectedDateNotAppBBar = DateTime.now();
   }
 
   @override
@@ -61,7 +61,7 @@ class _ExamplePageState extends State<ExamplePage> {
         weekDay: WeekDay.long,
         dayNameFontSize: 12,
         dayNumberFontSize: 16,
-        dayBGColor: Colors.grey.withOpacity(0.15),
+        dayBGColor: Colors.grey.withValues(alpha: 0.15),
         titleSpaceBetween: 15,
         backgroundColor: Colors.white,
         fullCalendarScroll: FullCalendarScroll.horizontal,
@@ -86,9 +86,9 @@ class _ExamplePageState extends State<ExamplePage> {
           width: double.maxFinite,
           height: double.maxFinite,
           decoration: BoxDecoration(
-            gradient: const LinearGradient(
-                colors: [ Color(0xff9DCEFF), Color(0xff92A3FD),
-                
+            gradient: const LinearGradient(colors: [
+              Color(0xff9DCEFF),
+              Color(0xff92A3FD),
             ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
             borderRadius: BorderRadius.circular(10.0),
           ),
