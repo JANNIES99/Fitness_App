@@ -20,7 +20,6 @@ class _ExerciseTimerState extends State<ExerciseTimer> {
     initalTime = ((widget.minute * 60) + widget.seconds);
     timeForTimer = ((widget.minute * 60) + widget.seconds);
     timeToDisplay = timeForTimer.toString();
-    startTimer();
     super.initState();
   }
 
@@ -35,6 +34,7 @@ class _ExerciseTimerState extends State<ExerciseTimer> {
             t.cancel();
             timeForTimer = 0;
             timeToDisplay = timeForTimer.toString();
+            isEnabled = !isEnabled;
           } else {
             timeForTimer = timeForTimer - 1;
             if (timeForTimer > 60) {
@@ -51,17 +51,33 @@ class _ExerciseTimerState extends State<ExerciseTimer> {
     );
   }
 
+  bool isEnabled = true;
   @override
   Widget build(BuildContext context) {
-    return CircularPercentIndicator(
-      radius: 50,
-      backgroundColor: Theme.of(context).colorScheme.onSecondary,
-      progressColor: Theme.of(context).colorScheme.onSecondaryContainer,
-      percent: timeForTimer / initalTime,
-      center: Text(
-        timeToDisplay,
-        style: const TextStyle(fontSize: 20, color: Colors.black),
-      ),
+    return Column(
+      children: [
+        CircularPercentIndicator(
+          radius: 50,
+          backgroundColor: Theme.of(context).colorScheme.onSecondary,
+          progressColor: Theme.of(context).colorScheme.onSecondaryContainer,
+          percent: timeForTimer / initalTime,
+          center: Text(
+            timeToDisplay,
+            style: const TextStyle(fontSize: 20, color: Colors.black),
+          ),
+        ),
+        ElevatedButton(
+          onPressed: isEnabled
+              ? () {
+                  startTimer();
+                  isEnabled = !isEnabled;
+                }
+              : null,
+          child: const Row(
+            children: [Text("Start"), Icon(Icons.run_circle_outlined)],
+          ),
+        )
+      ],
     );
   }
 }
