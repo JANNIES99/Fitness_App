@@ -157,18 +157,24 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
                     padding: const EdgeInsets.symmetric(horizontal: 15.0),
                     child: Column(
                       children: [
-                        RoundTextField(
-                          hitText: "First Name",
-                          icon: Icons.person,
-                          controller: firstName,
+                        Visibility(
+                          visible: widget.firstName == null,
+                          child: RoundTextField(
+                            hitText: "First Name",
+                            icon: Icons.person,
+                            controller: firstName,
+                          ),
                         ),
                         SizedBox(
                           height: media.width * 0.04,
                         ),
-                        RoundTextField(
-                          hitText: "Last Name",
-                          icon: Icons.person_outline_rounded,
-                          controller: lastName,
+                        Visibility(
+                          visible: widget.lastName == null,
+                          child: RoundTextField(
+                            hitText: "Last Name",
+                            icon: Icons.person_outline_rounded,
+                            controller: lastName,
+                          ),
                         ),
 
                         SizedBox(
@@ -234,13 +240,16 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
                           child: Container(
                             width: double.infinity,
                             height: 50,
-                            padding: const EdgeInsets.symmetric(horizontal: 10),
                             decoration: BoxDecoration(
                                 color: TColor.lightGray,
                                 borderRadius: BorderRadius.circular(15)),
                             child: Row(
                               children: [
-                                const Icon(Icons.calendar_month_outlined),
+                                Container(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 10),
+                                    child: const Icon(
+                                        Icons.calendar_month_outlined)),
                                 Text(displayDate,
                                     style:
                                         Theme.of(context).textTheme.labelSmall),
@@ -261,9 +270,9 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
                                   FilteringTextInputFormatter.allow(
                                       RegExp(r'^\d*\.?\d*'))
                                 ],
-                                keyboardType:
-                                    const TextInputType.numberWithOptions(
-                                        decimal: true),
+                                // keyboardType:
+                                //     const TextInputType.numberWithOptions(
+                                //         decimal: true),
                                 controller: weight,
                               ),
                             ),
@@ -301,9 +310,9 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
                                   FilteringTextInputFormatter.allow(
                                       RegExp(r'^\d*\.?\d*'))
                                 ],
-                                keyboardType:
-                                    const TextInputType.numberWithOptions(
-                                        decimal: true),
+                                // keyboardType:
+                                //     const TextInputType.numberWithOptions(
+                                //         decimal: true),
                                 controller: height,
                               ),
                             ),
