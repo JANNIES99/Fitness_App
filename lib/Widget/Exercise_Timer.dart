@@ -66,17 +66,6 @@ class _ExerciseTimerState extends State<ExerciseTimer> {
             style: const TextStyle(fontSize: 20, color: Colors.black),
           ),
         ),
-        ElevatedButton(
-          onPressed: isEnabled
-              ? () {
-                  startTimer();
-                  isEnabled = !isEnabled;
-                }
-              : null,
-          child: const Row(
-            children: [Text("Start"), Icon(Icons.run_circle_outlined)],
-          ),
-        )
       ],
     );
   }
