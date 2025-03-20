@@ -32,8 +32,8 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
   int? experienceValue;
 
   void registerUser() {
-    if (firstName.text != "" &&
-        lastName.text != "" &&
+    if ((firstName.text != "" || widget.firstName != null) &&
+        (lastName.text != "" || widget.lastName != null) &&
         _selectedData != null &&
         selectedGender != null &&
         experienceValue != null &&

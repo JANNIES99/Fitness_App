@@ -201,15 +201,18 @@ class _MealScheduleViewState extends State<MealScheduleView> {
                     itemCount: recommendations.length,
                     itemBuilder: (context, index) {
                       final meal = recommendations[index];
-                      return ListTile(
-                        title: Text(meal.title),
-                        subtitle: Text(
-                          'Ready in ${meal.readyInMinutes} mins • ${meal.diets.join(", ")}',
+                      return Card(
+                        elevation: 1,
+                        child: ListTile(
+                          title: Text(meal.title),
+                          subtitle: Text(
+                            'Ready in ${meal.readyInMinutes} mins • ${meal.diets.join(", ")}',
+                          ),
+                          onTap: () {
+                            Navigator.pop(context);
+                            _selectMeal(meal, mealType);
+                          },
                         ),
-                        onTap: () {
-                          Navigator.pop(context);
-                          _selectMeal(meal, mealType);
-                        },
                       );
                     },
                   ),
