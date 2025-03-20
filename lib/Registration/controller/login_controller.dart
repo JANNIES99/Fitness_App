@@ -14,7 +14,7 @@ class LoginController {
       // Attempt sign-in
       await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: email, password: password);
-      SnackBar messageSnackBar = SnackBar(
+      SnackBar messageSnackBar = const SnackBar(
         backgroundColor: Colors.green,
         content: Text("Logged in successfully"),
       );
@@ -33,7 +33,7 @@ class LoginController {
       print("Logged in successfully");
     } catch (e) {
       // Show error message
-      SnackBar messageSnackBar = SnackBar(
+      SnackBar messageSnackBar = const SnackBar(
         backgroundColor: Colors.red,
         content: Text("Invalid Email or Password"),
       );

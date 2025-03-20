@@ -11,8 +11,11 @@ import '../common_widget/round_button.dart';
 import '../common_widget/round_textfield.dart';
 
 class CompleteProfileView extends StatefulWidget {
-  const CompleteProfileView({required this.gmail, super.key});
+  const CompleteProfileView(
+      {required this.gmail, super.key, this.firstName, this.lastName});
   final String gmail;
+  final String? firstName;
+  final String? lastName;
 
   @override
   State<CompleteProfileView> createState() => _CompleteProfileViewState();
@@ -38,8 +41,9 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
         weight.text != "") {
       UserProfile user = UserProfile(
         gmail: widget.gmail,
-        firstName: firstName.text,
-        lastName: lastName.text,
+        firstName:
+            widget.firstName == null ? firstName.text : widget.firstName!,
+        lastName: widget.lastName == null ? lastName.text : widget.lastName!,
         streak: 0,
         gender: selectedGender!,
         height: double.parse(height.text),
@@ -223,23 +227,25 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
                         SizedBox(
                           height: media.width * 0.04,
                         ),
-                        Container(
-                          width: double.infinity,
-                          decoration: BoxDecoration(
-                              color: TColor.lightGray,
-                              borderRadius: BorderRadius.circular(15)),
-                          child: Row(
-                            children: [
-                              IconButton(
-                                  onPressed: () {
-                                    _openDatePicker();
-                                  },
-                                  icon: const Icon(
-                                      Icons.calendar_month_outlined)),
-                              Text(displayDate,
-                                  style:
-                                      Theme.of(context).textTheme.labelSmall),
-                            ],
+                        GestureDetector(
+                          onTap: () {
+                            _openDatePicker();
+                          },
+                          child: Container(
+                            width: double.infinity,
+                            height: 50,
+                            padding: const EdgeInsets.symmetric(horizontal: 10),
+                            decoration: BoxDecoration(
+                                color: TColor.lightGray,
+                                borderRadius: BorderRadius.circular(15)),
+                            child: Row(
+                              children: [
+                                const Icon(Icons.calendar_month_outlined),
+                                Text(displayDate,
+                                    style:
+                                        Theme.of(context).textTheme.labelSmall),
+                              ],
+                            ),
                           ),
                         ),
                         SizedBox(

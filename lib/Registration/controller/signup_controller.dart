@@ -55,6 +55,8 @@ class SignupController {
           MaterialPageRoute(
               builder: (context) => CompleteProfileView(
                     gmail: email,
+                    firstName: fname,
+                    lastName: lname,
                   )),
           (route) => false, // Remove all previous routes from the stack
         );

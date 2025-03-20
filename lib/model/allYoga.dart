@@ -117,12 +117,6 @@ List<Yoga> allYoga = [
           "Begin by lying flat on your back with your arms by your sides and your legs extended. \nInhale and lift your legs overhead, bringing them toward the floor behind you while keeping them straight. \nPress your arms into the floor for support, and keep your feet active, reaching toward the ground. \nEngage your core to help stabilize your spine and avoid strain in the neck. \nKeep your neck long, avoiding compression, and gaze toward the ceiling or close your eyes for a deeper relaxation. \nHold the pose with breathing deeply. \nTo release, slowly roll your spine back down and return to the starting position.",
       second: 30),
   Yoga(
-      name: "Hanumanasana",
-      image: Image.asset("images/Yoga/Hanumanasana.png"),
-      instructions:
-          "Begin by lying flat on your back with your arms by your sides and your legs extended. \nInhale and lift your legs overhead, bringing them toward the floor behind you while keeping them straight. \nPress your arms into the floor for support, and keep your feet active, reaching toward the ground. \nEngage your core to help stabilize your spine and avoid strain in the neck. \nKeep your neck long, avoiding compression, and gaze toward the ceiling or close your eyes for a deeper relaxation. \nHold the pose with breathing deeply. \nTo release, slowly roll your spine back down and return to the starting position.",
-      second: 30),
-  Yoga(
       name: "Malasana",
       image: Image.asset("images/Yoga/Malasana.png"),
       instructions:
