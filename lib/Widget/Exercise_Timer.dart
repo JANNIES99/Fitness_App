@@ -12,16 +12,39 @@ class ExerciseTimer extends StatefulWidget {
 }
 
 class _ExerciseTimerState extends State<ExerciseTimer> {
-  int timeForTimer = 0;
+  int timeForTimer = 5;
   int initalTime = 0;
-  String timeToDisplay = "";
+  String timeToDisplay = "5";
   @override
   void initState() {
-    initalTime = ((widget.minute * 60) + widget.seconds);
     timeForTimer = ((widget.minute * 60) + widget.seconds);
-    timeToDisplay = timeForTimer.toString();
-    startTimer();
+    initalTime = ((widget.minute * 60) + widget.seconds);
     super.initState();
+  }
+
+  void bufferTimer() {
+    int timeForTimer = 5;
+    Timer.periodic(
+      const Duration(
+        seconds: 1,
+      ),
+      (Timer t) {
+        setState(() {
+          if (timeForTimer < 1) {
+            t.cancel();
+            timeForTimer = 0;
+            timeToDisplay = timeForTimer.toString();
+            initalTime = ((widget.minute * 60) + widget.seconds);
+            timeForTimer = ((widget.minute * 60) + widget.seconds);
+            timeToDisplay = timeForTimer.toString();
+            startTimer();
+          } else {
+            timeForTimer = timeForTimer - 1;
+            timeToDisplay = timeForTimer.toString();
+          }
+        });
+      },
+    );
   }
 
   void startTimer() {
@@ -35,6 +58,7 @@ class _ExerciseTimerState extends State<ExerciseTimer> {
             t.cancel();
             timeForTimer = 0;
             timeToDisplay = timeForTimer.toString();
+            isEnabled = !isEnabled;
           } else {
             timeForTimer = timeForTimer - 1;
             if (timeForTimer > 60) {
@@ -51,6 +75,7 @@ class _ExerciseTimerState extends State<ExerciseTimer> {
     );
   }
 
+  bool isEnabled = true;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -65,6 +90,17 @@ class _ExerciseTimerState extends State<ExerciseTimer> {
             style: const TextStyle(fontSize: 20, color: Colors.black),
           ),
         ),
+        const SizedBox(
+          height: 20,
+        ),
+        ElevatedButton(
+            onPressed: isEnabled
+                ? () {
+                    bufferTimer();
+                    isEnabled = !isEnabled;
+                  }
+                : null,
+            child: const Text("Start"))
       ],
     );
   }
