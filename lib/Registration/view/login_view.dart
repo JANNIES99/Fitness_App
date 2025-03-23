@@ -125,7 +125,7 @@ class _LoginViewState extends State<LoginView> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () => LoginController().signInWithGoogle(),
                       child: Container(
                         width: 50,
                         height: 50,
