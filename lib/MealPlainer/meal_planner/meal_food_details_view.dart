@@ -210,15 +210,6 @@ class _MealFoodDetailsViewState extends State<MealFoodDetailsView> {
                               Html(
                                   data: _recipeDetails!['instructions'] ??
                                       'No instructions available'),
-                              // Text(
-                              //   _recipeDetails!['instructions'] ??
-                              //       'No instructions available',
-                              //   style: TextStyle(
-                              //     color: TColor.gray,
-                              //     fontSize: 14,
-                              //     height: 1.5,
-                              //   ),
-                              // ),
                               const SizedBox(height: 24),
                               Text(
                                 'Ingredients',

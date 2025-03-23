@@ -42,7 +42,6 @@ class _MealScheduleViewState extends State<MealScheduleView> {
   @override
   void initState() {
     super.initState();
-    // Initialize nutrition values
     calories = 0;
     protein = 0;
     fat = 0;
@@ -169,22 +168,16 @@ class _MealScheduleViewState extends State<MealScheduleView> {
 
   void _showMealTypeView(String mealType) async {
     try {
-      // Show loading indicator
       showDialog(
         context: context,
         barrierDismissible: false,
         builder: (context) => const Center(child: CircularProgressIndicator()),
       );
-
-      // Get meal recommendations
       final recommendations = await _getMealRecommendations(mealType);
 
-      // Hide loading indicator
       Navigator.pop(context);
 
       if (!mounted) return;
-
-      // Show recommendations dialog
       await showDialog(
         context: context,
         builder: (context) => AlertDialog(
@@ -249,21 +242,6 @@ class _MealScheduleViewState extends State<MealScheduleView> {
     }
   }
 
-  // void _showFullMealTypeView(String mealType) {
-  //   Navigator.push(
-  //     context,
-  //     MaterialPageRoute(
-  //       builder: (context) => MealTypeView(
-  //         mealType: mealType,
-  //         onMealSelected: (meal) async {
-  //           Navigator.pop(context);
-  //           await _selectMeal(meal, mealType);
-  //         },
-  //       ),
-  //     ),
-  //   );
-  // }
-
   Future<void> _selectMeal(Meal meal, String mealType) async {
     try {
       await _updateAndSaveMealPlan(meal, mealType);
@@ -300,13 +278,10 @@ class _MealScheduleViewState extends State<MealScheduleView> {
       ),
     );
 
-    // Create a new list with existing meals
     final meals = List<Meal>.from(_currentMealPlan!.meals);
 
-    // Prepare the new meal with correct type
     final mealWithType = selectedMeal.copyWith(type: mealType.toLowerCase());
 
-    // Find and replace or add the meal
     final existingIndex = meals.indexWhere(
       (m) => m.type?.toLowerCase() == mealType.toLowerCase(),
     );
@@ -317,14 +292,11 @@ class _MealScheduleViewState extends State<MealScheduleView> {
       meals.add(mealWithType);
     }
 
-    // Create updated meal plan
     final updatedMealPlan = _currentMealPlan!.copyWith(meals: meals);
 
     try {
-      // Save to storage
       await _mealService.saveMealPlan(updatedMealPlan, _selectedDateAppBBar);
 
-      // Update state without refreshing
       if (mounted) {
         setState(() {
           _currentMealPlan = updatedMealPlan;
@@ -372,21 +344,6 @@ class _MealScheduleViewState extends State<MealScheduleView> {
       ],
     );
   }
-
-  // String _getMealTime(Meal meal) {
-  //   // Simple logic to assign times based on meal order
-  //   final index = _currentMealPlan!.meals.indexOf(meal);
-  //   switch (index) {
-  //     case 0:
-  //       return '8:00 AM';
-  //     case 1:
-  //       return '1:00 PM';
-  //     case 2:
-  //       return '7:00 PM';
-  //     default:
-  //       return '${index + 8}:00';
-  //   }
-  // }
 
   void _showPreferencesDialog() async {
     final userPrefs = await UserPreferences.load();
@@ -588,11 +545,6 @@ class _MealScheduleViewState extends State<MealScheduleView> {
               controller: _calendarAgendaControllerAppBar,
               appbar: false,
               selectedDayPosition: SelectedDayPosition.center,
-              // leading: IconButton(
-              //     onPressed: () {}, icon: const Icon(Icons.arrow_back_rounded)),
-              // training: IconButton(
-              //     onPressed: () {},
-              //     icon: const Icon(Icons.arrow_forward_rounded)),
               weekDay: WeekDay.short,
               dayNameFontSize: 12,
               dayNumberFontSize: 16,
@@ -615,7 +567,6 @@ class _MealScheduleViewState extends State<MealScheduleView> {
                 });
 
                 try {
-                  // Force refresh when selecting a new date to ensure we get different meals
                   await _loadMealPlan(date, forceRefresh: true);
                 } catch (e) {
                   print('Error loading meal plan for date: $e');
@@ -662,8 +613,8 @@ class _MealScheduleViewState extends State<MealScheduleView> {
                           decoration: BoxDecoration(
                             gradient: LinearGradient(
                               colors: [
-                                TColor.primaryColor2.withOpacity(0.3),
-                                TColor.primaryColor1.withOpacity(0.3),
+                                TColor.primaryColor2.withValues(alpha: 0.3),
+                                TColor.primaryColor1.withValues(alpha: 0.3),
                               ],
                             ),
                             borderRadius: BorderRadius.circular(16),
@@ -762,7 +713,7 @@ class _MealScheduleViewState extends State<MealScheduleView> {
                             Expanded(
                               child: Container(
                                 height: 1,
-                                color: TColor.gray.withOpacity(0.3),
+                                color: TColor.gray.withValues(alpha: 0.3),
                               ),
                             ),
                           ],
@@ -830,7 +781,8 @@ class _MealScheduleViewState extends State<MealScheduleView> {
                                         Expanded(
                                           child: Container(
                                             height: 1,
-                                            color: TColor.gray.withOpacity(0.3),
+                                            color: TColor.gray
+                                                .withValues(alpha: 0.3),
                                           ),
                                         ),
                                       ],
@@ -869,7 +821,8 @@ class _MealScheduleViewState extends State<MealScheduleView> {
                                         Expanded(
                                           child: Container(
                                             height: 1,
-                                            color: TColor.gray.withOpacity(0.3),
+                                            color: TColor.gray
+                                                .withValues(alpha: 0.3),
                                           ),
                                         ),
                                       ],
@@ -907,7 +860,8 @@ class _MealScheduleViewState extends State<MealScheduleView> {
                                         Expanded(
                                           child: Container(
                                             height: 1,
-                                            color: TColor.gray.withOpacity(0.3),
+                                            color: TColor.gray
+                                                .withValues(alpha: 0.3),
                                           ),
                                         ),
                                       ],
