@@ -1,5 +1,3 @@
-// ignore_for_file: use_build_context_synchronously, avoid_print
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitnessapp/Registration/view/profile.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +9,6 @@ class LoginController {
     required BuildContext context,
   }) async {
     try {
-      // Attempt sign-in
       await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: email, password: password);
       SnackBar messageSnackBar = const SnackBar(
@@ -27,12 +24,10 @@ class LoginController {
         );
       }), (route) {
         return false;
-      } // Remove all previous routes from the stack
-          );
+      });
 
       print("Logged in successfully");
     } catch (e) {
-      // Show error message
       SnackBar messageSnackBar = const SnackBar(
         backgroundColor: Colors.red,
         content: Text("Invalid Email or Password"),

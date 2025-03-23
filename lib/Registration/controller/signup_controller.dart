@@ -1,11 +1,5 @@
-// ignore_for_file: use_build_context_synchronously, avoid_print
-
-//import 'dart:nativewrappers/_internal/vm/lib/internal_patch.dart';
-
 import 'package:firebase_auth/firebase_auth.dart';
-//import 'package:fitness_loginpage/view/login/login_view.dart';
 import 'package:fitnessapp/Registration/view/profile.dart';
-//import 'package:fitness_loginpage/view/login/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -21,7 +15,6 @@ class SignupController {
     required BuildContext context,
   }) async {
     try {
-      // Attempt to create a new user
       UserCredential userCredential = await FirebaseAuth.instance
           .createUserWithEmailAndPassword(email: email, password: password);
 
@@ -41,15 +34,12 @@ class SignupController {
       } catch (e) {
         print(e);
       }
-      // Check if the user was created successfully
       if (userCredential.user != null) {
         SnackBar messageSnackBar = const SnackBar(
           backgroundColor: Colors.green,
           content: Text("Account Created Successfully"),
         );
         ScaffoldMessenger.of(context).showSnackBar(messageSnackBar);
-
-        // Redirect to CompleteProfileView
         Navigator.pushAndRemoveUntil(
           context,
           MaterialPageRoute(
@@ -58,12 +48,11 @@ class SignupController {
                     firstName: fname,
                     lastName: lname,
                   )),
-          (route) => false, // Remove all previous routes from the stack
+          (route) => false,
         );
         print("Account created successfully");
       }
     } catch (e) {
-      // Show error message if registration fails
       SnackBar messageSnackBar = SnackBar(
         backgroundColor: Colors.red,
         content: Text(e.toString()),
@@ -75,16 +64,12 @@ class SignupController {
   }
 
   signInWithGoogle() async {
-    //begin interactive sign in process
     final GoogleSignInAccount? gUser = await GoogleSignIn().signIn();
 
-    // user cancels
     if (gUser == null) return;
 
-    //obtain auth details from request
     final GoogleSignInAuthentication gAuth = await gUser.authentication;
 
-    //create a new credential for user
     final credential = GoogleAuthProvider.credential(
       accessToken: gAuth.accessToken,
       idToken: gAuth.idToken,
@@ -93,4 +78,3 @@ class SignupController {
     return await _firebaseAuth.signInWithCredential(credential);
   }
 }
-//google_sign_in
