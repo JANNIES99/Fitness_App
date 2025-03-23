@@ -8,6 +8,7 @@ import 'package:fitnessapp/View/sections/yoga_section.dart';
 import 'package:fitnessapp/model/userProfile.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({required this.user, super.key});
@@ -54,6 +55,7 @@ class _HomeViewState extends State<HomeView> {
   void logOut() {
     _databaseService.deleteUserProfile(widget.user);
     _databaseService.deleteAllDaysWorked();
+    GoogleSignIn().signOut();
     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
       return const Splashscreen();
     }));
