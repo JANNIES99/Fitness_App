@@ -1,10 +1,8 @@
 import 'package:fitnessapp/Registration/view/login_view.dart';
-//import 'package:fitnessapp/Registration/view/welcome.dart';
 import 'package:fitnessapp/Service/Database.dart';
 import 'package:fitnessapp/View/home_view.dart';
 import 'package:fitnessapp/model/userProfile.dart';
 import 'package:flutter/material.dart';
-//import 'package:firebase_auth/firebase_auth.dart';
 
 class Splashscreen extends StatefulWidget {
   const Splashscreen({super.key});
@@ -14,7 +12,6 @@ class Splashscreen extends StatefulWidget {
 }
 
 class _SplashscreenState extends State<Splashscreen> {
-  //var user = FirebaseAuth.instance.currentUser;
   UserProfile? user;
   final DatabaseService _databaseService = DatabaseService.instance;
   void getProfileData() async {

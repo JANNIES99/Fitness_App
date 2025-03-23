@@ -1,13 +1,8 @@
-// ignore_for_file: deprecated_member_use
-
 import 'package:fitnessapp/Registration/common_widget/round_button.dart';
 import 'package:fitnessapp/Registration/common_widget/round_textfield.dart';
 import 'package:fitnessapp/Registration/controller/login_controller.dart';
-// ignore: unused_import
-import 'package:fitnessapp/Registration/view/profile.dart';
 import 'package:fitnessapp/Registration/view/signup_view.dart';
 import 'package:flutter/material.dart';
-
 import '../common/color_extention.dart';
 
 class LoginView extends StatefulWidget {
@@ -89,21 +84,6 @@ class _LoginViewState extends State<LoginView> {
                         child: Icon(hiddenIcon),
                       )),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SizedBox(
-                      height: media.width * 0.09,
-                    ),
-                    Text(
-                      "Forgot your password?",
-                      style: TextStyle(
-                          color: TColor.gray,
-                          fontSize: 10,
-                          decoration: TextDecoration.underline),
-                    ),
-                  ],
-                ),
                 const Spacer(),
                 RoundButton(
                   title: "Login",
@@ -121,12 +101,11 @@ class _LoginViewState extends State<LoginView> {
                   height: media.width * 0.04,
                 ),
                 Row(
-                  // crossAxisAlignment: CrossAxisAlignment.,
                   children: [
                     Expanded(
                         child: Container(
                       height: 1,
-                      color: TColor.gray.withOpacity(0.5),
+                      color: TColor.gray.withValues(alpha: 0.5),
                     )),
                     Text(
                       "  Or  ",
@@ -135,7 +114,7 @@ class _LoginViewState extends State<LoginView> {
                     Expanded(
                         child: Container(
                       height: 1,
-                      color: TColor.gray.withOpacity(0.5),
+                      color: TColor.gray.withValues(alpha: 0.5),
                     )),
                   ],
                 ),
@@ -155,7 +134,7 @@ class _LoginViewState extends State<LoginView> {
                           color: TColor.white,
                           border: Border.all(
                             width: 1,
-                            color: TColor.gray.withOpacity(0.4),
+                            color: TColor.gray.withValues(alpha: 0.4),
                           ),
                           borderRadius: BorderRadius.circular(15),
                         ),
@@ -169,27 +148,6 @@ class _LoginViewState extends State<LoginView> {
                     SizedBox(
                       height: media.width * 0.04,
                     ),
-                    // GestureDetector(
-                    //   onTap: () {},
-                    //   child: Container(
-                    //     width: 50,
-                    //     height: 50,
-                    //     alignment: Alignment.center,
-                    //     decoration: BoxDecoration(
-                    //       color: TColor.white,
-                    //       border: Border.all(
-                    //         width: 1,
-                    //         color: TColor.gray.withOpacity(0.4),
-                    //       ),
-                    //       borderRadius: BorderRadius.circular(15),
-                    //     ),
-                    //     // child: Image.asset(
-                    //     //   "assets/images/facebook.png",
-                    //     //   width: 50,
-                    //     //   height: 50,
-                    //     // ),
-                    //   ),
-                    // )
                   ],
                 ),
                 SizedBox(

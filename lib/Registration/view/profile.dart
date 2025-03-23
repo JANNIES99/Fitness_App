@@ -4,9 +4,7 @@ import 'package:fitnessapp/model/userProfile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:group_button/group_button.dart';
-
 import '../common/color_extention.dart';
-// ignore: unused_import
 import '../common_widget/round_button.dart';
 import '../common_widget/round_textfield.dart';
 
@@ -176,7 +174,6 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
                             controller: lastName,
                           ),
                         ),
-
                         SizedBox(
                           height: media.width * 0.04,
                         ),
@@ -340,32 +337,6 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
                         SizedBox(
                           height: media.width * 0.04,
                         ),
-                        // Container(
-                        //   decoration: BoxDecoration(
-                        //       color: TColor.lightGray,
-                        //       borderRadius: BorderRadius.circular(15)),
-                        //   child: Row(
-                        //     children: [
-                        //       for (int i = 1; i <= 10; i++)
-                        //         Container(
-                        //           margin: const EdgeInsets.all(10),
-                        //           height: 15,
-                        //           width: 15,
-                        //           decoration: BoxDecoration(
-                        //               color: Theme.of(context)
-                        //                   .colorScheme
-                        //                   .onSecondary,
-                        //               borderRadius: BorderRadius.circular(20)),
-                        //           child: Align(
-                        //             alignment: Alignment.center,
-                        //             child: Text((i.toString()),
-                        //                 style: const TextStyle(
-                        //                     color: Colors.black, fontSize: 10)),
-                        //           ),
-                        //         ),
-                        //     ],
-                        //   ),
-                        // )
                         Container(
                           padding: const EdgeInsets.all(10),
                           width: double.infinity,

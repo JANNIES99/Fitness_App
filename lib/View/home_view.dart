@@ -1,5 +1,4 @@
 import 'dart:typed_data';
-
 import 'package:fitnessapp/Registration/view/splashscreen.dart';
 import 'package:fitnessapp/Service/Database.dart';
 import 'package:fitnessapp/View/sections/diet_section.dart';

@@ -1,16 +1,9 @@
-//import 'package:fitness/view/login/complete_profile_view.dart';
-
-// ignore_for_file: deprecated_member_use, avoid_print, unused_import
-
 import 'package:fitnessapp/Registration/common/color_extention.dart';
 import 'package:fitnessapp/Registration/common_widget/round_button.dart';
 import 'package:fitnessapp/Registration/common_widget/round_textfield.dart';
 import 'package:fitnessapp/Registration/controller/signup_controller.dart';
 import 'package:fitnessapp/Registration/view/login_view.dart';
-import 'package:fitnessapp/Registration/view/profile.dart';
-//import 'package:fitness_loginpage/view/login/profile_view.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 class SignUpView extends StatefulWidget {
   const SignUpView({super.key});
@@ -168,7 +161,7 @@ class _SignUpViewState extends State<SignUpView> {
                       Expanded(
                           child: Container(
                         height: 1,
-                        color: TColor.gray.withOpacity(0.5),
+                        color: TColor.gray.withValues(alpha: 0.5),
                       )),
                       Text(
                         "  Or  ",
@@ -177,19 +170,13 @@ class _SignUpViewState extends State<SignUpView> {
                       Expanded(
                           child: Container(
                         height: 1,
-                        color: TColor.gray.withOpacity(0.5),
+                        color: TColor.gray.withValues(alpha: 0.5),
                       )),
                     ],
                   ),
-
                   SizedBox(
                     height: media.width * 0.04,
                   ),
-
-                  // ElevatedButton(
-                  //   onPressed: () => SignupController().signInWithGoogle(),
-                  //   child: const Text("Google Sign-In")
-                  //   ),
                   GestureDetector(
                     onTap: () => SignupController().signInWithGoogle(),
                     child: Container(
@@ -200,7 +187,7 @@ class _SignUpViewState extends State<SignUpView> {
                         color: TColor.white,
                         border: Border.all(
                           width: 1,
-                          color: TColor.gray.withOpacity(0.4),
+                          color: TColor.gray.withValues(alpha: 0.4),
                         ),
                         borderRadius: BorderRadius.circular(15),
                       ),
@@ -211,61 +198,6 @@ class _SignUpViewState extends State<SignUpView> {
                       ),
                     ),
                   ),
-                  // SizedBox(
-                  //   height: media.width * 0.04,
-                  // ),
-                  // Row(
-                  //   mainAxisAlignment: MainAxisAlignment.center,
-                  //   children: [
-                  //     GestureDetector(
-                  //       onTap: () {},
-                  //       child: Container(
-                  //         width: 50,
-                  //         height: 50,
-                  //         alignment: Alignment.center,
-                  //         decoration: BoxDecoration(
-                  //           color: TColor.white,
-                  //           border: Border.all(
-                  //             width: 1,
-                  //             color: TColor.gray.withOpacity(0.4),
-                  //           ),
-                  //           borderRadius: BorderRadius.circular(15),
-                  //         ),
-                  //         child: Image.asset(
-                  //           "assets/images/google.png",
-                  //           width: 50,
-                  //           height: 50,
-                  //         ),
-                  //       ),
-                  //     ),
-
-                  //      SizedBox(
-                  //       width: media.width * 0.04,
-                  //     ),
-
-                  //     GestureDetector(
-                  //       onTap: () {},
-                  //       child: Container(
-                  //         width: 50,
-                  //         height: 50,
-                  //         alignment: Alignment.center,
-                  //         decoration: BoxDecoration(
-                  //           color: TColor.white,
-                  //           border: Border.all(
-                  //             width: 1,
-                  //             color: TColor.gray.withOpacity(0.4),
-                  //           ),
-                  //           borderRadius: BorderRadius.circular(15),
-                  //         ),
-                  //         child: Image.asset(
-                  //           "assets/images/facebook.png",
-                  //           width: 50,
-                  //           height: 50,
-                  //         ),
-                  //       ),
-                  //     )
-                  //   ],
-                  // ),
                   TextButton(
                     onPressed: () {
                       Navigator.pop(context);
