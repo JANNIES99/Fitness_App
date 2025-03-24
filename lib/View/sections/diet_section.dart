@@ -239,6 +239,13 @@ class _DietSectionState extends State<DietSection> {
                       onPressed: _loadMealPlan,
                       child: const Text('Retry'),
                     ),
+                    const Spacer(),
+                    const Center(
+                      child: Text(
+                        "Weight Gain:3100 calories Weight Loss:2100 calories",
+                        style: TextStyle(color: Colors.black, fontSize: 12),
+                      ),
+                    )
                   ],
                 ),
               )
@@ -289,6 +296,15 @@ class _DietSectionState extends State<DietSection> {
                         ),
                         const SizedBox(height: 16),
                         _buildMealsList(),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        const Center(
+                          child: Text(
+                            "Weight Gain:3100 calories Weight Loss:2100 calories",
+                            style: TextStyle(color: Colors.black, fontSize: 12),
+                          ),
+                        )
                       ],
                     ),
                   );
