@@ -1,6 +1,7 @@
 import 'package:fitnessapp/Registration/common_widget/round_button.dart';
 import 'package:fitnessapp/Registration/common_widget/round_textfield.dart';
 import 'package:fitnessapp/Registration/controller/login_controller.dart';
+import 'package:fitnessapp/Registration/view/forgotpassword.dart';
 import 'package:fitnessapp/Registration/view/signup_view.dart';
 import 'package:flutter/material.dart';
 import '../common/color_extention.dart';
@@ -83,6 +84,30 @@ class _LoginViewState extends State<LoginView> {
                         height: 20,
                         child: Icon(hiddenIcon),
                       )),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SizedBox(
+                      height: media.width * 0.09,
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(
+                          builder: (context) {
+                            return const ForgotPasswordPage();
+                          },
+                        ));
+                      },
+                      child: const Text(
+                        "Forgot your password?",
+                        style: TextStyle(
+                            color: Colors.blue,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w700),
+                      ),
+                    ),
+                  ],
                 ),
                 const Spacer(),
                 RoundButton(
