@@ -17,24 +17,6 @@ class WelcomeView extends StatefulWidget {
 
 class _WelcomeViewState extends State<WelcomeView> {
   var user = FirebaseAuth.instance.currentUser;
-//   var db = FirebaseFirestore.instance;
-
-//   Future<String?> getFirstName(String userId) async {
-//   try {
-//     DocumentSnapshot userDoc =
-//         await FirebaseFirestore.instance.collection('users').doc(userId).get();
-
-//     if (userDoc.exists) {
-//       var fname= userDoc['fname']; // Assuming 'first_name' is the field name
-//     } else {
-//       print('User not found');
-//       return null;
-//     }
-//   } catch (e) {
-//     print('Error fetching user: $e');
-//     return null;
-//   }
-// }
 
   @override
   Widget build(BuildContext context) {
@@ -79,7 +61,6 @@ class _WelcomeViewState extends State<WelcomeView> {
                 textAlign: TextAlign.center,
                 style: TextStyle(color: TColor.gray, fontSize: 15),
               ),
-
               SizedBox(
                 height: media.width * 0.1,
               ),
@@ -97,15 +78,6 @@ class _WelcomeViewState extends State<WelcomeView> {
                   },
                   child: const Text("Logout")),
               const Spacer(),
-
-              //        RoundButton(
-              //           title: "Go To Home",
-              //           onPressed: () {
-              //             Navigator.push(
-              //                 context,
-              //                 MaterialPageRoute(
-              //                     builder: (context) => const MainTabView()));
-              //           }),
             ],
           ),
         ),
