@@ -110,9 +110,6 @@ class _FitnessSectionState extends State<FitnessSection> {
       } else if (weightclass >= 25) {
         buff += -0.2;
       }
-      if (widget.user.gender == "Female") {
-        buff += -0.25;
-      }
       buff += (widget.user.experience - 3) * 0.1;
     });
     super.initState();
