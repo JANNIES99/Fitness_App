@@ -1,12 +1,9 @@
-// ignore_for_file: use_build_context_synchronously, non_constant_identifier_names
 
 import 'package:fitnessapp/Registration/view/login_view.dart';
 import 'package:flutter/material.dart';
 import '../common/color_extention.dart';
-//import '../../common_widget/round_button.dart';
-//import '../main_tab/main_tab_view.dart';
+
 import 'package:firebase_auth/firebase_auth.dart';
-//import 'package:cloud_firestore/cloud_firestore.dart';
 
 class WelcomeView extends StatefulWidget {
   const WelcomeView({super.key});
