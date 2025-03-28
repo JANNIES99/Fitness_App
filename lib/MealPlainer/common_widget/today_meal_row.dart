@@ -58,7 +58,7 @@ class TodayMealRow extends StatelessWidget {
                       fontWeight: FontWeight.w500,
                     ),
                   ),
-                  if (meal.id != 0) // Only show details for real meals
+                  if (meal.id != 0) 
                     Text(
                       "${meal.readyInMinutes} mins • ${meal.servings} servings",
                       style: TextStyle(
@@ -69,7 +69,7 @@ class TodayMealRow extends StatelessWidget {
                 ],
               ),
             ),
-            if (meal.id != 0) // Only show notification icon for real meals
+            if (meal.id != 0) 
               IconButton(
                 onPressed: () {},
                 icon: Image.asset(
