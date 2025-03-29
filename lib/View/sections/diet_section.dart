@@ -46,7 +46,7 @@ class _DietSectionState extends State<DietSection> {
             _isLoading = true;
           });
           await preferences.save();
-          await _loadMealPlan(true); // Force refresh meals with new preferences
+          await _loadMealPlan(true); 
         },
       ),
     );

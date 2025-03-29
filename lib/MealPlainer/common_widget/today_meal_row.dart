@@ -13,7 +13,6 @@ class TodayMealRow extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         if (meal.id != 0) {
-          // Only navigate if it's a real meal
           Navigator.push(
             context,
             MaterialPageRoute(
