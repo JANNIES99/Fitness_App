@@ -18,8 +18,8 @@ class FindEatCell extends StatelessWidget {
           gradient: LinearGradient(
             colors: isEvent
                 ? [
-                    TColor.primaryColor2.withOpacity(0.5),
-                    TColor.primaryColor1.withOpacity(0.5)
+                    TColor.primaryColor2.withValues(alpha: 0.5),
+                    TColor.primaryColor1.withValues(alpha: 0.5)
                   ]
                 : [
                     TColor.secondaryColor2.withOpacity(0.5),
