@@ -22,7 +22,7 @@ class FindEatCell extends StatelessWidget {
                     TColor.primaryColor1.withValues(alpha: 0.5)
                   ]
                 : [
-                    TColor.secondaryColor2.withOpacity(0.5),
+                    TColor.secondaryColor2.withValues(alpha: 0.5),
                     TColor.secondaryColor1.withOpacity(0.5)
                   ],
           ),
