@@ -1,6 +1,6 @@
 # fitnessapp
 
-A new Flutter project.
+A new Flutter project This is a Fitness, Diet, Yoga android app.
 
 ## Getting Started
 
